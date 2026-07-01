@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "test": "playwright test",
-    "deploy": "astro build && wrangler deploy",
+    "deploy": "astro build && wrangler deploy --env=\"\"",
     "deploy:staging": "astro build && wrangler deploy -c wrangler.staging.jsonc"
   },
   "dependencies": {
