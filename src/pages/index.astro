@@ -45,6 +45,7 @@ const services = [
     href: '/services/tmj-facial-pain/',
     photo: '/images/service-tmj.png',
     photoAlt: 'Patient experiencing relief from jaw and facial pain',
+    lightPhoto: true,
   },
   {
     name: 'Emergency Care',
@@ -66,13 +67,15 @@ const services = [
     href: '/services/advanced-technology/',
     photo: '/images/service-advanced-tech.png',
     photoAlt: '3D digital rendering of dental anatomy',
+    lightPhoto: true,
   },
   {
     name: 'Galleri® Cancer Detection',
     description: 'First in Minnesota to offer the Galleri® multi-cancer early detection blood test.',
     href: '/services/galleri-oral-cancer-detection/',
-    photo: null,
-    photoAlt: '',
+    photo: '/images/GrailSampleBocx-crop.webp',
+    photoAlt: 'Healthcare provider holding a Galleri multi-cancer early detection test kit',
+    lightPhoto: true,
   },
 ];
 
@@ -150,21 +153,6 @@ const patientResources = [
             <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
               <a href="/schedule/" class="btn btn-primary">Schedule an Appointment</a>
               <a href="/about/" class="btn btn-outline">Meet Dr. Sudit</a>
-            </div>
-            <!-- Trust micro-bullets -->
-            <div class="hero-trust-row">
-              <span class="hero-trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                272 Five-Star Reviews
-              </span>
-              <span class="hero-trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                35+ Years of Practice
-              </span>
-              <span class="hero-trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Top Dentist Hall of Fame
-              </span>
             </div>
           </div>
 
@@ -294,7 +282,7 @@ const patientResources = [
       <div style="
         position: absolute;
         inset: 0;
-        background: linear-gradient(to right, rgba(10,25,55,0.58) 0%, rgba(10,25,55,0.22) 55%, transparent 100%);
+        background: linear-gradient(to right, rgba(10,25,55,0.85) 0%, rgba(10,25,55,0.65) 40%, rgba(10,25,55,0.25) 70%, transparent 100%);
         display: flex;
         align-items: center;
       ">
@@ -324,7 +312,7 @@ const patientResources = [
 
         <div class="svc-grid">
           {services.map((service) => (
-            <a href={service.href} class={`svc-tile${!service.photo ? ' svc-tile--no-photo' : ''}`}>
+            <a href={service.href} class={`svc-tile${!service.photo ? ' svc-tile--no-photo' : ''}${service.lightPhoto ? ' svc-tile--light-photo' : ''}`}>
               {service.photo && (
                 <img
                   src={service.photo}
@@ -468,25 +456,6 @@ const patientResources = [
     margin-top: 0.5rem;
   }
 
-  .hero-trust-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-  .hero-trust-item {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    letter-spacing: 0.01em;
-  }
-  .hero-trust-item svg {
-    color: var(--color-primary);
-    flex-shrink: 0;
-  }
-
   .hero-photo-wrap {
     position: relative;
   }
@@ -613,6 +582,24 @@ const patientResources = [
     background: rgba(10, 25, 55, 0.12);
   }
 
+  .svc-tile--light-photo .svc-tile__overlay {
+    background: linear-gradient(
+      to top,
+      rgba(10, 25, 55, 0.92) 0%,
+      rgba(10, 25, 55, 0.8) 45%,
+      rgba(10, 25, 55, 0.3) 100%
+    );
+  }
+
+  .svc-tile--light-photo:hover .svc-tile__overlay {
+    background: linear-gradient(
+      to top,
+      rgba(10, 25, 55, 0.96) 0%,
+      rgba(10, 25, 55, 0.86) 45%,
+      rgba(10, 25, 55, 0.42) 100%
+    );
+  }
+
   .svc-tile:hover .svc-tile__overlay {
     background: linear-gradient(
       to top,
@@ -695,7 +682,7 @@ const patientResources = [
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    border: 1px solid rgba(255,255,255,0.8);
+    border: 1px solid var(--color-border);
     padding: 1.75rem;
     text-decoration: none;
     color: inherit;

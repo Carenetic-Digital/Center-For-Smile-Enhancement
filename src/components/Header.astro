@@ -26,27 +26,42 @@ const isServiceActive = currentPath.startsWith('/services/');
 
 <header>
   <!-- Announcement banner -->
-  <div style="background-color: var(--color-primary); color: #ffffff; font-family: var(--font-body); font-size: 0.8125rem; text-align: center; padding: 0.5rem 1rem; letter-spacing: 0.02em;">
+  <div class="announcement-banner" style="background-color: var(--color-primary); color: #ffffff; font-family: var(--font-body); font-size: 0.8125rem; text-align: center; padding: 0.5rem 1rem; letter-spacing: 0.02em;">
     Now offering Galleri® early cancer detection — first dental practice in Minnesota.&nbsp;
     <a href="/services/galleri-oral-cancer-detection/" style="text-decoration: underline; color: var(--color-brand-light);">Learn more</a>
   </div>
+</header>
 
-  <!-- Navigation -->
-  <nav
+<style>
+  /* Global focus ring uses --color-primary, which is invisible against this
+     banner's own --color-primary background — override to a light color
+     that actually contrasts. */
+  .announcement-banner a:focus-visible {
+    outline-color: var(--color-brand-light);
+  }
+</style>
+
+<!--
+  Nav lives as a sibling of <header>, not nested inside it: position: sticky is
+  constrained by its containing block (the nearest block-level ancestor), and
+  <header> above is only as tall as the banner + nav themselves — leaving no
+  room for the nav to actually stick. As a sibling, its containing block is
+  <body>, which spans the full page.
+-->
+<nav
     style="position: sticky; top: 0; z-index: 50; background-color: #ffffff; border-bottom: 1px solid var(--color-border);"
     aria-label="Main navigation"
   >
     <div class="site-container">
       <div style="display: flex; align-items: center; justify-content: space-between; height: 5rem;">
 
-        <!-- Logo -->
-        <a href="/" aria-label="Center for Smile Enhancement — Home" style="flex-shrink: 0;">
+        <!-- Logo (oversized, overlaps out the bottom of the nav bar) -->
+        <a href="/" aria-label="Center for Smile Enhancement — Home" class="site-logo">
           <img
-            src="/images/logo-banner.jpg"
+            src="/images/logo-mark.png"
             alt="Center for Smile Enhancement"
-            width="220"
-            height="52"
-            style="height: 4.5rem; width: auto; object-fit: contain;"
+            width="600"
+            height="599"
             loading="eager"
           />
         </a>
@@ -177,7 +192,6 @@ const isServiceActive = currentPath.startsWith('/services/');
       </div>
     </div>
   </nav>
-</header>
 
 <style>
   /* ── Show/hide breakpoint ───────────────────────────── */
@@ -185,6 +199,27 @@ const isServiceActive = currentPath.startsWith('/services/');
     .desktop-nav  { display: flex !important; }
     .desktop-cta  { display: inline-flex !important; }
     .mobile-toggle { display: none !important; }
+  }
+
+  /* ── Logo: oversized, overflows out the bottom of the nav ─ */
+  .site-logo {
+    flex-shrink: 0;
+    align-self: flex-start;
+    position: relative;
+    z-index: 1;
+    margin-top: 0.375rem;
+  }
+  .site-logo img {
+    display: block;
+    height: 5.5rem;
+    width: auto;
+    object-fit: contain;
+  }
+  @media (min-width: 640px) {
+    .site-logo img { height: 7rem; }
+  }
+  @media (min-width: 1024px) {
+    .site-logo img { height: 8rem; }
   }
 
   /* ── Shared nav-link style ──────────────────────────── */
