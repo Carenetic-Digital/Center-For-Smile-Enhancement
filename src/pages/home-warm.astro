@@ -1,0 +1,961 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    name: 'General & Family Dentistry',
+    description: 'Preventive cleanings, exams, fillings, and whole-family care for all ages.',
+    href: '/services/general-family-dentistry/',
+    photo: '/images/service-family.jpg',
+    photoAlt: 'Mother and child brushing teeth together',
+  },
+  {
+    name: 'Cosmetic Dentistry',
+    description: 'ZOOM whitening, porcelain veneers, bonding, and complete smile transformations.',
+    href: '/services/cosmetic-dentistry/',
+    photo: '/images/service-cosmetic-smile.png',
+    photoAlt: 'Woman with a confident, beautiful smile',
+  },
+  {
+    name: 'Orthodontics',
+    description: 'Invisalign clear aligners for teens and adults — no metal brackets.',
+    href: '/services/orthodontics/',
+    photo: '/images/service-orthodontics.png',
+    photoAlt: 'Patient placing an Invisalign clear aligner',
+  },
+  {
+    name: 'Implant Dentistry',
+    description: 'Permanent tooth replacement with natural-looking, long-lasting dental implants.',
+    href: '/services/implant-dentistry/',
+    photo: '/images/service-cosmetic.jpg',
+    photoAlt: 'Patient with a beautiful, confident smile after restorative dental care',
+  },
+  {
+    name: 'Masterpiece Aesthetics',
+    description: 'Botox, dermal fillers, microneedling, and medical-grade skincare services.',
+    href: '/services/masterpiece-aesthetics/',
+    photo: '/images/service-aesthetics.png',
+    photoAlt: 'Woman with refreshed, elegant appearance',
+  },
+  {
+    name: 'TMJ & Facial Pain',
+    description: 'Expert diagnosis and treatment for jaw pain, TMJ disorders, and facial discomfort.',
+    href: '/services/tmj-facial-pain/',
+    photo: '/images/service-tmj.png',
+    photoAlt: 'Patient experiencing relief from jaw and facial pain',
+  },
+  {
+    name: 'Emergency Care',
+    description: 'Same-day and after-hours care for dental emergencies. Call us at 952-593-9310.',
+    href: '/services/emergency-care/',
+    photo: '/images/service-emergency.png',
+    photoAlt: 'Child with a surprised expression needing dental care',
+  },
+  {
+    name: 'Teledentistry',
+    description: 'Connect with Dr. Sudit remotely for consultations, follow-ups, and advice.',
+    href: '/services/teledentistry/',
+    photo: '/images/service-teledentistry.png',
+    photoAlt: 'Patient connecting with dentist via smartphone',
+  },
+  {
+    name: 'Advanced Technology',
+    description: 'State-of-the-art imaging, digital dentistry tools, and precision diagnostics.',
+    href: '/services/advanced-technology/',
+    photo: '/images/service-advanced-tech.png',
+    photoAlt: '3D digital rendering of dental anatomy',
+  },
+  {
+    name: 'Galleri® Cancer Detection',
+    description: 'First in Minnesota to offer the Galleri® multi-cancer early detection blood test.',
+    href: '/services/galleri-oral-cancer-detection/',
+    photo: '/images/GrailSampleBocx-crop.webp',
+    photoAlt: 'Healthcare provider holding a Galleri multi-cancer early detection test kit',
+  },
+];
+
+const testimonials = [
+  {
+    quote: "I've been a patient of Dr. Sudit's for over 25 years. His commitment to excellence and the genuine warmth of his team keep me coming back. There is truly no one else I would trust with my family's dental care.",
+    author: "Sarah M.",
+    location: "Minnetonka",
+    stars: 5,
+  },
+  {
+    quote: "I had a dental emergency on a Friday afternoon and they got me in immediately. The care was exceptional, and the entire team made what could have been a very stressful situation completely comfortable. I can't recommend them enough.",
+    author: "James R.",
+    location: "Eden Prairie",
+    stars: 5,
+  },
+  {
+    quote: "Dr. Sudit is in a league of his own. The level of personal attention, the spotless and beautiful office, the way every single team member treats you — it is unlike any dental experience I've ever had.",
+    author: "Carol L.",
+    location: "Wayzata",
+    stars: 5,
+  },
+];
+
+const patientResources = [
+  {
+    title: 'New Patients',
+    description: 'Everything you need to know before your first visit — what to expect and how to prepare.',
+    href: '/patients/new-patients/',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  },
+  {
+    title: 'Patient Forms',
+    description: 'Access and complete your paperwork in advance through our patient portal.',
+    href: '/patients/patient-forms/',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+  },
+  {
+    title: 'Insurance & Payment',
+    description: 'We\'re out-of-network fee-for-service and accept CareCredit, Cherry, and offer a prepay discount.',
+    href: '/patients/insurance-payment/',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>`,
+  },
+  {
+    title: 'FAQ',
+    description: 'Answers to common questions about our services, technology, and practice philosophy.',
+    href: '/patients/faq/',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Center for Smile Enhancement | Dr. Michael Sudit, DDS | Minnetonka, MN"
+  description="Boutique dental care in Minnetonka, MN. Dr. Michael Sudit offers cosmetic, general, implant, and aesthetic dentistry with Disney-inspired service for 35+ years."
+>
+  <div class="warm-page">
+  <Header />
+
+  <main id="main-content">
+    <!-- ── Hero ──────────────────────────────────────── -->
+    <section aria-label="Introduction" class="hero-section">
+      <div class="site-container">
+        <div class="hero-layout">
+
+          <!-- Text content -->
+          <div class="hero-text">
+            <span class="pill-eyebrow">Minnetonka, MN &nbsp;·&nbsp; Boutique Dental Care</span>
+            <h1 class="hero-h1">
+              Excellence Is the Baseline.<br />
+              Service Is the Differentiator.
+            </h1>
+            <p class="hero-lede">
+              For over 35 years, Dr. Michael Sudit has delivered boutique dental care in Minnetonka defined by clinical excellence and a patient experience inspired by the world's finest hospitality brands.
+            </p>
+            <div class="hero-ctas">
+              <a href="/schedule/" class="btn-pill btn-pill-primary">Schedule an Appointment</a>
+              <a href="/about/" class="btn-pill btn-pill-outline">Meet Dr. Sudit</a>
+            </div>
+          </div>
+
+          <!-- Doctor photo, offset with decorative blob -->
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-blob" aria-hidden="true"></div>
+            <div class="hero-photo-inner">
+              <img
+                src="/images/hero-patient.jpg"
+                alt="Patient with a confident smile at Center for Smile Enhancement"
+                width="2500"
+                height="1664"
+                loading="eager"
+                fetchpriority="high"
+                class="hero-photo-img"
+              />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Floating stats card, overlapping hero -->
+        <div class="stats-float">
+          <div class="stats-float-item">
+            <span class="stats-number">272</span>
+            <span class="stats-label">Five-Star Google Reviews</span>
+          </div>
+          <div class="stats-float-item">
+            <span class="stats-number">35+</span>
+            <span class="stats-label">Years in Practice</span>
+          </div>
+          <div class="stats-float-item">
+            <span class="stats-number">Hall&nbsp;of&nbsp;Fame</span>
+            <span class="stats-label">Top Dentist — Mpls. St. Paul Mag.</span>
+          </div>
+          <div class="stats-float-item">
+            <span class="stats-number">Since&nbsp;2001</span>
+            <span class="stats-label">Disney Institute&nbsp;Trained</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What Sets Us Apart ─────────────────────────── -->
+    <section aria-labelledby="differentiators-heading" class="section-wash section-pad-top-lg">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="pill-eyebrow pill-eyebrow--muted">Our Difference</span>
+          <h2 id="differentiators-heading" class="warm-heading">
+            What Sets Us Apart
+          </h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="soft-card">
+            <div class="icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <h3 class="soft-card-title">The Disney Difference</h3>
+            <p class="soft-card-body">
+              Since 2001, our practice has been infused with the Disney Institute's customer service philosophy. Every touchpoint — from your first call to your final follow-up — is designed to exceed your expectations.
+            </p>
+          </div>
+
+          <div class="soft-card">
+            <div class="icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h3 class="soft-card-title">The Total Health Connection</h3>
+            <p class="soft-card-body">
+              We treat the whole person, not just the teeth. Your oral health is directly connected to your systemic and chronic health outcomes — a philosophy that guides every diagnosis and treatment decision we make.
+            </p>
+          </div>
+
+          <div class="soft-card">
+            <div class="icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3 class="soft-card-title">Every Patient Is a VIP</h3>
+            <p class="soft-card-body">
+              VIP means Very Individual Patient. We take the time to understand your unique goals, preferences, and concerns — because one-size-fits-all has never been part of our vocabulary.
+            </p>
+          </div>
+
+          <div class="soft-card">
+            <div class="icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3 class="soft-card-title">Galleri® Cancer Detection</h3>
+            <p class="soft-card-body">
+              We are the first dental practice in Minnesota to offer the Galleri® multi-cancer early detection blood test — a powerful, proactive tool for protecting your long-term health.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Practice Interior ─────────────────────────── -->
+    <section class="section-surface">
+      <div class="site-container section-py">
+        <div class="interior-frame">
+          <img
+            src="/images/interior-office.webp"
+            alt="Center for Smile Enhancement reception area in Minnetonka, MN"
+            width="2500"
+            height="1664"
+            loading="eager"
+            decoding="async"
+            class="interior-img"
+          />
+          <div class="interior-caption-card">
+            <p class="interior-caption-title">
+              A boutique experience in the heart of Minnetonka
+            </p>
+            <p class="interior-caption-sub">
+              10500 Wayzata Blvd &nbsp;·&nbsp; Mon–Thu 8am–5pm, Fri 8am–12pm
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Services ───────────────────────────────────── -->
+    <section aria-labelledby="services-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="pill-eyebrow pill-eyebrow--muted">Comprehensive Care</span>
+          <h2 id="services-heading" class="warm-heading">
+            All Your Dental Needs, Under One Roof
+          </h2>
+          <p class="section-sub">
+            From routine cleanings to full smile makeovers, Dr. Sudit and his team provide a comprehensive range of dental and aesthetic services.
+          </p>
+        </div>
+
+        <div class="svc-grid">
+          {services.map((service) => (
+            <a href={service.href} class="svc-tile">
+              <img
+                src={service.photo}
+                alt={service.photoAlt}
+                loading="lazy"
+                decoding="async"
+                class="svc-tile__img"
+              />
+              <div class="svc-tile__overlay" />
+              <div class="svc-tile__content">
+                <h3 class="svc-tile__name">{service.name}</h3>
+                <p class="svc-tile__desc">{service.description}</p>
+                <span class="svc-tile__cta" aria-hidden="true">
+                  Learn more
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+              <span class="sr-only">Learn more about {service.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonials ───────────────────────────────── -->
+    <section aria-labelledby="testimonials-heading" class="section-brand">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="pill-eyebrow pill-eyebrow--onBrand">Patient Stories</span>
+          <h2 id="testimonials-heading" class="warm-heading">
+            What Our Patients Are Saying
+          </h2>
+          <p class="section-sub">
+            272 five-star Google reviews and counting.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          {testimonials.map((t) => (
+            <div class="soft-card testimonial-card">
+              <svg class="quote-mark" width="34" height="26" viewBox="0 0 34 26" fill="var(--color-brand-light)" aria-hidden="true">
+                <path d="M0 26V16.6C0 7.2 5.4 1.1 14.7 0l1.1 4.2C10 5.7 7.3 9 7.1 13.4h6.9V26H0zm18.6 0V16.6c0-9.4 5.4-15.5 14.7-16.6l1.1 4.2c-5.8 1.5-8.5 4.8-8.7 9.2h6.9V26H18.6z"/>
+              </svg>
+              <div class="stars" aria-label={`${t.stars} out of 5 stars`}>
+                {Array.from({ length: t.stars }).map(() => (
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                ))}
+              </div>
+              <blockquote>
+                <p class="testimonial-quote">
+                  "{t.quote}"
+                </p>
+                <footer class="testimonial-footer">
+                  <span class="avatar-badge">{t.author.charAt(0)}</span>
+                  <span>
+                    <span class="testimonial-author">{t.author}</span>
+                    <span class="testimonial-location">{t.location}</span>
+                  </span>
+                </footer>
+              </blockquote>
+            </div>
+          ))}
+        </div>
+
+        <div class="center-cta">
+          <a href="/patients/reviews/" class="btn-pill btn-pill-outline">Read All Reviews</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Patient Resources ──────────────────────────── -->
+    <section aria-labelledby="resources-heading" class="resources-section">
+      <div class="resources-blob" aria-hidden="true"></div>
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="pill-eyebrow">For Our Patients</span>
+          <h2 id="resources-heading" class="warm-heading">
+            Patient Resources
+          </h2>
+        </div>
+
+        <div class="resources-grid">
+          {patientResources.map((res) => (
+            <a href={res.href} class="soft-card resource-card">
+              <div class="icon-badge icon-badge--filled" set:html={res.icon} />
+              <h3 class="soft-card-title" style="font-size: 1.0625rem;">{res.title}</h3>
+              <p class="soft-card-body">{res.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final CTA — floating island ─────────────────── -->
+    <section aria-labelledby="cta-heading" class="section-white cta-outer">
+      <div class="site-container">
+        <div class="cta-island">
+          <span class="pill-eyebrow pill-eyebrow--onDark">Minnetonka, MN</span>
+          <h2 id="cta-heading" class="cta-heading">
+            Ready to Experience the Difference?
+          </h2>
+          <p class="cta-sub">
+            New and returning patients are welcome. Call us or schedule online — we look forward to exceeding your expectations.
+          </p>
+          <div class="cta-ctas">
+            <a href="/schedule/" class="btn-pill btn-pill-onDark-primary">Schedule an Appointment</a>
+            <a href="tel:9525939310" class="btn-pill btn-pill-onDark-outline">Call 952-593-9310</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  </div>
+</BaseLayout>
+
+<style>
+  /* ── Pill-ify shared Header/Footer buttons on this page only ─ */
+  :global(.warm-page .btn) {
+    border-radius: 999px;
+  }
+
+  /* ── Shared section backgrounds ─────────────────────── */
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-wash { background-color: #ebeef5; }
+  .section-brand { background-color: var(--color-brand-light); }
+  .section-pad-top-lg { padding-top: 0.5rem; }
+
+  /* Text on a full brand-light section needs darker tones than the
+     default muted gray to hold WCAG AA contrast (see DESIGN.md warning) */
+  .section-brand .section-sub {
+    color: var(--color-text-base);
+  }
+
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  .warm-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .center-cta { text-align: center; margin-top: 2.5rem; }
+
+  /* ── Pill eyebrow / badges ───────────────────────────── */
+  .pill-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    background-color: var(--color-brand-light);
+    border-radius: 999px;
+    padding: 0.4375rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .pill-eyebrow--muted {
+    color: var(--color-text-muted);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+  .pill-eyebrow--onDark {
+    background-color: rgba(255,255,255,0.14);
+    color: #ffffff;
+  }
+  .pill-eyebrow--onBrand {
+    background-color: #ffffff;
+    color: var(--color-primary);
+  }
+
+  /* ── Pill buttons ─────────────────────────────────────── */
+  .btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9375rem 2rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .btn-pill-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(30, 52, 96, 0.22);
+  }
+  .btn-pill-primary:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+  }
+  .btn-pill-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  .btn-pill-outline:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+  }
+  .btn-pill-onDark-primary {
+    background-color: #ffffff;
+    color: var(--color-primary);
+    border-color: #ffffff;
+  }
+  .btn-pill-onDark-primary:hover {
+    background-color: transparent;
+    color: #ffffff;
+  }
+  .btn-pill-onDark-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: rgba(255,255,255,0.6);
+  }
+  .btn-pill-onDark-outline:hover {
+    background-color: rgba(255,255,255,0.14);
+    border-color: #ffffff;
+  }
+
+  /* ── Hero ───────────────────────────────────────────── */
+  .hero-section {
+    background-color: #ffffff;
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .hero-layout { grid-template-columns: 4fr 3fr; gap: 3.5rem; }
+  }
+  @media (min-width: 1024px) {
+    .hero-layout { grid-template-columns: 3fr 2fr; gap: 4.5rem; }
+  }
+
+  .hero-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.625rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.18;
+  }
+  .hero-lede {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-top: 1.5rem;
+    margin-bottom: 2.25rem;
+    max-width: 34rem;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-photo-wrap {
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 30rem;
+  }
+  @media (min-width: 768px) {
+    .hero-photo-wrap { justify-self: end; margin-right: -0.5rem; }
+  }
+  .hero-photo-blob {
+    position: absolute;
+    top: -1.75rem;
+    right: -1.5rem;
+    width: 88%;
+    height: 88%;
+    background-color: var(--color-brand-light);
+    border-radius: 3.5rem 3.5rem 1rem 3.5rem;
+    z-index: 0;
+  }
+  @media (min-width: 768px) {
+    .hero-photo-blob { top: -2rem; right: -2rem; }
+  }
+  .hero-photo-inner {
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-surface);
+    height: 420px;
+    overflow: hidden;
+    border-radius: 3.5rem 3.5rem 1rem 3.5rem;
+    box-shadow: 0 24px 48px rgba(30, 52, 96, 0.16);
+  }
+  @media (min-width: 640px) {
+    .hero-photo-inner { height: 480px; }
+  }
+  @media (min-width: 1024px) {
+    .hero-photo-inner { height: 520px; }
+  }
+  .hero-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  /* ── Floating stats card ─────────────────────────────── */
+  .stats-float {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    border-radius: 1.75rem;
+    border: 1px solid rgba(30, 52, 96, 0.07);
+    box-shadow: 0 2px 8px rgba(30, 52, 96, 0.06), 0 24px 52px rgba(30, 52, 96, 0.16);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1rem;
+    padding: 2rem 1.75rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .stats-float {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 2.25rem 3rem;
+      margin-top: -2.75rem;
+      transform: translateY(0);
+    }
+  }
+  .stats-float-item { display: flex; flex-direction: column; gap: 0.375rem; }
+  .stats-number {
+    font-family: var(--font-display);
+    font-size: clamp(1.375rem, 2.6vw, 2rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+  .stats-label {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+
+  /* ── Feature cards ────────────────────────────────────── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .features-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .features-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .soft-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(30, 52, 96, 0.07);
+    box-shadow: 0 2px 8px rgba(30, 52, 96, 0.06), 0 12px 32px rgba(30, 52, 96, 0.14);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .soft-card:hover {
+    box-shadow: 0 4px 12px rgba(30, 52, 96, 0.08), 0 22px 46px rgba(30, 52, 96, 0.22);
+    transform: translateY(-3px);
+  }
+  .soft-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .soft-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .icon-badge {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--color-primary);
+  }
+  .icon-badge--filled { background-color: var(--color-surface); }
+
+  /* ── Practice interior ───────────────────────────────── */
+  .interior-frame {
+    position: relative;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    box-shadow: 0 24px 56px rgba(30, 52, 96, 0.18);
+  }
+  .interior-img {
+    display: block;
+    width: 100%;
+    height: clamp(240px, 32vw, 440px);
+    object-fit: cover;
+    object-position: center 35%;
+  }
+  .interior-caption-card {
+    position: absolute;
+    left: clamp(1.25rem, 3vw, 2.5rem);
+    bottom: clamp(1.25rem, 3vw, 2.5rem);
+    max-width: 24rem;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 16px 40px rgba(30, 52, 96, 0.2);
+  }
+  .interior-caption-title {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.45;
+    margin-bottom: 0.5rem;
+  }
+  .interior-caption-sub {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── Services ─────────────────────────────────────────── */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  @media (min-width: 640px) {
+    .svc-grid { grid-template-columns: repeat(3, 1fr); gap: 1.125rem; }
+  }
+  @media (min-width: 1024px) {
+    .svc-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  }
+  @media (min-width: 1280px) {
+    .svc-grid { grid-template-columns: repeat(5, 1fr); }
+  }
+
+  .svc-tile {
+    position: relative;
+    display: block;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 20px rgba(30, 52, 96, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  .svc-tile:hover {
+    box-shadow: 0 18px 40px rgba(30, 52, 96, 0.24);
+  }
+
+  .svc-tile__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+  .svc-tile:hover .svc-tile__img { transform: scale(1.05); }
+
+  .svc-tile__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(10, 25, 55, 0.9) 0%,
+      rgba(10, 25, 55, 0.45) 42%,
+      rgba(10, 25, 55, 0.08) 100%
+    );
+    transition: background 0.35s ease;
+  }
+  .svc-tile:hover .svc-tile__overlay {
+    background: linear-gradient(
+      to top,
+      rgba(10, 25, 55, 0.96) 0%,
+      rgba(10, 25, 55, 0.58) 42%,
+      rgba(10, 25, 55, 0.2) 100%
+    );
+  }
+
+  .svc-tile__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    color: white;
+  }
+  .svc-tile__name {
+    font-family: var(--font-display);
+    font-size: clamp(0.8125rem, 1.1vw, 1rem);
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+    margin-bottom: 0.35rem;
+  }
+  .svc-tile__desc {
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.625rem;
+    display: none;
+  }
+  @media (min-width: 640px) {
+    .svc-tile__desc { display: block; }
+  }
+  .svc-tile__cta {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── Testimonials ─────────────────────────────────────── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  @media (min-width: 768px) {
+    .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .testimonial-card { position: relative; padding-top: 1.5rem; }
+  .quote-mark { position: absolute; top: 1.25rem; right: 1.75rem; opacity: 0.9; }
+  .stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
+  .testimonial-quote {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-base);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+  }
+  .avatar-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    flex-shrink: 0;
+  }
+  .testimonial-author { font-weight: 500; color: var(--color-primary); display: block; }
+  .testimonial-location { font-weight: 400; color: var(--color-text-muted); font-size: 0.8125rem; }
+
+  /* ── Patient Resources ────────────────────────────────── */
+  .resources-section {
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  .resources-blob {
+    position: absolute;
+    inset: 2rem 0 2rem 0;
+    background-color: #ebeef5;
+    border-radius: 4rem;
+    z-index: 0;
+  }
+  @media (max-width: 767px) {
+    .resources-blob { border-radius: 2rem; }
+  }
+  .resources-section .site-container { position: relative; z-index: 1; }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .resources-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .resources-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .resource-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ── Final CTA — floating island ─────────────────────── */
+  .cta-outer { padding-top: 4rem; padding-bottom: 5rem; }
+  .cta-island {
+    background-color: var(--color-primary);
+    border-radius: 2.5rem;
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
+    text-align: center;
+    box-shadow: 0 32px 64px rgba(30, 52, 96, 0.28);
+  }
+  .cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .cta-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.78);
+    max-width: 32rem;
+    margin: 0 auto 2.25rem;
+    line-height: 1.7;
+  }
+  .cta-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+</style>
