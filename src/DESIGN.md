@@ -82,10 +82,10 @@ Premium, editorial, warm. Target demographic is adults 45+, fee-for-service pati
 
 ## Buttons
 
-Three variants, defined as CSS component classes:
+Pill-shaped, three variants, defined as CSS component classes:
 
 ```html
-<!-- Primary: dark navy fill -->
+<!-- Primary: dark navy fill, soft drop shadow, lifts 1px on hover -->
 <a href="..." class="btn btn-primary">Schedule Appointment</a>
 
 <!-- Outline: dark navy border, transparent fill (inverts on hover) -->
@@ -95,7 +95,7 @@ Three variants, defined as CSS component classes:
 <a href="..." class="btn btn-outline-white">Contact Us</a>
 ```
 
-Spec: 2px solid border, `padding: 0.8125rem 1.875rem`, uppercase tracking, 0.2s transition.
+Spec: `border-radius: 999px` (full pill), 2px solid border, `padding: 0.9375rem 2rem`, uppercase tracking, 0.2s transition. `.btn-primary` carries `box-shadow: 0 8px 24px rgba(30, 52, 96, 0.22)` and translates up 1px on hover.
 
 ---
 
@@ -119,31 +119,48 @@ Use `.section-py` for standard vertical section spacing:
 
 ### Homepage Section Color Alternation
 
+Stats float as an overlapping card rather than a separate strip; interior photo and final CTA are framed "islands" rather than full-bleed bands.
+
 | Section | Background |
 |---------|-----------|
-| Hero | `#ffffff` |
-| Trust strip | `--color-surface` |
-| What Sets Us Apart | `#ffffff` |
-| Services | `--color-surface` |
-| Testimonials | `#ffffff` |
-| Patient Resources | `--color-brand-light` |
-| Final CTA | `--color-primary` (dark navy) |
+| Hero (+ floating stats card) | `#ffffff` |
+| What Sets Us Apart | `#ebeef5` (`.section-wash`) |
+| Practice Interior | `--color-surface` |
+| Services | `#ffffff` |
+| Testimonials | `--color-brand-light` (`.section-brand`) |
+| Patient Resources | `#ffffff`, with an inset rounded "blob" wash behind the grid |
+| Final CTA | `#ffffff` page background, with a `--color-primary` rounded island containing the CTA |
 | Footer | `--color-primary` (dark navy) |
+
+---
+
+## Shape Language
+
+Warm/soft direction layered on top of the navy/light-blue/white palette:
+
+- **Pill shapes** — buttons, eyebrow badges, icon badges (`border-radius: 999px`)
+- **Rounded cards** — `border-radius: 1.5rem`, layered box-shadow (a tight 2px shadow + a soft 12–24px shadow), never a hard 1px-border-only card
+- **Asymmetric photo frames** — hero/feature photos use `border-radius: 3.5rem 3.5rem 1rem 3.5rem` (three rounded corners, one square) with a `--color-brand-light` decorative "blob" offset behind the frame
+- **Floating/overlapping elements** — e.g. a stats card that overlaps the hero on desktop (negative `margin-top`), or a CTA "island" that sits inset within its section rather than spanning full-bleed
+- **Section wash colors** — alternate `#ffffff`, `#ebeef5`, `--color-surface`, and `--color-brand-light` rather than only white/surface, to keep long pages from feeling flat
+
+Apply this language to new pages' hero/CTA sections and card grids; don't reintroduce the old flat 1px-bordered card or square-cornered button style.
 
 ---
 
 ## Cards
 
-Use `.card` class for standard bordered cards:
+Use `.card` class for standard soft cards:
 ```html
 <div class="card">...</div>
 ```
 - White background
-- 1px border using `--color-border`
-- `padding: 1.75rem`
-- Hover: subtle shadow lift + 2px translate up
+- `border-radius: 1.5rem`
+- Faint 1px border (`rgba(30, 52, 96, 0.07)`)
+- `padding: 2rem 1.75rem`
+- Layered box-shadow (tight + soft), hover: deeper shadow + 3px translate up
 
-Feature cards get a `border-top: 3px solid var(--color-brand-light)` accent.
+Feature-style cards may add an `.icon-badge` (pill, `--color-brand-light` fill) above the heading instead of a top border accent.
 
 ---
 
@@ -202,7 +219,7 @@ lg: 1.5fr + 3×1fr
 - Primary (`#1e3460`) on white: ~12.2:1 ✓
 - Muted (`#6b7280`) on white: ~4.8:1 ✓ (borderline; prefer `--color-text-base` for critical copy)
 - White on primary (`#1e3460`): ~12.2:1 ✓
-- **⚠ Warning:** `--color-text-muted` (`#6b7280`) on `--color-brand-light` (`#c5cde3`) = 3.04:1 — **WCAG AA FAIL** for body text. Never place muted text directly on the brand-light background. Use `--color-primary` or `--color-text-base` for any text on brand-light sections. The Patient Resources section `section-eyebrow` works because it includes an explicit `style="color: var(--color-primary)"` override.
+- **⚠ Warning:** `--color-text-muted` (`#6b7280`) on `--color-brand-light` (`#c5cde3`) = 3.04:1 — **WCAG AA FAIL** for body text. Never place muted text directly on the brand-light background. Use `--color-primary` or `--color-text-base` for any text on brand-light sections (e.g. `.section-sub` inside a `.section-brand` block needs a `color: var(--color-text-base)` override — see the Testimonials section on the homepage). The default `.section-eyebrow` is already safe (`--color-primary` on `--color-brand-light`); use the `--muted`, `--onDark`, `--onBrand` modifiers for eyebrows on other backgrounds.
 - All interactive elements have visible focus states
 - SVG icons include `aria-hidden="true"` when decorative
 - Semantic HTML: `<header>`, `<main>`, `<footer>`, `<nav>`, `<section aria-labelledby>`, `<article>`
