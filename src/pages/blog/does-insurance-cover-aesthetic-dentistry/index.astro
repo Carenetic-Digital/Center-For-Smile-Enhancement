@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'Does Insurance Cover Aesthetic Dentistry?',
+  description:
+    'Botox, fillers, and other facial aesthetic treatments are usually cosmetic, not medical — which affects insurance coverage. Here is what to know.',
+  datePublished: '2025-07-22',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+};
+---
+
+<BaseLayout
+  title="Does Insurance Cover Aesthetic Dentistry in Minnetonka, MN?"
+  description="Botox, fillers, and other facial aesthetic treatments are usually cosmetic, not medical — which affects insurance coverage. Here's what's typically covered."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aesthetic Dentistry"
+      title="Does Insurance Cover Aesthetic Dentistry?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Insurance & Aesthetic Dentistry' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            If you're considering Botox, dermal fillers, or another facial aesthetic treatment
+            through our Masterpiece Aesthetics services, one of the first questions patients ask
+            is whether insurance will help cover the cost. The short answer: usually not — but
+            there are important exceptions worth understanding.
+          </p>
+
+          <h2>Cosmetic vs. Medically Necessary: Why It Matters</h2>
+          <p>
+            Insurance companies — whether medical or dental — draw a hard line between treatments
+            considered cosmetic and those considered medically necessary. Aesthetic treatments
+            like Botox®, Dysport®, dermal fillers, microneedling, and radiofrequency skin
+            treatments are, in the vast majority of cases, elective procedures aimed at
+            appearance rather than treating a diagnosed medical condition. That classification is
+            what determines coverage.
+          </p>
+
+          <h2>When Facial Aesthetic Treatments Are Rarely Covered</h2>
+          <p>
+            Standard cosmetic use of neuromodulators and fillers — softening expression lines,
+            restoring volume, refreshing your look — is considered elective by essentially every
+            insurance plan, medical or dental. These treatments are typically paid for out of
+            pocket.
+          </p>
+
+          <h2>When Coverage May Apply</h2>
+          <p>
+            There are narrower circumstances where a facial or oral treatment overlapping with
+            aesthetics may be partially covered by medical insurance, because it's being used to
+            treat a diagnosed condition rather than purely for appearance:
+          </p>
+          <ul>
+            <li>
+              <strong>Therapeutic Botox use</strong> — for example, treatment of chronic migraines
+              or TMJ-related muscle tension, when prescribed for a diagnosed condition rather than
+              cosmetic softening
+            </li>
+            <li>
+              <strong>Reconstructive treatment</strong> following an injury or trauma to the face
+              or jaw
+            </li>
+            <li>
+              <strong>Medically necessary dental-adjacent procedures</strong>, such as orthodontic
+              treatment for a functional bite problem
+            </li>
+          </ul>
+          <p>
+            In these cases, documentation of medical necessity and pre-authorization from your
+            insurer are typically required before treatment.
+          </p>
+
+          <h2>How to Find Out What Applies to You</h2>
+          <ul>
+            <li>Ask your provider directly whether your specific concern could qualify as medically necessary</li>
+            <li>Contact your insurance company to ask how they define "cosmetic" versus "medical" for the treatment you're considering</li>
+            <li>Request pre-authorization in writing before scheduling, if there's any chance a treatment could be partially covered</li>
+          </ul>
+
+          <h2>Making Aesthetic Treatment Affordable</h2>
+          <p>
+            Even when a treatment isn't covered, there are ways to manage the investment: flexible
+            payment options, combining treatments for better overall value, and prioritizing the
+            treatments that will make the biggest difference to you first. Every Masterpiece
+            Aesthetics consultation at Center for Smile Enhancement is complimentary, so you can
+            explore your options and get a clear picture of your plan before committing to
+            anything.
+          </p>
+
+          <h2>The Bottom Line</h2>
+          <p>
+            Most facial aesthetic treatments — Botox, fillers, microneedling, and skin treatments
+            — are considered elective and are not covered by insurance. The exceptions are narrow
+            and tied to a diagnosed medical condition, not appearance alone. When in doubt, ask
+            both your provider and your insurer before you schedule.
+          </p>
+
+          <p>
+            Curious what's right for you?
+            <a href="/schedule/">Schedule a complimentary Masterpiece Aesthetics consultation</a>
+            to discuss your goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Have Questions About Coverage?"
+      sub="Schedule a complimentary consultation and we'll help you understand your options."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

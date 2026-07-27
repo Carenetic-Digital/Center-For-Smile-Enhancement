@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import RelatedGrid from '../../../components/RelatedGrid.astro';
+import CTABand from '../../../components/CTABand.astro';
+
+const technologies = [
+  {
+    title: 'Digital X-Ray Imaging',
+    body: 'Digital radiography produces detailed images using significantly less radiation than traditional film X-rays, with results available instantly for review.',
+  },
+  {
+    title: 'Intraoral Cameras',
+    body: 'Small, high-resolution cameras let us show you exactly what we see, chairside — so you understand your own oral health rather than taking our word for it.',
+  },
+  {
+    title: 'Digital Impression Scanning',
+    body: 'Instead of traditional putty impressions, digital scanning captures a precise 3D model of your teeth quickly and comfortably.',
+  },
+  {
+    title: 'Computer-Guided Treatment Planning',
+    body: 'Digital planning tools help us map out treatment with greater precision, so procedures like implants and restorations are planned before we ever begin.',
+  },
+];
+
+const relatedItems = [
+  {
+    title: 'Implant Dentistry',
+    description: 'See how precision imaging and planning support long-lasting implant results.',
+    href: '/services/implant-dentistry/',
+  },
+  {
+    title: 'Cosmetic Dentistry',
+    description: 'Digital tools help us plan smile transformations with greater predictability.',
+    href: '/services/cosmetic-dentistry/',
+  },
+];
+---
+
+<BaseLayout
+  title="Advanced Technology | Center for Smile Enhancement, MN"
+  description="Modern digital imaging, intraoral cameras, and precision diagnostic tools at Center for Smile Enhancement in Minnetonka, MN support accurate, comfortable care."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Advanced Technology"
+      title="Modern Tools for Precise, Comfortable Care"
+      lede="From digital imaging to computer-guided treatment planning, we invest in modern dental technology so your diagnosis is more accurate, your treatment is more predictable, and your visit is more comfortable."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Advanced Technology' },
+      ]}
+      primaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+      secondaryCta={{ label: 'Meet Dr. Sudit', href: '/about/' }}
+      image="/images/service-advanced-tech.png"
+      imageAlt="3D digital rendering of dental anatomy"
+    />
+
+    <!-- ── Technology Categories ────────────────────────── -->
+    <section aria-labelledby="tech-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">In Our Office</span>
+          <h2 id="tech-heading" class="section-heading page-h2">
+            Technology That Supports Better Care
+          </h2>
+          <p class="section-sub">
+            Modern dental technology isn't about novelty — it's about giving us clearer information and giving you a more comfortable experience.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          {technologies.map((t) => (
+            <div class="card">
+              <h3 class="feature-title">{t.title}</h3>
+              <p class="feature-body">{t.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why It Matters ───────────────────────────────── -->
+    <section aria-labelledby="why-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="why-wrap">
+          <span class="section-eyebrow section-eyebrow--muted">Why It Matters</span>
+          <h2 id="why-heading" class="section-heading page-h2">Better Information, Better Outcomes</h2>
+          <p class="section-sub" style="margin-left: auto; margin-right: auto;">
+            Clearer images mean earlier detection of issues. Precise scans mean fewer surprises during treatment. And a more comfortable visit means you're more likely to keep up with the preventive care that protects your smile long-term. That's the real value of investing in modern tools — better care, delivered with the same VIP attention every patient can expect.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Where Technology Helps Most"
+      heading="See It in Action"
+      items={relatedItems}
+    />
+
+    <CTABand
+      eyebrow="Advanced Technology"
+      heading="Experience Modern Dentistry, Done Right"
+      sub="Schedule an appointment and see how our approach to technology supports a more precise, more comfortable visit."
+      primaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+  .page-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .feature-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .why-wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+</style>

@@ -227,4 +227,49 @@
     box-shadow: 0 4px 12px rgba(30, 52, 96, 0.08), 0 22px 46px rgba(30, 52, 96, 0.22);
     transform: translateY(-3px);
   }
+
+  /* ── Long-form article content (legal pages, blog posts) ────────── */
+  .article-prose {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-base);
+  }
+  .article-prose h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .article-prose h3 {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .article-prose p { margin-bottom: 1.25rem; }
+  .article-prose ul,
+  .article-prose ol {
+    margin: 0 0 1.25rem 1.25rem;
+    padding: 0;
+  }
+  .article-prose li { margin-bottom: 0.5rem; }
+  .article-prose a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .article-prose strong { color: var(--color-primary); }
+  .article-prose blockquote {
+    border-left: 3px solid var(--color-brand-light);
+    padding-left: 1.25rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+  .article-prose img {
+    border-radius: 1.5rem;
+    margin: 2rem 0;
+  }
 }

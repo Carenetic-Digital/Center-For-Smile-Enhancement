@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Root Canal Aftercare | Center for Smile Enhancement"
+  description="Aftercare instructions after root canal therapy at the Center for Smile Enhancement in Minnetonka, MN, including pain management tips and when to call us."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aftercare Instructions"
+      title="Root Canal Aftercare"
+      lede="Root canal therapy is completed in two appointments. Here's what to expect and how to care for your tooth in between."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+        { label: 'Root Canals' },
+      ]}
+    />
+
+    <section class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <h2>What to Expect</h2>
+          <p>
+            Root canal therapy is typically completed in two stages. At the first appointment, we remove the infected tissue from inside the tooth and place a medicated dressing before sealing the tooth with a temporary filling. At the second appointment, we remove the temporary filling and complete the permanent restoration (please note there are additional fees for the permanent restoration).
+          </p>
+          <p>
+            You may notice an unusual taste from the medication placed inside the tooth — this is normal, but let us know about it at your next visit. You'll likely remain numb for a few hours after your procedure, the injection site may feel tender or bruised for several days, and some deep discomfort in the jaw for a few days is also common.
+          </p>
+
+          <h2>Do's and Don'ts</h2>
+          <ul>
+            <li>Avoid chewing on the treated tooth until your second appointment is complete.</li>
+            <li>The temporary filling may wear away slightly at the surface — that's normal. As long as the opening stays sealed, your tooth is protected.</li>
+            <li>Call us right away if the treated tooth feels high, or touches the opposing tooth when you bite down.</li>
+            <li>If we've prescribed an antibiotic, complete the full course as directed, even if you're feeling better.</li>
+          </ul>
+
+          <h2>Pain Management</h2>
+          <p>
+            Over-the-counter options such as ibuprofen (Advil), naproxen sodium (Aleve), or acetaminophen (Tylenol) work best when taken before discomfort sets in. If you need more than a single medication provides, an Advil-and-Tylenol combination — alternating between the two on a regular schedule — is an effective approach many patients use for post-procedure discomfort. Ask our team for guidance on timing a combination schedule that works for you.
+          </p>
+
+          <h2>When to Call Us</h2>
+          <p>
+            Call our office at <a href="tel:9525939310">952-593-9310</a> any time you have questions or concerns — including if your bite feels off, discomfort is more than mild, or the sealed opening in your tooth is exposed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Questions About Your Recovery?"
+      sub="If anything feels off after your root canal, please reach out — we're here to help."
+      primaryCta={{ label: 'Contact Our Office', href: '/contact/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const related = [
+  {
+    title: 'Masterpiece Aesthetics',
+    description: 'Explore our full collection of aesthetic and injectable treatments in Minnetonka, MN.',
+    href: '/services/masterpiece-aesthetics/',
+  },
+  {
+    title: 'Botox Injections',
+    description: 'Soften expression lines and ease facial tension with neuromodulator injections.',
+    href: '/services/masterpiece-aesthetics/botox-injections/',
+  },
+  {
+    title: 'Bruise Management',
+    description: 'How we help patients minimize bruising before and after injectable treatments.',
+    href: '/services/masterpiece-aesthetics/bruise-management/',
+  },
+];
+
+const serviceData = {
+  name: 'Dermal Filler Injections',
+  serviceType: 'Hyaluronic acid dermal filler treatment',
+  provider: {
+    '@type': 'Dentist',
+    name: 'Center for Smile Enhancement',
+    telephone: '+19525939310',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Minnetonka, MN',
+  },
+  isPartOf: {
+    '@type': 'Service',
+    name: 'Masterpiece Aesthetics',
+  },
+};
+---
+
+<BaseLayout
+  title="Dermal Fillers | Center for Smile Enhancement, Minnetonka"
+  description="Restore volume and soften lines with Juvederm, Restylane, Perlane, and Belotero fillers at Masterpiece Aesthetics in Minnetonka, MN. Consultations welcome."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Masterpiece Aesthetics"
+      title="Dermal Filler Injections"
+      lede="Dermal fillers restore lost volume and smooth deeper facial lines using smooth, hyaluronic acid-based gels — a natural-looking complement to your smile, delivered with Dr. Sudit's careful attention to facial anatomy."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Masterpiece Aesthetics', href: '/services/masterpiece-aesthetics/' },
+        { label: 'Dermal Filler Injections' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── What are dermal fillers ───────────────────────── -->
+    <section aria-labelledby="what-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="content-wrap">
+          <span class="section-eyebrow section-eyebrow--muted">What to Expect</span>
+          <h2 id="what-heading" class="section-heading page-h2">
+            How Dermal Fillers Work
+          </h2>
+          <p class="body-copy">
+            Dermal fillers are made from hyaluronic acid, a substance naturally found in the skin that helps retain moisture and support volume. When injected, the gel adds fullness beneath the skin's surface, softening deeper lines and folds and restoring a more youthful contour. Our office offers a range of well-established filler formulations, including Juvederm, Restylane, Perlane, and Belotero, allowing Dr. Sudit to select the right product and technique for each treatment area.
+          </p>
+          <p class="body-copy">
+            Results are visible immediately and typically last anywhere from a few months to about a year, depending on the product used, the treatment area, and your individual metabolism. Some formulations, such as Juvederm XC, include a local anesthetic to help keep treatment comfortable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Common treatment areas ────────────────────────── -->
+    <section aria-labelledby="areas-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow">Common Treatment Areas</span>
+          <h2 id="areas-heading" class="section-heading page-h2">
+            Where Dermal Fillers Are Commonly Used
+          </h2>
+        </div>
+
+        <div class="uses-grid">
+          <div class="card use-card">
+            <h3 class="use-card-title">Nasolabial Folds</h3>
+            <p class="use-card-body">Softens the creases that run from the sides of the nose to the corners of the mouth.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Lip Lines</h3>
+            <p class="use-card-body">Smooths vertical lines above the lips and can add subtle definition and volume to the lips themselves.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Marionette Lines</h3>
+            <p class="use-card-body">Fills the lines that extend downward from the corners of the mouth toward the chin.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Chin &amp; Jawline</h3>
+            <p class="use-card-body">Softens chin wrinkles and can add subtle structure and balance to the lower face.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Consultation / aftercare link ─────────────────── -->
+    <section aria-labelledby="consult-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="content-wrap">
+          <span class="section-eyebrow section-eyebrow--muted">Your Visit</span>
+          <h2 id="consult-heading" class="section-heading page-h2">
+            A Personalized Consultation, Every Time
+          </h2>
+          <p class="body-copy">
+            Every filler treatment begins with a complimentary consultation to discuss your goals, review your medical history, and determine which product and treatment areas will best achieve a natural-looking result. As with any injectable, mild and temporary effects such as redness, swelling, or bruising are possible — our team will walk you through how to care for the treated area before you leave.
+          </p>
+          <p class="body-copy">
+            Already a patient with an upcoming or recent filler appointment? Visit our
+            <a href="/aftercare/dermal-filler-injections/" class="inline-link">post-treatment care instructions</a> for detailed guidance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Related Aesthetic Treatments"
+      items={related}
+    />
+
+    <CTABand
+      heading="Ready to Schedule Your Filler Consultation?"
+      sub="Complimentary consultations are available with Dr. Sudit to discuss your goals and build a treatment plan tailored to you."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .content-wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .content-wrap .body-copy { text-align: left; }
+
+  .section-intro {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3.5rem;
+  }
+  .page-h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .body-copy {
+    margin-top: 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+  .inline-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 500;
+  }
+
+  .uses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .uses-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .use-card { text-align: left; }
+  .use-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .use-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+</style>

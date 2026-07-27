@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Routine Fillings Aftercare | Center for Smile Enhancement"
+  description="What to expect after a routine filling at the Center for Smile Enhancement in Minnetonka, MN, including numbness duration, sensitivity, and care guidance."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aftercare Instructions"
+      title="Routine Fillings Aftercare"
+      lede="Most patients recover from a routine filling with little more than temporary numbness and mild sensitivity. Here's what to expect."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+        { label: 'Routine Fillings' },
+      ]}
+    />
+
+    <section class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <h2>What to Expect</h2>
+          <p>
+            Today, tooth-colored composite filling material is the standard of care — amalgam (silver) fillings are rare and used only in select cases. You can expect the numb feeling in your lip, cheek, and tongue to last several hours after your appointment, often two to three hours but sometimes longer. The injection site may feel tender for a day or two, and while bruising is possible, it's uncommon.
+          </p>
+
+          <h2>Do's and Don'ts</h2>
+          <ul>
+            <li>Over-the-counter pain relievers such as ibuprofen, naproxen sodium, or acetaminophen can help with any discomfort — they work best when taken before the soreness sets in.</li>
+            <li>With a composite filling, you're free to eat and drink as soon as you leave our office, though it's best to stick to softer foods and avoid hot liquids while you're still numb, since it's easy to accidentally bite your lip, cheek, or tongue — or burn yourself — without realizing it.</li>
+            <li>If you received an amalgam filling (which is uncommon today), avoid chewing on that side of your mouth for about two hours while the material fully hardens.</li>
+            <li>Resume your normal brushing and flossing routine the same day as your appointment.</li>
+            <li>Temporary sensitivity to hot or cold foods, or to chewing, is normal and can last from a few days to a few weeks. As long as it's gradually improving, there's no cause for concern.</li>
+          </ul>
+
+          <h2>When to Call Us</h2>
+          <p>
+            Call our office at <a href="tel:9525939310">952-593-9310</a> if your bite feels uncomfortable or uneven once the numbness wears off — please don't try to adjust to it yourself, as an uneven bite can fracture the filling or cause ongoing sensitivity. Also call if sensitivity worsens rather than improves.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Questions About Your Recovery?"
+      sub="If anything feels off after your filling, we're happy to take a look."
+      primaryCta={{ label: 'Contact Our Office', href: '/contact/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

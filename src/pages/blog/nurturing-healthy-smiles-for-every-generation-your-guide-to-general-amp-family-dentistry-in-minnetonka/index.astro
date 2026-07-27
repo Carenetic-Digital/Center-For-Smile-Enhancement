@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline:
+    'Nurturing Healthy Smiles for Every Generation: Your Guide to General & Family Dentistry in Minnetonka',
+  description:
+    'From a child\'s first checkup to lifelong preventive care, explore general and family dentistry services at Center for Smile Enhancement in Minnetonka, MN.',
+  datePublished: '2025-09-21',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+};
+---
+
+<BaseLayout
+  title="Family Dentistry for Every Generation in Minnetonka, MN"
+  description="From a child's first checkup to lifelong preventive care, explore general and family dentistry services at Center for Smile Enhancement in Minnetonka."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="General & Family Dentistry"
+      title="Nurturing Healthy Smiles for Every Generation: Your Guide to General & Family Dentistry in Minnetonka"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'General & Family Dentistry' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            Great dental care is a relationship that spans generations. At Center for Smile
+            Enhancement, general and family dentistry is built on trust, comfort, and meticulous
+            attention to detail — from a child's very first visit through a lifetime of
+            preventive care.
+          </p>
+
+          <h2>What Is General & Family Dentistry?</h2>
+          <p>
+            General and family dentistry focuses on preventing, diagnosing, and treating the most
+            common oral health conditions for patients of every age, all under one roof.
+          </p>
+
+          <h2>Pediatric Dentistry</h2>
+          <p>
+            We work to make a child's first dental visits positive and even fun, easing any
+            anxiety while teaching good brushing habits that last a lifetime.
+          </p>
+
+          <h2>Digital X-Rays</h2>
+          <p>
+            Digital imaging gives our team a clear picture of your oral health with minimal
+            radiation exposure, helping us catch cavities, bone changes, and abnormal tooth
+            positioning early.
+          </p>
+
+          <h2>Dental Sealants</h2>
+          <p>
+            A protective sealant coating on molars — typically recommended for children and teens
+            between ages 6 and 14 — helps guard the deep grooves of back teeth against decay.
+          </p>
+
+          <h2>Fillings</h2>
+          <p>
+            We offer both traditional and composite filling materials, with an emphasis on
+            natural-looking, mercury-free composite fillings that blend seamlessly with your
+            smile.
+          </p>
+
+          <h2>Common Concerns We Treat</h2>
+          <ul>
+            <li>Bad breath</li>
+            <li>Tooth decay and cavities</li>
+            <li>Gum disease</li>
+            <li>Mouth sores</li>
+            <li>Tooth erosion and sensitivity</li>
+          </ul>
+
+          <h2>Oral Cancer Screening</h2>
+          <p>
+            A quick, painless oral cancer screening is included as part of your regular
+            preventive visit — an important, easy-to-overlook piece of whole-body health.
+          </p>
+
+          <h2>Root Canal Treatment</h2>
+          <p>
+            When a tooth's inner pulp becomes infected, root canal therapy allows Dr. Sudit and
+            our team to preserve your natural tooth rather than extract it. With modern
+            techniques and anesthesia, the procedure is typically no more uncomfortable than a
+            routine filling.
+          </p>
+
+          <p>
+            Whether you're scheduling your child's first cleaning or your own routine checkup,
+            our team is here to care for every generation of your family.
+            <a href="/schedule/">Schedule an appointment</a> today.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready to Care for Your Whole Family's Smiles?"
+      sub="Schedule an appointment for your family's general and preventive dental care today."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

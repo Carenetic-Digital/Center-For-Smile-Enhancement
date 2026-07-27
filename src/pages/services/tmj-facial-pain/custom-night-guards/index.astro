@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import CTABand from '../../../../components/CTABand.astro';
+
+const benefits = [
+  {
+    title: 'A Precise, Comfortable Fit',
+    body: 'Taken from an impression or digital scan of your own bite, a custom night guard fits your teeth and jaw far more precisely than any over-the-counter option.',
+  },
+  {
+    title: 'Protects Your Enamel',
+    body: 'Grinding (bruxism) can wear down enamel over time. A custom guard creates a protective barrier between your upper and lower teeth overnight.',
+  },
+  {
+    title: 'Eases Jaw Muscle Strain',
+    body: 'By cushioning the bite and reducing the intensity of clenching, a well-fitted guard can meaningfully lower tension in the jaw joint and surrounding muscles.',
+  },
+  {
+    title: 'Durable, Quality Materials',
+    body: 'Custom guards are fabricated from durable dental-grade materials designed to hold up night after night, unlike thinner boil-and-bite alternatives.',
+  },
+];
+
+const relatedItems = [
+  {
+    title: 'TMJ Diagnosis & Treatment',
+    description: 'How we evaluate jaw pain and decide whether a night guard is the right first step.',
+    href: '/services/tmj-facial-pain/tmj-diagnosis-treatment/',
+  },
+  {
+    title: 'TMJ & Facial Pain Overview',
+    description: 'Back to an overview of symptoms and treatment options for jaw and facial pain.',
+    href: '/services/tmj-facial-pain/',
+  },
+];
+---
+
+<BaseLayout
+  title="Custom Night Guards | Center for Smile Enhancement, MN"
+  description="Custom-fitted night guards protect your teeth and ease jaw strain from grinding and clenching, crafted by Center for Smile Enhancement in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Custom Night Guards"
+      title="Custom-Fitted Protection for Grinding & Clenching"
+      lede="Many people grind or clench their teeth at night without realizing it — often waking up with a sore jaw, worn-down teeth, or a dull headache. A custom night guard is one of the simplest, most effective ways to protect your smile and ease that strain."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'TMJ & Facial Pain', href: '/services/tmj-facial-pain/' },
+        { label: 'Custom Night Guards' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── Why Custom ───────────────────────────────────── -->
+    <section aria-labelledby="benefits-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Why Custom-Made</span>
+          <h2 id="benefits-heading" class="section-heading page-h2">
+            Why a Custom Guard Outperforms Store-Bought
+          </h2>
+          <p class="section-sub">
+            Off-the-shelf night guards are made to a generic shape — not your bite. A custom guard is designed specifically for your teeth and jaw, which makes all the difference in comfort and effectiveness.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          {benefits.map((b) => (
+            <div class="card">
+              <h3 class="feature-title">{b.title}</h3>
+              <p class="feature-body">{b.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── The Process ──────────────────────────────────── -->
+    <section aria-labelledby="process-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">The Process</span>
+          <h2 id="process-heading" class="section-heading page-h2">
+            Getting Your Night Guard
+          </h2>
+        </div>
+
+        <div class="process-list">
+          <div class="process-item">
+            <span class="process-number" aria-hidden="true">1</span>
+            <div>
+              <h3 class="feature-title">A Quick Consultation</h3>
+              <p class="feature-body">We discuss your symptoms — jaw soreness, headaches, worn teeth, or a partner mentioning nighttime grinding — to confirm a guard is the right fit for you.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <span class="process-number" aria-hidden="true">2</span>
+            <div>
+              <h3 class="feature-title">Impression or Digital Scan</h3>
+              <p class="feature-body">We capture a precise impression or digital scan of your bite, which is used to fabricate an appliance that fits your teeth exactly.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <span class="process-number" aria-hidden="true">3</span>
+            <div>
+              <h3 class="feature-title">Fitting & Fine-Tuning</h3>
+              <p class="feature-body">Once your custom guard is ready, we check the fit and make any adjustments needed so it feels comfortable and secure from the very first night.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Continue Exploring"
+      heading="Related TMJ Care"
+      items={relatedItems}
+    />
+
+    <CTABand
+      eyebrow="TMJ & Facial Pain"
+      heading="Protect Your Smile While You Sleep"
+      sub="If you're waking up with jaw soreness or headaches, a custom night guard could make a real difference. Let's talk about it."
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+  .page-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .feature-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .feature-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+  .process-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .process-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+</style>

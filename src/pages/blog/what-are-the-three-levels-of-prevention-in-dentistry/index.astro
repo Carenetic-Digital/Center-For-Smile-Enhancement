@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'What Are the Three Levels of Prevention in Dentistry?',
+  description: 'Understanding primary, secondary, and tertiary prevention in dentistry, and how each level protects your long-term oral health.',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  datePublished: '2025-05-17',
+  mainEntityOfPage: 'https://www.drsudit.com/blog/what-are-the-three-levels-of-prevention-in-dentistry/',
+};
+---
+
+<BaseLayout
+  title="The Three Levels of Prevention in Dentistry | MN"
+  description="Learn about primary, secondary, and tertiary prevention in dentistry, and how each stage protects your smile in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Preventive Dentistry"
+      title="What Are the Three Levels of Prevention in Dentistry?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'What Are the Three Levels of Prevention in Dentistry?' },
+      ]}
+    />
+
+    <article>
+      <div class="site-container">
+        <div class="article-prose">
+          <p>
+            Preventive dentistry is the cornerstone of long-term oral health. Understanding the three levels of prevention empowers patients to manage their oral hygiene proactively, in partnership with their dental team.
+          </p>
+
+          <h2>Primary Prevention</h2>
+          <p>
+            Primary prevention focuses on stopping dental disease before it develops. This includes oral hygiene education, where patients learn proper brushing and flossing techniques; fluoride treatments that strengthen enamel; and dental sealants that protect molars, particularly for younger patients.
+          </p>
+
+          <h2>Secondary Prevention</h2>
+          <p>
+            Secondary prevention emphasizes early detection through routine exams, advanced imaging technology, and prompt treatment of minor issues. When oral issues are caught in their early stages, treatment is simpler, less invasive, and more cost-effective.
+          </p>
+
+          <h2>Tertiary Prevention</h2>
+          <p>
+            Tertiary prevention addresses existing conditions through restorative solutions like crowns, bridges, and implants; treatment for advanced disease; and ongoing maintenance plans to prevent relapse.
+          </p>
+
+          <p>
+            Whether you're focused on prevention or in need of restorative care, Center for Smile Enhancement in Minnetonka, MN is here to help you every step of the way.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <CTABand
+      heading="Ready to Prioritize Your Prevention?"
+      sub="From routine cleanings to restorative care, our team meets you at whichever stage of prevention you need."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

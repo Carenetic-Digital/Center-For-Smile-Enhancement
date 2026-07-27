@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+
+const reviews = [
+  {
+    quote: "I have been with Dr. Sudit for over 25 years! There is truly no one else I would trust with my family's dental care.",
+    author: 'Chaia W.',
+  },
+  {
+    quote: 'Dr Sudit made me feel like I was the only person in the office. The nicest people EVER and made me feel so at ease.',
+    author: 'Steven N.',
+  },
+  {
+    quote: 'Dr. Sudit and his staff are thorough, caring, and warm. As always the gentleness and concern for my comfort was top of the list.',
+    author: 'Jules R.',
+  },
+  {
+    quote: 'I would give them 10 stars. The staff is very personable and professional.',
+    author: 'Danny H.',
+  },
+  {
+    quote: 'Excellent customer experience! The entire team was professional, and the care was fast and painless.',
+    author: 'Anthony L.',
+  },
+  {
+    quote: 'Dr. Sudit and his entire staff are extremely knowledgeable, and hard working and talented as a team. Highly recommended.',
+    author: 'Sandy C.',
+  },
+];
+---
+
+<BaseLayout
+  title="Patient Reviews | Center for Smile Enhancement, MN"
+  description="272 five-star Google reviews and real patient stories about Dr. Michael Sudit and his caring team at the Center for Smile Enhancement in Minnetonka, Minnesota."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Patient Stories"
+      title="What Our Patients Are Saying"
+      lede="Nothing means more to us than the trust our patients place in our care. Here's a look at what they have to say."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Patients', href: '/patients/' },
+        { label: 'Reviews' },
+      ]}
+    />
+
+    <!-- ── Headline stat ────────────────────────────────────── -->
+    <section aria-labelledby="stat-heading" class="section-white">
+      <div class="site-container">
+        <div class="stat-band">
+          <span class="stat-number">272</span>
+          <span class="stat-label" id="stat-heading">Five-Star Google Reviews</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Review quotes ────────────────────────────────────── -->
+    <section aria-labelledby="quotes-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">In Their Words</span>
+          <h2 id="quotes-heading" class="section-heading section-heading-size">
+            Real Stories From Real Patients
+          </h2>
+        </div>
+
+        <div class="reviews-grid">
+          {reviews.map((r) => (
+            <div class="card review-card">
+              <div class="stars" aria-label="5 out of 5 stars">
+                {Array.from({ length: 5 }).map(() => (
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                ))}
+              </div>
+              <blockquote>
+                <p class="review-quote">"{r.quote}"</p>
+                <footer class="review-author">{r.author}</footer>
+              </blockquote>
+            </div>
+          ))}
+        </div>
+
+        <p class="reviews-footnote">
+          These are just a few of our 272 five-star reviews — read more of our reviews on Google.
+        </p>
+      </div>
+    </section>
+
+    <CTABand />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3.5rem;
+  }
+
+  .stat-band {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding-bottom: 3rem;
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .review-card { display: flex; flex-direction: column; }
+  .stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
+  .review-quote {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-base);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+  .review-author {
+    font-weight: 500;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+  }
+
+  .reviews-footnote {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+</style>

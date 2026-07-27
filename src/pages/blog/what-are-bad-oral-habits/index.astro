@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'What Are Bad Oral Habits?',
+  author: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  datePublished: "2025-04-10",
+  description: "From skipping flossing to using teeth as tools, learn the common bad oral habits that damage your smile and how to correct them with our Minnetonka, MN team.",
+  url: "https://www.drsudit.com/blog/what-are-bad-oral-habits/",
+};
+---
+
+<BaseLayout
+  title="Common Bad Oral Habits to Avoid | Minnetonka, MN"
+  description="From skipping flossing to using teeth as tools, learn the common bad oral habits that damage your smile — and how to fix them — from our Minnetonka, MN team."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Patient Education"
+      title="What Are Bad Oral Habits?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'What Are Bad Oral Habits?' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            Good oral hygiene is about more than a bright smile — it's essential to your overall health. At
+            Center for Smile Enhancement in Minnetonka, we regularly see the same avoidable habits chip away at
+            patients' dental health over time. The good news is that nearly all of them are easy to correct once
+            you know what to watch for.
+          </p>
+
+          <h2>Why Good Oral Hygiene Matters</h2>
+          <p>
+            Brushing twice daily, flossing daily, and keeping up with regular dental visits protect your teeth
+            and gums from decay and disease. Neglecting these basics is one of the most common paths to tooth
+            decay, gum disease, and eventually tooth loss.
+          </p>
+
+          <h2>Common Oral Hygiene Habits Worth Fixing</h2>
+          <ul>
+            <li>
+              <strong>Infrequent brushing.</strong> Brushing less than twice a day allows plaque to build up,
+              increasing your risk of cavities and gum disease. Aim to brush every morning and before bed for two
+              minutes with a fluoride toothpaste.
+            </li>
+            <li>
+              <strong>Poor brushing technique.</strong> Brushing too hard, using a hard-bristled brush, or
+              scrubbing back and forth can wear down enamel and irritate gums. Use gentle, circular motions, and
+              replace your toothbrush every three to four months.
+            </li>
+            <li>
+              <strong>Skipping floss.</strong> Flossing reaches the areas a toothbrush can't. Without it, bacteria
+              linger between teeth, raising your risk of decay and gum disease.
+            </li>
+            <li>
+              <strong>Skipping regular dental visits.</strong> Routine cleanings and exams catch problems early —
+              often saving you time, discomfort, and money down the road.
+            </li>
+            <li>
+              <strong>Mouth breathing.</strong> Breathing through your mouth, especially while sleeping, reduces
+              saliva production, and saliva plays an important role in protecting teeth from decay.
+            </li>
+          </ul>
+
+          <h2>Lifestyle Habits That Affect Your Smile</h2>
+          <ul>
+            <li>
+              <strong>Smoking and tobacco use</strong> contribute to bad breath, stained teeth, gum disease, and
+              increased oral cancer risk.
+            </li>
+            <li>
+              <strong>A high-sugar, acidic diet</strong> feeds harmful bacteria and erodes enamel. Leafy greens,
+              water, and dairy products are gentler on your teeth.
+            </li>
+            <li>
+              <strong>Using your teeth as tools</strong> — opening packages or bottles, for example — risks chips,
+              cracks, and unplanned trips to the dentist.
+            </li>
+          </ul>
+
+          <p>
+            Small, consistent changes to your daily routine make a real difference over time. If it's been a
+            while since your last cleaning, or you'd like personalized guidance on improving your habits, our
+            Minnetonka team is happy to help.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready for a Healthier Smile?"
+      sub="Schedule a cleaning or checkup with our Minnetonka team and get personalized guidance on your oral care routine."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

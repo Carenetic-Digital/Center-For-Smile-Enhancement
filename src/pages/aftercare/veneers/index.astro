@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Veneers Aftercare Instructions | Smile Enhancement"
+  description="Aftercare instructions for new porcelain veneers at the Center for Smile Enhancement in Minnetonka, MN, including sensitivity, bite checks, and care tips."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aftercare Instructions"
+      title="Veneers Aftercare"
+      lede="A short adjustment period is normal as your smile settles into its new veneers. Here's how to care for them in the days after your appointment."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+        { label: 'Veneers' },
+      ]}
+    />
+
+    <section class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <h2>What to Expect</h2>
+          <p>
+            You may notice sensitivity to hot or cold foods and liquids for a few days to a few weeks — this is normal as long as it's gradually improving. Numbness typically lasts two to three hours after your appointment, and the injection site may be tender, with possible minor bruising, for a couple of days. It's also common for your lips, cheeks, and tongue to need a short adjustment period as they get used to the new shape of your veneers, which can lead to occasional minor self-biting for a few days to a few weeks.
+          </p>
+
+          <h2>Do's and Don'ts</h2>
+          <ul>
+            <li>Over-the-counter pain relievers such as ibuprofen, naproxen sodium, or acetaminophen can ease any discomfort — take them before soreness sets in for the best effect.</li>
+            <li>If we've prescribed a chlorhexidine antibacterial mouthwash, swish for one to two minutes and spit it out, then brush your teeth, twice daily for 7–10 days.</li>
+            <li>Avoid flossing directly around your new veneers until your two-week follow-up appointment.</li>
+          </ul>
+
+          <h2>Monitor Your Bite</h2>
+          <p>
+            Once the numbness fully wears off, pay close attention to how your bite feels. If it seems even slightly off, do not try to get used to it — call our office right away. An uneven bite left unaddressed can lead to fracturing or ongoing sensitivity.
+          </p>
+
+          <h2>When to Call Us</h2>
+          <p>
+            Call our office at <a href="tel:9525939310">952-593-9310</a> if your bite feels misaligned, if sensitivity worsens rather than improves, or with any other questions or concerns.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Questions About Your Recovery?"
+      sub="If your new veneers don't feel quite right, please reach out — we want to make sure you're completely comfortable."
+      primaryCta={{ label: 'Contact Our Office', href: '/contact/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

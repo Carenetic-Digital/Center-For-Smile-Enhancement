@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Patient Forms | The Center for Smile Enhancement, MN"
+  description="New patient paperwork at the Center for Smile Enhancement in Minnetonka, MN. Online forms are being finalized — call ahead and we'll help you get a head start."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Patient Forms"
+      title="Get a Head Start on Your Paperwork"
+      lede="Completing your patient forms before your visit helps us make the most of your time in the chair — and lets our team prepare for your specific needs before you arrive."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Patients', href: '/patients/' },
+        { label: 'Patient Forms' },
+      ]}
+    />
+
+    <!-- ── What forms are for ─────────────────────────────── -->
+    <section aria-labelledby="forms-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Before Your Visit</span>
+          <h2 id="forms-heading" class="section-heading section-heading-size">
+            Why We Ask You to Fill Out Forms
+          </h2>
+          <p class="section-sub">
+            New patient paperwork gives Dr. Sudit and our team the health history, insurance details, and consent information we need to provide safe, personalized care from the moment your appointment begins. Completing forms in advance means less time in the waiting room and more time focused on you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Placeholder notice ─────────────────────────────── -->
+    <section aria-labelledby="placeholder-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="placeholder-card">
+          <span class="section-eyebrow section-eyebrow--muted">Online Forms Coming Soon</span>
+          <h2 id="placeholder-heading" class="placeholder-heading">
+            We're Finalizing Our Online Forms
+          </h2>
+          <p class="placeholder-body">
+            Online forms are being finalized. To save time at your visit, please call our office at
+            <a href="tel:9525939310" class="placeholder-link">952-593-9310</a>
+            and we'll help you get your paperwork started in advance.
+          </p>
+          <div class="placeholder-ctas">
+            <a href="tel:9525939310" class="btn btn-primary">Call 952-593-9310</a>
+            <a href="/schedule/" class="btn btn-outline">Schedule an Appointment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABand />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .placeholder-card {
+    max-width: 40rem;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border: 1px solid rgba(30, 52, 96, 0.07);
+    box-shadow: 0 2px 8px rgba(30, 52, 96, 0.06), 0 12px 32px rgba(30, 52, 96, 0.14);
+  }
+  .placeholder-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .placeholder-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+  .placeholder-link {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    white-space: nowrap;
+  }
+  .placeholder-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+</style>

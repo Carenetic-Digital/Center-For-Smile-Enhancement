@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'What Are the 8 Risk Factors for Poor Oral Hygiene?',
+  description: 'Eight common risk factors behind poor oral hygiene — from skipped checkups to diet and stress — and how to address each one.',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  datePublished: '2025-05-15',
+  mainEntityOfPage: 'https://www.drsudit.com/blog/what-are-the-8-risk-factors-for-poor-oral-hygiene/',
+};
+---
+
+<BaseLayout
+  title="8 Risk Factors for Poor Oral Hygiene | MN"
+  description="From diet to stress to skipped checkups, learn the 8 risk factors behind poor oral hygiene and how to protect your smile in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Patient Education"
+      title="What Are the 8 Risk Factors for Poor Oral Hygiene?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'What Are the 8 Risk Factors for Poor Oral Hygiene?' },
+      ]}
+    />
+
+    <article>
+      <div class="site-container">
+        <div class="article-prose">
+          <p>
+            Maintaining good oral hygiene is key not only to a bright smile but also to your overall health. Below, we outline eight common risk factors that can lead to poor oral hygiene — and what you can do about each one.
+          </p>
+
+          <h2>1. Skipping Regular Dental Check-Ups</h2>
+          <p>
+            Avoiding routine visits allows problems to go undetected until they become bigger issues. We recommend cleanings and exams every six months.
+          </p>
+
+          <h2>2. Improper Brushing Techniques</h2>
+          <p>
+            Brushing matters as much as how often you do it. Use gentle circular motions with a soft-bristled brush for at least two minutes, and don't forget your tongue.
+          </p>
+
+          <h2>3. Unhealthy Dietary Choices</h2>
+          <p>
+            A diet high in sugar, starch, or acidic foods contributes to decay and enamel erosion over time.
+          </p>
+
+          <h2>4. Tobacco Use</h2>
+          <p>
+            Tobacco use is one of the leading risk factors for gum disease, tooth loss, and oral cancer.
+          </p>
+
+          <h2>5. Limited Knowledge of Oral Hygiene</h2>
+          <p>
+            Many patients underestimate the importance of daily flossing and the benefits of fluoride toothpaste in their routine.
+          </p>
+
+          <h2>6. Dry Mouth (Xerostomia)</h2>
+          <p>
+            Saliva plays a vital role in protecting your teeth by washing away food particles and neutralizing acid. Reduced saliva flow leaves teeth more vulnerable to decay.
+          </p>
+
+          <h2>7. Stress and Bruxism</h2>
+          <p>
+            Chronic stress can lead to teeth grinding, jaw clenching, and neglected hygiene routines — all of which take a toll on oral health.
+          </p>
+
+          <h2>8. Underlying Medical Conditions</h2>
+          <p>
+            Conditions like diabetes and autoimmune disorders can significantly affect oral health outcomes, making regular dental care even more important.
+          </p>
+
+          <p>
+            If any of these risk factors sound familiar, our team at Center for Smile Enhancement in Minnetonka, MN can help you build a plan to get your oral health back on track.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <CTABand
+      heading="Ready to Address These Risk Factors?"
+      sub="A checkup and cleaning is the easiest way to start reducing your risk and protecting your smile."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

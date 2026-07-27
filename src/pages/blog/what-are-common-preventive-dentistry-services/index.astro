@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'What Are Common Preventive Dentistry Services?',
+  description: 'A guide to the preventive dentistry services — check-ups, cleanings, fluoride, sealants, and oral cancer screenings — that protect your smile long-term.',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  datePublished: '2025-05-31',
+  mainEntityOfPage: 'https://www.drsudit.com/blog/what-are-common-preventive-dentistry-services/',
+};
+---
+
+<BaseLayout
+  title="Common Preventive Dentistry Services | Minnetonka, MN"
+  description="Discover the preventive dentistry services — check-ups, cleanings, fluoride, sealants, and screenings — that keep your smile healthy in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Preventive Dentistry"
+      title="What Are Common Preventive Dentistry Services?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'What Are Common Preventive Dentistry Services?' },
+      ]}
+    />
+
+    <article>
+      <div class="site-container">
+        <div class="article-prose">
+          <p>
+            Preventive dentistry is the foundation of a healthy, long-lasting smile. At Center for Smile Enhancement in Minnetonka, MN, we emphasize proactive care to help patients avoid oral health issues before they start.
+          </p>
+          <p>
+            Preventive dentistry refers to the services and habits aimed at protecting teeth and gums from disease, decay, and damage. The goal is to catch problems early through a combination of consistent professional care and good habits at home. Here are some of the most common preventive services we offer.
+          </p>
+
+          <h2>Routine Dental Check-Ups</h2>
+          <p>
+            Recommended every six months, routine check-ups allow our team to evaluate your oral health, take X-rays when needed, and review your at-home hygiene habits. These visits are the best opportunity to catch small issues before they become bigger, more costly problems.
+          </p>
+
+          <h2>Professional Dental Cleanings</h2>
+          <p>
+            Professional cleanings remove plaque and tartar buildup that brushing and flossing at home can't fully address. Cleanings also polish teeth and may include a fluoride application for extra protection.
+          </p>
+
+          <h2>Fluoride Treatments</h2>
+          <p>
+            Fluoride is a natural mineral that strengthens tooth enamel, making it more resistant to decay. Fluoride treatments benefit children, adults, and anyone experiencing tooth sensitivity.
+          </p>
+
+          <h2>Dental Sealants</h2>
+          <p>
+            Sealants are a thin protective coating applied to the chewing surfaces of molars, where cavities most often start. They're particularly effective for children, but adults can benefit as well.
+          </p>
+
+          <h2>Oral Cancer Screenings</h2>
+          <p>
+            During routine visits, we also examine the tongue, gums, throat, and cheeks for any abnormal tissue. Early detection is critical for successful treatment outcomes.
+          </p>
+
+          <p>
+            Preventive dentistry protects your total health and helps you avoid costly, painful procedures later on. If it's been a while since your last visit, now is a great time to get back on track.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <CTABand
+      heading="Ready to Schedule Your Preventive Visit?"
+      sub="Routine check-ups and cleanings are the easiest way to protect your smile for years to come."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

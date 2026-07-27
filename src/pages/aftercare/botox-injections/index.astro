@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Botox Injections Aftercare | Center for Smile Enhancement"
+  description="Recovery guidance after Botox treatment at the Center for Smile Enhancement in Minnetonka, MN — what to expect, care tips, and when to call our office."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aftercare Instructions"
+      title="Botox Injections Aftercare"
+      lede="A few simple steps in the hours and days after your treatment will help your results develop smoothly and comfortably."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+        { label: 'Botox Injections' },
+      ]}
+    />
+
+    <section class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <h2>What to Expect</h2>
+          <p>
+            Botox results develop gradually — most patients see full results within two days to two weeks of treatment. It's normal to notice mild irritation, bruising, or slight drooping at the injection sites in the meantime; these effects are temporary and typically resolve on their own.
+          </p>
+
+          <h2>Do's and Don'ts</h2>
+          <ul>
+            <li>Gently animate the treated muscles (raise your eyebrows, smile, frown) for about an hour after treatment, and repeat these movements several times each hour for the rest of the day. This helps the product settle evenly.</li>
+            <li>Avoid lying down for four hours after your appointment.</li>
+            <li>Apply a cold pack to the treated area as needed to ease any discomfort or bruising.</li>
+            <li>Ease back into physical activity gradually, and avoid vigorous exercise for the remainder of the day.</li>
+            <li>Plan to return for a follow-up visit about two weeks after treatment so we can evaluate your results and make any adjustments.</li>
+          </ul>
+
+          <h2>When to Call Us</h2>
+          <p>
+            Call our office right away at <a href="tel:9525939310">952-593-9310</a> if you experience a skin rash, sudden fever, bleeding at an injection site, or increasing pain or swelling after your treatment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Questions About Your Recovery?"
+      sub="Our team is happy to answer any questions about your Botox recovery or help you schedule your follow-up visit."
+      primaryCta={{ label: 'Contact Our Office', href: '/contact/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

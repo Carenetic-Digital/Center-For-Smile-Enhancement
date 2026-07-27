@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const serviceData = {
+  name: 'Smile Makeovers',
+  serviceType: 'Smile Makeover',
+  provider: {
+    "@type": "Dentist",
+    name: "Center for Smile Enhancement",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Minnetonka, MN",
+  },
+  description: "Comprehensive, personalized smile makeovers combining whitening, veneers, bonding, and restorative dentistry at the Center for Smile Enhancement in Minnetonka, MN.",
+  url: "https://www.drsudit.com/services/cosmetic-dentistry/smile-makeovers/",
+};
+---
+
+<BaseLayout
+  title="Smile Makeovers | Center for Smile Enhancement, Minnetonka, MN"
+  description="A personalized smile makeover combining whitening, veneers, and bonding at the Center for Smile Enhancement in Minnetonka, MN. Complimentary consultations."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="Smile Makeovers"
+      lede="A smile makeover isn't a single procedure — it's a personalized treatment plan that combines the right mix of cosmetic and restorative dentistry to give you a smile you're proud to share."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Cosmetic Dentistry', href: '/services/cosmetic-dentistry/' },
+        { label: 'Smile Makeovers' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── What is a smile makeover ────────────────────────── -->
+    <section aria-labelledby="what-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="intro-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Every Patient Is a VIP</span>
+            <h2 id="what-heading" class="section-heading section-heading-size">
+              A Plan Built Entirely Around You
+            </h2>
+          </div>
+          <div class="intro-copy">
+            <p>
+              No two smiles — and no two patients — are alike. A smile makeover begins with a comprehensive exam and an in-depth conversation about your goals, then brings together whichever combination of treatments will get you there: whitening, porcelain veneers, dental bonding, crowns, and other restorative work.
+            </p>
+            <p>
+              For some patients, that means one or two focused treatments. For others, it's a more complete transformation. Either way, Dr. Sudit designs the plan personally and collaborates with an artisan dental laboratory technician to ensure every detail — shape, shade, and proportion — looks natural on you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What's combined ─────────────────────────────────── -->
+    <section aria-labelledby="combine-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Building Blocks</span>
+          <h2 id="combine-heading" class="section-heading section-heading-size">
+            Treatments We May Combine
+          </h2>
+          <p class="section-sub">
+            Your makeover plan draws only from what your smile actually needs — nothing more.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <a href="/services/cosmetic-dentistry/teeth-whitening/" class="card link-card">
+            <h3 class="card-title">Teeth Whitening</h3>
+            <p class="card-body">ZOOM in-office or take-home whitening to brighten the foundation of your smile.</p>
+          </a>
+          <a href="/services/cosmetic-dentistry/porcelain-veneers/" class="card link-card">
+            <h3 class="card-title">Porcelain Veneers</h3>
+            <p class="card-body">Custom shells that reshape, brighten, and refine individual teeth.</p>
+          </a>
+          <a href="/services/cosmetic-dentistry/dental-bonding/" class="card link-card">
+            <h3 class="card-title">Dental Bonding</h3>
+            <p class="card-body">Conservative, single-visit repair for chips, gaps, and minor imperfections.</p>
+          </a>
+          <div class="card">
+            <h3 class="card-title">Crowns &amp; Restorative Care</h3>
+            <p class="card-body">Full-coverage crowns for teeth that need more structural support alongside a cosmetic refresh.</p>
+          </div>
+        </div>
+
+        <p class="cross-link-note">
+          Some makeovers also incorporate <a href="/services/orthodontics/">Invisalign clear aligners</a> for alignment or <a href="/services/masterpiece-aesthetics/">Masterpiece Aesthetics</a> treatments like Botox and dermal fillers for a fully refreshed look — we'll discuss whether either makes sense for your goals.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── What to expect / practical details ──────────────── -->
+    <section aria-labelledby="expect-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Your Journey</span>
+          <h2 id="expect-heading" class="section-heading section-heading-size">
+            What to Expect
+          </h2>
+        </div>
+
+        <ol class="steps-list">
+          <li class="steps-item">
+            <span class="steps-number">1</span>
+            <div>
+              <h3 class="card-title">Comprehensive Consultation</h3>
+              <p class="card-body">A complimentary consultation to discuss your goals, examine your smile, and outline realistic options.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">2</span>
+            <div>
+              <h3 class="card-title">Custom Treatment Plan</h3>
+              <p class="card-body">We design a personalized, phased plan and timeline that fits your goals, budget, and schedule.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">3</span>
+            <div>
+              <h3 class="card-title">Coordinated Treatment</h3>
+              <p class="card-body">Each treatment in your plan is carried out with careful attention to how it works together with the others, for a cohesive final result.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">4</span>
+            <div>
+              <h3 class="card-title">Ongoing Care</h3>
+              <p class="card-body">We support you with maintenance guidance and regular checkups to help your new smile last.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="prepay-note">
+          <p>
+            Ask about our prepay discount of up to 10% on major procedures, and our complimentary consultations for every new smile makeover patient.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Individual Cosmetic Treatments"
+      items={[
+        { title: 'Cosmetic Dentistry Overview', description: 'See the full range of smile-enhancing treatments we offer.', href: '/services/cosmetic-dentistry/' },
+        { title: 'Porcelain Veneers', description: 'Stain-resistant porcelain shells that reshape and brighten your smile.', href: '/services/cosmetic-dentistry/porcelain-veneers/' },
+        { title: 'Teeth Whitening', description: 'ZOOM in-office bleaching and take-home options to brighten your smile.', href: '/services/cosmetic-dentistry/teeth-whitening/' },
+      ]}
+    />
+
+    <CTABand
+      heading="Ready to Reimagine Your Smile?"
+      sub="Schedule a complimentary consultation and let's build a personalized plan for your smile makeover."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (min-width: 768px) {
+    .intro-layout { grid-template-columns: 1fr 1.4fr; gap: 3.5rem; }
+  }
+  .intro-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+  .intro-copy p:last-child { margin-bottom: 0; }
+
+  .card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .benefit-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .benefit-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .link-card {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .cross-link-note {
+    margin: 3rem auto 0;
+    max-width: 42rem;
+    text-align: center;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .cross-link-note a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .steps-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .steps-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .steps-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+  }
+
+  .prepay-note {
+    max-width: 42rem;
+    margin: 3rem auto 0;
+    text-align: center;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+  .prepay-note p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-base);
+    margin: 0;
+  }
+</style>

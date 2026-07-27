@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Crowns & Bridges Aftercare | Center for Smile Enhancement"
+  description="Aftercare instructions for new crowns and bridges at the Center for Smile Enhancement in Minnetonka, MN, including eating guidelines and when to call us."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aftercare Instructions"
+      title="Crowns & Bridges Aftercare"
+      lede="Your new crown or bridge needs a little time to fully set. Follow these guidelines for a smooth, comfortable recovery."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+        { label: 'Crowns & Bridges' },
+      ]}
+    />
+
+    <section class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <h2>What to Expect</h2>
+          <p>
+            You'll likely remain numb for two to three hours after your appointment, and the injection site may feel tender — with possible minor bruising — for a couple of days. Temporary sensitivity to hot and cold foods, or to chewing, is also common and can last anywhere from a few days to a few weeks.
+          </p>
+
+          <h2>Do's and Don'ts</h2>
+          <ul>
+            <li>
+              <strong>Avoid chewing hot foods or drinking hot liquids on the side of your new crown or bridge for at least one hour after your appointment.</strong> The dental cement needs this time to fully cure undisturbed — chewing or introducing heat too soon can disrupt the bond before it fully sets.
+            </li>
+            <li>Over-the-counter pain relievers such as ibuprofen (Advil), naproxen sodium (Aleve), or acetaminophen (Tylenol) can help with any swelling or soreness — they work best when taken before discomfort sets in.</li>
+            <li>Resume brushing and flossing that same evening, even if your gums feel a little tender. If we've prescribed a chlorhexidine mouthwash, swish for one to two minutes and spit it out before brushing, twice daily for 7–10 days.</li>
+            <li>If you have a temporary crown or bridge in place, avoid hard, crunchy, or sticky foods that could dislodge it, and don't floss directly around it. Call us right away if it comes loose or falls out.</li>
+          </ul>
+
+          <h2>When to Call Us</h2>
+          <p>
+            Call our office at <a href="tel:9525939310">952-593-9310</a> if your bite feels misaligned once the numbness wears off — please don't try to adjust to it yourself, as this can lead to discomfort or damage. Also call if sensitivity worsens rather than improves, or if a temporary restoration comes loose.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Questions About Your Recovery?"
+      sub="If your new crown or bridge doesn't feel quite right, don't wait — reach out and we'll take care of it."
+      primaryCta={{ label: 'Contact Our Office', href: '/contact/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

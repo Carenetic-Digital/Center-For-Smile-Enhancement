@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const related = [
+  {
+    title: 'Masterpiece Aesthetics',
+    description: 'Explore our full collection of aesthetic and injectable treatments in Minnetonka, MN.',
+    href: '/services/masterpiece-aesthetics/',
+  },
+  {
+    title: 'Botox Injections',
+    description: 'Soften expression lines and ease facial tension with neuromodulator injections.',
+    href: '/services/masterpiece-aesthetics/botox-injections/',
+  },
+  {
+    title: 'Dermal Filler Injections',
+    description: 'Restore volume and soften deeper lines with hyaluronic acid dermal fillers.',
+    href: '/services/masterpiece-aesthetics/dermal-filler-injections/',
+  },
+];
+
+const serviceData = {
+  name: 'Bruise Management',
+  serviceType: 'Pre- and post-injectable bruise minimization guidance',
+  provider: {
+    '@type': 'Dentist',
+    name: 'Center for Smile Enhancement',
+    telephone: '+19525939310',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Minnetonka, MN',
+  },
+  isPartOf: {
+    '@type': 'Service',
+    name: 'Masterpiece Aesthetics',
+  },
+};
+---
+
+<BaseLayout
+  title="Bruise Management | Center for Smile Enhancement, MN"
+  description="Learn how Masterpiece Aesthetics in Minnetonka, MN helps patients minimize bruising before and after Botox and dermal filler treatments with proactive guidance."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Masterpiece Aesthetics"
+      title="Bruise Management"
+      lede="Bruising is one of the most common concerns patients have about injectable treatments. Our team takes a proactive approach before and after every appointment to help minimize bruising and keep downtime to a minimum."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Masterpiece Aesthetics', href: '/services/masterpiece-aesthetics/' },
+        { label: 'Bruise Management' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── Why bruising happens ──────────────────────────── -->
+    <section aria-labelledby="why-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="content-wrap">
+          <span class="section-eyebrow section-eyebrow--muted">Understanding Bruising</span>
+          <h2 id="why-heading" class="section-heading page-h2">
+            Why Bruising Can Happen
+          </h2>
+          <p class="body-copy">
+            Botox and dermal filler injections involve fine needles placed just beneath the skin, and it's normal for a small blood vessel to occasionally be affected in the process. When this happens, mild bruising, redness, or swelling can appear at the injection site. These reactions are temporary and typically resolve within a few days — how a patient responds depends on individual factors such as skin sensitivity, medications, and supplements.
+          </p>
+          <p class="body-copy">
+            Because bruising is one of the most common questions we hear from patients considering Botox or dermal fillers, we build guidance into every consultation so you know what to expect and how we help manage it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Our approach ──────────────────────────────────── -->
+    <section aria-labelledby="approach-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow">Our Approach</span>
+          <h2 id="approach-heading" class="section-heading page-h2">
+            How We Help Minimize Bruising
+          </h2>
+        </div>
+
+        <div class="uses-grid">
+          <div class="card use-card">
+            <h3 class="use-card-title">Pre-Treatment Guidance</h3>
+            <p class="use-card-body">Before your appointment, we review your medications and supplements and discuss steps — such as avoiding blood thinners and certain supplements — that may help reduce your risk of bruising.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Arnica &amp; Cold Therapy</h3>
+            <p class="use-card-body">We often recommend arnica montana and cold compress application around your treatment as supportive measures for reducing bruising and swelling.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Gentle Injection Technique</h3>
+            <p class="use-card-body">Dr. Sudit's careful, precise injection approach is informed by years of clinical experience treating the delicate tissues of the face.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Camouflage Options</h3>
+            <p class="use-card-body">If bruising does occur, we're happy to recommend cosmetic camouflage products that can help conceal it while it resolves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Aftercare link ────────────────────────────────── -->
+    <section aria-labelledby="consult-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="content-wrap">
+          <span class="section-eyebrow section-eyebrow--muted">Your Visit</span>
+          <h2 id="consult-heading" class="section-heading page-h2">
+            We'll Walk You Through It
+          </h2>
+          <p class="body-copy">
+            Every Botox and dermal filler patient receives personalized guidance on minimizing bruising as part of their treatment plan, discussed during your complimentary consultation and reinforced before you leave our office.
+          </p>
+          <p class="body-copy">
+            Already a patient managing bruising after a recent visit? Visit our
+            <a href="/aftercare/bruise-management/" class="inline-link">bruise management care instructions</a> for detailed guidance, or call us at
+            <a href="tel:9525939310" class="inline-link">952-593-9310</a> with any questions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Related Aesthetic Treatments"
+      items={related}
+    />
+
+    <CTABand
+      heading="Have Questions Before Your Treatment?"
+      sub="Our team is happy to discuss bruising and downtime expectations during a complimentary consultation with Dr. Sudit."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .content-wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .content-wrap .body-copy { text-align: left; }
+
+  .section-intro {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3.5rem;
+  }
+  .page-h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .body-copy {
+    margin-top: 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+  .inline-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 500;
+  }
+
+  .uses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .uses-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .use-card { text-align: left; }
+  .use-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .use-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+</style>

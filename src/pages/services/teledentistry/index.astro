@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import RelatedGrid from '../../../components/RelatedGrid.astro';
+import CTABand from '../../../components/CTABand.astro';
+
+const useCases = [
+  { title: 'Quick Questions', body: 'Got a question about a symptom, a medication, or something that just doesn’t feel right? A short video or phone visit can often provide fast clarity.' },
+  { title: 'Post-Treatment Follow-Ups', body: 'After a procedure, we can check in on your healing and recovery remotely, without requiring an extra trip to the office.' },
+  { title: 'Minor Issue Triage', body: 'Not sure if something needs an in-office visit? A virtual consultation helps us determine the right next step together.' },
+  { title: 'Convenience for Existing Patients', body: 'For patients we already know, a virtual visit is a convenient way to stay connected between in-person appointments.' },
+];
+
+const relatedItems = [
+  {
+    title: 'Emergency Care',
+    description: 'If your situation needs same-day, in-person attention, here’s how we can help.',
+    href: '/services/emergency-care/',
+  },
+  {
+    title: 'General & Family Dentistry',
+    description: 'Preventive cleanings, exams, and whole-family care for when an in-office visit is the right fit.',
+    href: '/services/general-family-dentistry/',
+  },
+];
+---
+
+<BaseLayout
+  title="Teledentistry Services | Center for Smile Enhancement, MN"
+  description="Connect with our team remotely for consultations, follow-ups, and quick advice — convenient virtual care from Center for Smile Enhancement in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Teledentistry"
+      title="Dental Care, From Wherever You Are"
+      lede="Not every question or concern requires an office visit. With a remote video or phone consultation, you can connect with our team for quick advice, follow-ups, and peace of mind — right from home."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Teledentistry' },
+      ]}
+      primaryCta={{ label: 'Schedule a Virtual Visit', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      image="/images/service-teledentistry.png"
+      imageAlt="Patient connecting with dentist via smartphone"
+    />
+
+    <!-- ── How It Works ─────────────────────────────────── -->
+    <section aria-labelledby="how-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">How It Works</span>
+          <h2 id="how-heading" class="section-heading page-h2">
+            Simple, Convenient, Personal
+          </h2>
+          <p class="section-sub">
+            Request a virtual visit, connect with our team by video or phone at your scheduled time, and get the guidance you need — no waiting room required.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="card">
+            <span class="process-number" aria-hidden="true">1</span>
+            <h3 class="feature-title">Request Your Visit</h3>
+            <p class="feature-body">Reach out online or by phone to let us know what's going on and set up a convenient time.</p>
+          </div>
+          <div class="card">
+            <span class="process-number" aria-hidden="true">2</span>
+            <h3 class="feature-title">Connect Remotely</h3>
+            <p class="feature-body">Join a video or phone call with our team from your phone, tablet, or computer — wherever you are.</p>
+          </div>
+          <div class="card">
+            <span class="process-number" aria-hidden="true">3</span>
+            <h3 class="feature-title">Get Clear Next Steps</h3>
+            <p class="feature-body">We'll give you honest guidance, whether that's simple advice, a follow-up plan, or a recommendation to come in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What It's Great For ──────────────────────────── -->
+    <section aria-labelledby="use-cases-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">What It's Great For</span>
+          <h2 id="use-cases-heading" class="section-heading page-h2">
+            Where a Virtual Visit Helps Most
+          </h2>
+        </div>
+
+        <div class="feature-grid">
+          {useCases.map((u) => (
+            <div class="card">
+              <h3 class="feature-title">{u.title}</h3>
+              <p class="feature-body">{u.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── A Complement, Not a Replacement ──────────────── -->
+    <section aria-labelledby="complement-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="complement-wrap">
+          <span class="section-eyebrow section-eyebrow--muted">Good to Know</span>
+          <h2 id="complement-heading" class="section-heading page-h2">A Complement to In-Office Care, Not a Replacement</h2>
+          <p class="section-sub" style="margin-left: auto; margin-right: auto;">
+            Teledentistry is a convenient tool for the moments it's genuinely useful — but procedures, exams, and hands-on treatment still require an in-office visit. We'll always be upfront about which one is the right fit for your situation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Related Care"
+      heading="When an In-Person Visit Is the Right Call"
+      items={relatedItems}
+    />
+
+    <CTABand
+      eyebrow="Teledentistry"
+      heading="Have a Quick Question? Let's Talk."
+      sub="Schedule a virtual visit and connect with our team from wherever you are."
+      primaryCta={{ label: 'Schedule a Virtual Visit', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+  .page-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .process-grid,
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .process-grid,
+    .feature-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .process-grid { grid-template-columns: repeat(3, 1fr); }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .feature-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .process-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .complement-wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+</style>

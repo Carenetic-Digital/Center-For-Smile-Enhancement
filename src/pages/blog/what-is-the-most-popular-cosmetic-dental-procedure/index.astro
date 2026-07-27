@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'What Is the Most Popular Cosmetic Dental Procedure?',
+  author: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  datePublished: "2025-04-22",
+  description: "Professional teeth whitening is the most requested cosmetic dental treatment at our Minnetonka, MN practice. Learn how it works and what other options exist.",
+  url: "https://www.drsudit.com/blog/what-is-the-most-popular-cosmetic-dental-procedure/",
+};
+---
+
+<BaseLayout
+  title="Most Popular Cosmetic Dental Procedure | Minnetonka, MN"
+  description="Professional teeth whitening is the most requested cosmetic dental treatment at Center for Smile Enhancement in Minnetonka, MN. See how it works and what else is available."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="What Is the Most Popular Cosmetic Dental Procedure?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'What Is the Most Popular Cosmetic Dental Procedure?' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            When patients ask us what the most popular cosmetic dental procedure is, the answer is almost always
+            the same: professional teeth whitening. It's the treatment we're asked about most often at Center
+            for Smile Enhancement in Minnetonka, and for good reason — it delivers a noticeably brighter smile
+            in as little as one session, without drilling, injections, or downtime.
+          </p>
+
+          <h2>Why Teeth Whitening Is So Popular</h2>
+          <p>
+            Whitening appeals to such a wide range of patients because it's low-commitment and high-impact. A
+            single visit can leave your teeth visibly whiter, and because the process doesn't alter the
+            structure of your teeth, it's a comfortable option for patients who simply want to refresh their
+            appearance rather than pursue a more involved procedure.
+          </p>
+          <p>
+            We offer whitening in two ways:
+          </p>
+          <ul>
+            <li>
+              <strong>In-office professional whitening</strong> — a stronger, professional-grade treatment
+              completed in the office under our supervision for the fastest, most dramatic results.
+            </li>
+            <li>
+              <strong>Take-home whitening kits</strong> — custom-fitted trays paired with professional-strength
+              whitening gel, so you can brighten your smile gradually and on your own schedule.
+            </li>
+          </ul>
+
+          <h2>Other Popular Cosmetic Treatments</h2>
+          <p>
+            While whitening is our most-requested single procedure, it's often just the starting point. Many
+            patients pair it with, or move on to, other cosmetic services depending on their goals:
+          </p>
+          <ul>
+            <li><strong>Porcelain veneers</strong> — thin, custom shells that address discoloration, chips, and gaps in a single, long-lasting solution.</li>
+            <li><strong>Invisalign clear aligners</strong> — a discreet, metal-free way to straighten teeth at any age.</li>
+            <li><strong>Full smile makeovers</strong> — a coordinated combination of treatments designed to transform your entire smile.</li>
+          </ul>
+
+          <h2>Finding the Right Fit for You</h2>
+          <p>
+            The "most popular" procedure isn't necessarily the right one for every patient. The best way to know
+            what will work for your smile is a personalized consultation, where we take a close look at your
+            oral health, your goals, and your budget before recommending a treatment plan. We offer complimentary
+            consultations for new cosmetic patients, so there's no pressure to decide before you understand your
+            options.
+          </p>
+          <p>
+            If you're ready to talk about brightening or transforming your smile, our Minnetonka team is happy
+            to help you explore what's possible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Curious What's Right for Your Smile?"
+      sub="Schedule a complimentary cosmetic consultation and let our team help you choose the right treatment."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

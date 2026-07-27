@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const serviceData = {
+  name: 'Teeth Whitening',
+  serviceType: 'Teeth Whitening',
+  provider: {
+    "@type": "Dentist",
+    name: "Center for Smile Enhancement",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Minnetonka, MN",
+  },
+  description: "Professional ZOOM in-office teeth whitening and custom take-home whitening trays at the Center for Smile Enhancement in Minnetonka, MN.",
+  url: "https://www.drsudit.com/services/cosmetic-dentistry/teeth-whitening/",
+};
+---
+
+<BaseLayout
+  title="Teeth Whitening | Center for Smile Enhancement, Minnetonka, MN"
+  description="Brighten your smile with ZOOM in-office whitening or custom take-home trays at the Center for Smile Enhancement in Minnetonka, MN. Complimentary consultations."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="Professional Teeth Whitening"
+      lede="Years of coffee, tea, wine, and everyday staining can dull even the healthiest smile. Our professional whitening options — in-office ZOOM treatment or custom take-home trays — lift stains safely and predictably, with results that far exceed store-bought kits."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Cosmetic Dentistry', href: '/services/cosmetic-dentistry/' },
+        { label: 'Teeth Whitening' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── Benefits ───────────────────────────────────────── -->
+    <section aria-labelledby="benefits-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Why Whiten</span>
+          <h2 id="benefits-heading" class="section-heading section-heading-size">
+            A Brighter Smile, Safely Achieved
+          </h2>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="card">
+            <h3 class="card-title">Dramatic Results, Fast</h3>
+            <p class="card-body">
+              ZOOM in-office whitening uses a 25% hydrogen peroxide gel activated with focused light, delivering noticeably brighter teeth in a single visit.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Enamel-Safe</h3>
+            <p class="card-body">
+              Tooth enamel is the hardest substance in the human body — harder than bone — and professional whitening is formulated to brighten teeth without damaging it.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Long-Lasting Brightness</h3>
+            <p class="card-body">
+              With reasonable care around staining foods and beverages, results from professional whitening last significantly longer than at-home kits or whitening toothpaste alone.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">A Foundation for More</h3>
+            <p class="card-body">
+              Whitening is often the first step in a larger smile makeover, giving veneers, bonding, and crowns a bright, uniform shade to match.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Options ────────────────────────────────────────── -->
+    <section aria-labelledby="options-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Your Options</span>
+          <h2 id="options-heading" class="section-heading section-heading-size">
+            In-Office or Take-Home — We'll Help You Choose
+          </h2>
+          <p class="section-sub">
+            The right approach depends on your goals, timeline, and how sensitive your teeth are. We'll walk you through both during your consultation.
+          </p>
+        </div>
+
+        <div class="options-grid">
+          <div class="card">
+            <h3 class="card-title">ZOOM In-Office Whitening</h3>
+            <p class="card-body">
+              A concentrated 25% hydrogen peroxide gel is applied to the teeth and activated with a focused light in a series of short cycles, completed in a single office visit for patients who want the fastest, most dramatic results.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Custom Take-Home Trays</h3>
+            <p class="card-body">
+              Custom-fitted bleaching trays let you whiten gradually at home, on your own schedule, using a lower-concentration gel — and they're the perfect way to maintain your results between visits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What to Expect ─────────────────────────────────── -->
+    <section aria-labelledby="expect-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Your Visit</span>
+          <h2 id="expect-heading" class="section-heading section-heading-size">
+            What to Expect
+          </h2>
+        </div>
+
+        <ol class="steps-list">
+          <li class="steps-item">
+            <span class="steps-number">1</span>
+            <div>
+              <h3 class="card-title">Consultation &amp; Shade Assessment</h3>
+              <p class="card-body">We evaluate your teeth, discuss your goals, and take a baseline shade reading so you can see your progress.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">2</span>
+            <div>
+              <h3 class="card-title">Protection &amp; Preparation</h3>
+              <p class="card-body">Gums and soft tissue are shielded, and teeth are prepared for whitening gel application.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">3</span>
+            <div>
+              <h3 class="card-title">Whitening Treatment</h3>
+              <p class="card-body">For in-office whitening, gel is applied in cycles under a focused light; for take-home trays, you'll wear your custom trays as directed.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">4</span>
+            <div>
+              <h3 class="card-title">Reveal &amp; Maintenance Plan</h3>
+              <p class="card-body">We review your results and recommend a simple at-home routine to help your bright, even smile last.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Other Cosmetic Dentistry Services"
+      items={[
+        { title: 'Cosmetic Dentistry Overview', description: 'See the full range of smile-enhancing treatments we offer.', href: '/services/cosmetic-dentistry/' },
+        { title: 'Porcelain Veneers', description: 'Stain-resistant porcelain shells that reshape and brighten your smile.', href: '/services/cosmetic-dentistry/porcelain-veneers/' },
+        { title: 'Smile Makeovers', description: 'A comprehensive plan combining multiple treatments for a complete transformation.', href: '/services/cosmetic-dentistry/smile-makeovers/' },
+      ]}
+    />
+
+    <CTABand
+      heading="Ready for a Brighter Smile?"
+      sub="Schedule a complimentary consultation to find the whitening option that's right for you."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .benefit-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .benefit-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+  @media (min-width: 640px) {
+    .options-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .steps-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .steps-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .steps-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+  }
+</style>

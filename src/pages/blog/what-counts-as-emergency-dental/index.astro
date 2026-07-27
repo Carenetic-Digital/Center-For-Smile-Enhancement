@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'What Counts as Emergency Dental Care?',
+  author: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  datePublished: "2025-04-14",
+  description: "Not sure if your dental issue is an emergency? Learn the signs of a true dental emergency and when to call Center for Smile Enhancement in Minnetonka, MN.",
+  url: "https://www.drsudit.com/blog/what-counts-as-emergency-dental/",
+};
+---
+
+<BaseLayout
+  title="What Counts as a Dental Emergency? | Minnetonka, MN"
+  description="Not sure if your dental issue is an emergency? Learn the warning signs and when to call Center for Smile Enhancement in Minnetonka, MN for urgent care."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Emergency Dentistry"
+      title="What Counts as Emergency Dental?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'What Counts as Emergency Dental?' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            Dental pain and injuries don't wait for convenient timing, and it isn't always obvious whether a
+            problem can wait for a regular appointment or needs attention right away. In general, emergency
+            dentistry refers to urgent care needed to relieve severe pain, stop bleeding, save a tooth, or treat
+            an infection that could worsen without prompt treatment.
+          </p>
+
+          <h2>Common Dental Emergencies</h2>
+          <ul>
+            <li>
+              <strong>Severe toothache.</strong> Intense, persistent pain that doesn't respond to over-the-counter
+              medication can signal an infection, abscess, or deep decay that needs prompt evaluation.
+            </li>
+            <li>
+              <strong>Knocked-out or loose tooth.</strong> Time matters here. Keep the tooth moist — in milk or
+              your own saliva — and contact our office immediately.
+            </li>
+            <li>
+              <strong>Cracked or broken teeth.</strong> A fracture that causes pain or exposes the inner layers
+              of the tooth needs prompt attention to prevent further damage or infection.
+            </li>
+          </ul>
+
+          <h2>Emergencies That Are Easy to Overlook</h2>
+          <ul>
+            <li>Oral cuts or soft tissue injuries with heavy or persistent bleeding</li>
+            <li>A dental abscess — painful swelling, a foul taste, fever, or facial swelling</li>
+            <li>A lost filling or crown that leaves a tooth suddenly sensitive or exposed</li>
+          </ul>
+
+          <h2>Not Sure If It's an Emergency? Ask Yourself:</h2>
+          <ul>
+            <li>Is the pain severe or unmanageable?</li>
+            <li>Have you experienced recent trauma to your mouth or jaw?</li>
+            <li>Is there visible swelling or signs of infection?</li>
+            <li>Is there excessive bleeding?</li>
+            <li>Is a tooth loose, broken, or missing?</li>
+          </ul>
+          <p>
+            If you answered yes to any of these, don't wait — contact our Minnetonka office right away. Our team
+            is here to help you get relief and protect your long-term oral health.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      eyebrow="Minnetonka, MN"
+      heading="Experiencing a Dental Emergency?"
+      sub="Call our Minnetonka office right away — we're here to help relieve pain and protect your smile."
+      primaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      secondaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import RelatedGrid from '../../../components/RelatedGrid.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const treatments = [
+  {
+    name: 'Botox Injections',
+    description: 'Neuromodulator injections that soften expression lines and relax facial tension for a naturally refreshed look.',
+    href: '/services/masterpiece-aesthetics/botox-injections/',
+  },
+  {
+    name: 'Dermal Filler Injections',
+    description: 'Hyaluronic acid fillers that restore lost volume and smooth deeper facial lines and folds.',
+    href: '/services/masterpiece-aesthetics/dermal-filler-injections/',
+  },
+  {
+    name: 'Bruise Management',
+    description: 'Our proactive approach to minimizing bruising and downtime before and after injectable treatments.',
+    href: '/services/masterpiece-aesthetics/bruise-management/',
+  },
+];
+
+const serviceData = {
+  name: 'Masterpiece Aesthetics',
+  serviceType: 'Cosmetic and aesthetic injectable treatments',
+  provider: {
+    '@type': 'Dentist',
+    name: 'Center for Smile Enhancement',
+    telephone: '+19525939310',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Minnetonka, MN',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Masterpiece Aesthetics Treatments',
+    itemListElement: treatments.map((t) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: t.name,
+      },
+    })),
+  },
+};
+---
+
+<BaseLayout
+  title="Masterpiece Aesthetics | Center for Smile Enhancement, MN"
+  description="Botox, dermal fillers, and bruise management from Dr. Michael Sudit's Masterpiece Aesthetics program in Minnetonka, MN. Complimentary consultations available."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Masterpiece Aesthetics"
+      title="A Refined Approach to Facial Aesthetics"
+      lede="Alongside our dental care, Dr. Michael Sudit offers a curated collection of injectable and skin-enhancing treatments designed to complement your smile with a naturally refreshed, well-rested appearance."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Masterpiece Aesthetics' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      image="/images/service-aesthetics.png"
+      imageAlt="Woman with refreshed, elegant appearance"
+    />
+
+    <!-- ── Intro / Philosophy ─────────────────────────── -->
+    <section aria-labelledby="approach-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Our Philosophy</span>
+          <h2 id="approach-heading" class="section-heading page-h2">
+            Subtle Enhancement, Thoughtfully Delivered
+          </h2>
+          <p class="section-sub">
+            Masterpiece Aesthetics reflects the same VIP philosophy that guides every visit to our Minnetonka practice — every patient is treated as a Very Individual Patient, with a treatment plan tailored to their goals, not a one-size-fits-all approach. Dr. Sudit's gentle injection technique and close attention to facial anatomy are informed by decades of clinical experience.
+          </p>
+          <p class="section-sub">
+            In addition to the treatments below, our office offers Viora radiofrequency skin treatments and a curated selection of medical-grade skincare products to support your results between visits. Ask about these options during your complimentary consultation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Treatments grid ──────────────────────────────── -->
+    <section aria-labelledby="treatments-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow">Our Treatments</span>
+          <h2 id="treatments-heading" class="section-heading page-h2">
+            Explore Masterpiece Aesthetics
+          </h2>
+          <p class="section-sub">
+            Learn more about each of our core aesthetic services, or call our office to discuss which options may be right for you.
+          </p>
+        </div>
+
+        <div class="treatments-grid">
+          {treatments.map((t) => (
+            <a href={t.href} class="card treatment-card">
+              <h3 class="treatment-card-title">{t.name}</h3>
+              <p class="treatment-card-body">{t.description}</p>
+              <span class="treatment-card-cta" aria-hidden="true">
+                Learn more
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why choose us ────────────────────────────────── -->
+    <section aria-labelledby="why-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Why Patients Choose Us</span>
+          <h2 id="why-heading" class="section-heading page-h2">
+            The Masterpiece Aesthetics Difference
+          </h2>
+        </div>
+
+        <div class="reasons-grid">
+          <div class="card reason-card">
+            <h3 class="treatment-card-title">Complimentary Consultations</h3>
+            <p class="treatment-card-body">
+              Every aesthetics visit begins with an unhurried, no-cost consultation to discuss your goals and build a treatment plan around them.
+            </p>
+          </div>
+          <div class="card reason-card">
+            <h3 class="treatment-card-title">Disney-Inspired Service</h3>
+            <p class="treatment-card-body">
+              Since 2001, our team has trained with the Disney Institute's customer service philosophy — every visit is designed to feel calm, welcoming, and unrushed.
+            </p>
+          </div>
+          <div class="card reason-card">
+            <h3 class="treatment-card-title">272 Five-Star Reviews</h3>
+            <p class="treatment-card-body">
+              Our patients consistently share their experiences online — 272 five-star Google reviews and counting reflect our commitment to care and comfort.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Masterpiece Aesthetics Treatments"
+      items={treatments}
+    />
+
+    <CTABand
+      heading="Ready to Discuss Your Aesthetic Goals?"
+      sub="Schedule a complimentary consultation with Dr. Sudit to explore which Masterpiece Aesthetics treatments are right for you."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3.5rem;
+  }
+  .page-h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    text-align: left;
+  }
+
+  .treatments-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .treatments-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .treatment-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+  .treatment-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .treatment-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+  }
+  .treatment-card-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .reasons-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .reason-card { text-align: left; }
+</style>

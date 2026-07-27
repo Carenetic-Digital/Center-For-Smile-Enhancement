@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const related = [
+  {
+    title: 'Masterpiece Aesthetics',
+    description: 'Explore our full collection of aesthetic and injectable treatments in Minnetonka, MN.',
+    href: '/services/masterpiece-aesthetics/',
+  },
+  {
+    title: 'Dermal Filler Injections',
+    description: 'Restore volume and soften deeper lines with hyaluronic acid dermal fillers.',
+    href: '/services/masterpiece-aesthetics/dermal-filler-injections/',
+  },
+  {
+    title: 'Bruise Management',
+    description: 'How we help patients minimize bruising before and after injectable treatments.',
+    href: '/services/masterpiece-aesthetics/bruise-management/',
+  },
+];
+
+const serviceData = {
+  name: 'Botox Injections',
+  serviceType: 'Neuromodulator injectable treatment',
+  provider: {
+    '@type': 'Dentist',
+    name: 'Center for Smile Enhancement',
+    telephone: '+19525939310',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Minnetonka, MN',
+  },
+  isPartOf: {
+    '@type': 'Service',
+    name: 'Masterpiece Aesthetics',
+  },
+};
+---
+
+<BaseLayout
+  title="Botox Injections | Center for Smile Enhancement, Minnetonka"
+  description="Smooth wrinkles and relax facial tension with Botox injections at Masterpiece Aesthetics in Minnetonka, MN. Gentle technique, complimentary consultations."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Masterpiece Aesthetics"
+      title="Botox Injections"
+      lede="Botox is a quick, non-surgical treatment that softens expression lines and eases facial muscle tension for a naturally refreshed look — delivered with Dr. Sudit's gentle, precise injection technique."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Masterpiece Aesthetics', href: '/services/masterpiece-aesthetics/' },
+        { label: 'Botox Injections' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── What is Botox ─────────────────────────────────── -->
+    <section aria-labelledby="what-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="content-wrap">
+          <span class="section-eyebrow section-eyebrow--muted">What to Expect</span>
+          <h2 id="what-heading" class="section-heading page-h2">
+            How Botox Injections Work
+          </h2>
+          <p class="body-copy">
+            Botox is a neuromodulator — a small, targeted dose is injected into specific facial muscles, where it temporarily blocks the nerve signals that cause those muscles to contract. With the muscle relaxed, the overlying skin smooths out, softening the look of expression lines without altering your natural facial movement.
+          </p>
+          <p class="body-copy">
+            Results develop gradually over the days following treatment and typically last three to five months, depending on the treatment area and your individual response. Because the procedure requires no incisions and no downtime, most patients return to their normal routine the same day.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Common uses ───────────────────────────────────── -->
+    <section aria-labelledby="uses-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow">Common Treatment Areas</span>
+          <h2 id="uses-heading" class="section-heading page-h2">
+            Where Botox Is Commonly Used
+          </h2>
+        </div>
+
+        <div class="uses-grid">
+          <div class="card use-card">
+            <h3 class="use-card-title">Forehead &amp; Brow Lines</h3>
+            <p class="use-card-body">Relaxes horizontal forehead lines and the vertical lines between the brows for a smoother, more rested appearance.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Crow's Feet</h3>
+            <p class="use-card-body">Softens the fine lines that form at the outer corners of the eyes, especially when smiling or squinting.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Gummy Smile Correction</h3>
+            <p class="use-card-body">Helps balance the lip's resting position to reduce excess gum show when smiling.</p>
+          </div>
+          <div class="card use-card">
+            <h3 class="use-card-title">Facial Rejuvenation</h3>
+            <p class="use-card-body">A subtle, natural-looking refresh that complements your overall facial aesthetics and smile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Consultation / aftercare link ─────────────────── -->
+    <section aria-labelledby="consult-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="content-wrap">
+          <span class="section-eyebrow section-eyebrow--muted">Your Visit</span>
+          <h2 id="consult-heading" class="section-heading page-h2">
+            A Personalized Consultation, Every Time
+          </h2>
+          <p class="body-copy">
+            Every Botox treatment begins with a complimentary consultation, during which Dr. Sudit reviews your medical history, discusses your goals, and maps a treatment plan specific to your facial anatomy. As with any injectable, mild and temporary effects such as redness or bruising at the injection site are possible — our team will walk you through how to care for the treated area before you leave.
+          </p>
+          <p class="body-copy">
+            Already a patient with an upcoming or recent Botox appointment? Visit our
+            <a href="/aftercare/botox-injections/" class="inline-link">post-treatment care instructions</a> for detailed guidance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Related Aesthetic Treatments"
+      items={related}
+    />
+
+    <CTABand
+      heading="Ready to Schedule Your Botox Consultation?"
+      sub="Complimentary consultations are available with Dr. Sudit to discuss your goals and build a treatment plan tailored to you."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .content-wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .content-wrap .body-copy { text-align: left; }
+
+  .section-intro {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3.5rem;
+  }
+  .page-h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .body-copy {
+    margin-top: 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+  .inline-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 500;
+  }
+
+  .uses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .uses-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .use-card { text-align: left; }
+  .use-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .use-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+</style>

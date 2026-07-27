@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'Can Dentists Repair Severely Damaged Teeth?',
+  description:
+    'Severe tooth decay, trauma, or damage does not mean extraction is the only option. Learn how modern restorative dentistry can save and rebuild your smile.',
+  datePublished: '2025-06-08',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+};
+---
+
+<BaseLayout
+  title="Can Dentists Repair Severely Damaged Teeth in Minnetonka?"
+  description="Severe tooth decay, trauma, or damage doesn't mean extraction is the only option. Learn how modern restorative dentistry can save and rebuild your smile."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Restorative Dentistry"
+      title="Can Dentists Repair Severely Damaged Teeth?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Repairing Severely Damaged Teeth' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            Severely damaged teeth can feel like a dead end — but in most cases, modern
+            restorative dentistry offers a path to repair rather than extraction. Here's how Dr.
+            Sudit and our team approach even the most complex restorative cases.
+          </p>
+
+          <h2>What Counts as "Severe" Dental Damage?</h2>
+          <ul>
+            <li>Untreated tooth decay that has progressed beyond what a simple filling can address</li>
+            <li>Advanced periodontal (gum) disease causing gum recession and bone loss</li>
+            <li>Trauma from an accident — a chipped, cracked, fractured, or knocked-out tooth</li>
+            <li>Malocclusion (bite misalignment) affecting chewing or speech</li>
+          </ul>
+
+          <h2>How We Restore Severely Damaged Teeth</h2>
+
+          <h3>Fillings and Crowns</h3>
+          <p>
+            For teeth with significant decay or structural loss, a crown rebuilds the visible
+            portion of the tooth, restoring strength and function while protecting what remains
+            of the natural tooth.
+          </p>
+
+          <h3>Root Canal Therapy</h3>
+          <p>
+            When decay or trauma reaches the inner pulp of a tooth, root canal treatment removes
+            the infected tissue and preserves the natural tooth rather than requiring extraction.
+          </p>
+
+          <h3>Periodontal Treatment</h3>
+          <p>
+            For damage caused by gum disease, treatments such as scaling, root planing, and laser
+            therapy address the infection at the root of the problem and help stabilize the
+            surrounding bone and tissue.
+          </p>
+
+          <h3>Orthodontic Correction</h3>
+          <p>
+            Invisalign or traditional braces can correct bite misalignment that contributes to
+            uneven wear and ongoing damage.
+          </p>
+
+          <h3>Dental Implants</h3>
+          <p>
+            When a tooth is damaged beyond repair, a dental implant offers a permanent,
+            natural-looking replacement that restores full function.
+          </p>
+
+          <h2>Prevention Is Still the Best Medicine</h2>
+          <p>
+            While modern dentistry can repair even severe damage, routine preventive care —
+            cleanings, exams, and prompt attention to small problems — remains the best way to
+            avoid needing extensive restorative work in the first place.
+          </p>
+
+          <h2>The Bottom Line</h2>
+          <p>
+            If you're living with a damaged tooth and assuming extraction is your only option,
+            the answer is almost always: not necessarily. Schedule an evaluation with our team to
+            find out what's possible for your specific situation.
+          </p>
+
+          <p>
+            <a href="/schedule/">Schedule a consultation</a> to discuss restorative options for a
+            damaged tooth, or call us at 952-593-9310.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready to Restore Your Smile?"
+      sub="Schedule a consultation to find out how we can repair even the most damaged teeth."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

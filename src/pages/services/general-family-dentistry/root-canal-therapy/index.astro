@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const provider = {
+  "@type": "Dentist",
+  name: "Center for Smile Enhancement",
+  telephone: "+19525939310",
+  email: "TheCenterforSmileEnhancement@PDPSmiles.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "10500 Wayzata Blvd.",
+    addressLocality: "Minnetonka",
+    addressRegion: "MN",
+    postalCode: "55305",
+    addressCountry: "US",
+  },
+};
+
+const relatedItems = [
+  {
+    title: 'General & Family Dentistry',
+    description: 'See the full range of general and family dental care we offer, from first checkups to restorative treatment.',
+    href: '/services/general-family-dentistry/',
+  },
+  {
+    title: 'Cleanings & Exams',
+    description: 'Routine cleanings, comprehensive exams, digital X-rays, and oral cancer screening for the whole family.',
+    href: '/services/general-family-dentistry/cleanings-exams/',
+  },
+  {
+    title: 'Routine Fillings',
+    description: 'Tooth-colored composite fillings that treat decay while preserving your natural tooth structure.',
+    href: '/services/general-family-dentistry/routine-fillings/',
+  },
+  {
+    title: 'Crowns & Bridges',
+    description: 'Durable, natural-looking restorations that rebuild damaged teeth and replace missing ones.',
+    href: '/services/general-family-dentistry/crowns-bridges/',
+  },
+  {
+    title: 'Extractions',
+    description: 'Careful removal of teeth that can’t be saved, with a clear plan for what comes next.',
+    href: '/services/general-family-dentistry/extractions/',
+  },
+];
+---
+
+<BaseLayout
+  title="Root Canals | Center for Smile Enhancement | Minnetonka, MN"
+  description="Gentle root canal therapy in Minnetonka, MN relieves pain from infected tooth pulp and saves your natural tooth, restoring lasting comfort and oral health."
+>
+  <Header />
+
+  <main id="main-content">
+    <StructuredData
+      type="MedicalProcedure"
+      data={{
+        name: "Root Canal Therapy",
+        description: "Treatment that removes infected or inflamed tooth pulp and seals the tooth with a medicated filling material, relieving pain and saving the natural tooth.",
+        provider,
+        areaServed: { "@type": "City", name: "Minnetonka, MN" },
+        url: Astro.url.href,
+      }}
+    />
+
+    <PageHero
+      eyebrow="General & Family Dentistry"
+      title="Root Canal Therapy"
+      lede="Root canal therapy relieves pain from an infected or inflamed tooth and saves your natural tooth — sparing you from an extraction whenever possible."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'General & Family Dentistry', href: '/services/general-family-dentistry/' },
+        { label: 'Root Canal Therapy' },
+      ]}
+      primaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── How It Helps ──────────────────────────────────── -->
+    <section aria-labelledby="helps-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">How It Helps</span>
+          <h2 id="helps-heading" class="section-heading section-heading--size">
+            Relieving Pain, Saving Your Tooth
+          </h2>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="card">
+            <h3 class="card-title">Removes the Source of Pain</h3>
+            <p class="card-body">
+              Treatment involves carefully removing the tooth's infected root pulp, addressing the underlying cause of the pain rather than simply managing it.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Saves Your Natural Tooth</h3>
+            <p class="card-body">
+              Once the pulp is removed, the space is filled with a medicated material that is permanently sealed into place — allowing you to keep your natural tooth instead of losing it to extraction.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Protects the Tooth Afterward</h3>
+            <p class="card-body">
+              A treated tooth is often capped with a crown to protect it and restore its full strength for everyday biting and chewing. Learn more about <a href="/services/general-family-dentistry/crowns-bridges/">crowns and bridges</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Signs & What to Expect ────────────────────────── -->
+    <section aria-labelledby="signs-heading" class="section-wash">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Signs & What to Expect</span>
+          <h2 id="signs-heading" class="section-heading section-heading--size">
+            When Root Canal Therapy May Be Recommended
+          </h2>
+          <p class="section-sub">
+            Common signs that a tooth's pulp may be infected or inflamed include lingering sensitivity to hot or cold, persistent or throbbing pain, swelling or tenderness near the gums, or a tooth that has started to darken. An exam is the best way to know for certain. As with most root canal treatment, you can expect the area to be thoroughly numbed first, so the procedure itself is generally no more uncomfortable than having a filling placed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="More General & Family Dentistry"
+      heading="Related Services"
+      items={relatedItems}
+    />
+
+    <CTABand
+      heading="Dealing With Tooth Pain?"
+      sub="Don't wait it out. Call us or schedule online — we'll get you in to find relief and protect your natural tooth."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-wash { background-color: #ebeef5; }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-heading--size {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .card-body a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const businessName = 'Center for Smile Enhancement';
+const contactEmail = 'TheCenterforSmileEnhancement@PDPSmiles.com';
+const lastUpdated = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title="Privacy Policy | Center for Smile Enhancement, Minnetonka"
+  description="Read the privacy policy for Center for Smile Enhancement, a boutique dental practice in Minnetonka, MN, on how we collect, use, and protect your information."
+  noindex={true}
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Legal"
+      title="Privacy Policy"
+      breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]}
+    />
+
+    <section aria-labelledby="privacy-content-heading" class="section-white">
+      <div class="site-container section-py">
+        <h2 id="privacy-content-heading" class="sr-only">Privacy Policy Details</h2>
+        <div class="article-prose">
+          <p class="last-updated">Last updated: {lastUpdated}</p>
+
+          <h2>Introduction</h2>
+          <p>
+            {businessName} ("we," "our," or "us") respects your privacy and is committed to protecting your
+            personal data. This privacy policy explains how we collect, use, and safeguard your information
+            when you visit our website or interact with our practice.
+          </p>
+
+          <h2>Information We Collect</h2>
+          <h3>Information You Provide</h3>
+          <p>We may collect information you voluntarily provide, including:</p>
+          <ul>
+            <li>Name and contact information (email, phone number, mailing address)</li>
+            <li>Messages submitted through contact or appointment request forms</li>
+            <li>Any other information you choose to provide</li>
+          </ul>
+
+          <h3>Automatically Collected Information</h3>
+          <p>When you visit our website, we may automatically collect:</p>
+          <ul>
+            <li>Browser type and version</li>
+            <li>Pages visited and time spent on our site</li>
+            <li>Referring website</li>
+            <li>Device and general location information</li>
+          </ul>
+
+          <h2>How We Use Your Information</h2>
+          <p>We use the information we collect to:</p>
+          <ul>
+            <li>Respond to your inquiries and appointment requests</li>
+            <li>Improve our website and services</li>
+            <li>Send communications you've requested</li>
+            <li>Comply with applicable legal and regulatory obligations</li>
+          </ul>
+
+          <h2>Data Sharing</h2>
+          <p>
+            We do not sell your personal information. We may share information with service providers who
+            assist in operating our website and practice, subject to confidentiality obligations.
+          </p>
+
+          <h2>Data Security</h2>
+          <p>
+            We implement reasonable administrative, technical, and physical safeguards to protect your
+            information. However, no method of transmission over the internet is completely secure, and we
+            cannot guarantee absolute security.
+          </p>
+
+          <h2>Your Rights</h2>
+          <p>Depending on your location, you may have rights to:</p>
+          <ul>
+            <li>Access the personal data we hold about you</li>
+            <li>Request correction of inaccurate data</li>
+            <li>Request deletion of your data</li>
+            <li>Object to certain processing of your data</li>
+            <li>Request a copy of your data in a portable format</li>
+          </ul>
+
+          <h2>Cookies</h2>
+          <p>
+            Our website uses only the cookies necessary for basic functionality. We do not use third-party
+            advertising or cross-site tracking cookies.
+          </p>
+
+          <h2>Children's Privacy</h2>
+          <p>
+            Our website is not directed to children under 13 years of age, and we do not knowingly collect
+            personal information from children online.
+          </p>
+
+          <h2>Changes to This Policy</h2>
+          <p>
+            We may update this privacy policy from time to time. Changes will be posted on this page with an
+            updated revision date.
+          </p>
+
+          <h2>Contact Us</h2>
+          <p>If you have questions about this privacy policy or our data practices, please contact us at:</p>
+          <p>
+            <strong>{businessName}</strong><br />
+            10500 Wayzata Blvd., Minnetonka, MN 55305<br />
+            Phone: <a href="tel:9525939310">952-593-9310</a><br />
+            Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+          </p>
+
+          <p class="pending-note">
+            This policy will be finalized in coordination with our compliance team as part of our ongoing
+            legal review.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .last-updated {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+  .pending-note {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+</style>

@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const businessName = 'Center for Smile Enhancement';
+const contactEmail = 'TheCenterforSmileEnhancement@PDPSmiles.com';
+const lastUpdated = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title="Notice of Privacy Practices | Center for Smile Enhancement"
+  description="Our HIPAA Notice of Privacy Practices explains how Center for Smile Enhancement may use and disclose your health information, and describes your privacy rights."
+  noindex={true}
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Legal"
+      title="HIPAA Notice of Privacy Practices"
+      breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'HIPAA Notice' }]}
+    />
+
+    <section aria-labelledby="hipaa-content-heading" class="section-white">
+      <div class="site-container section-py">
+        <h2 id="hipaa-content-heading" class="sr-only">HIPAA Notice Details</h2>
+        <div class="article-prose">
+          <p class="last-updated">Last updated: {lastUpdated}</p>
+
+          <p>
+            This notice describes how medical information about you may be used and disclosed and how you can
+            get access to this information. Please review it carefully.
+          </p>
+
+          <h2>Our Commitment to Your Privacy</h2>
+          <p>
+            {businessName} is required by law to maintain the privacy of your protected health information
+            ("PHI"), to provide you with this notice of our legal duties and privacy practices, and to abide
+            by the terms of the notice currently in effect.
+          </p>
+
+          <h2>How We May Use and Disclose Your Health Information</h2>
+          <h3>Treatment</h3>
+          <p>
+            We may use and disclose your PHI to provide, coordinate, or manage your dental care and related
+            services, including consultations with other treating providers.
+          </p>
+
+          <h3>Payment</h3>
+          <p>
+            We may use and disclose your PHI to bill and collect payment for the treatment and services you
+            receive, including communicating with your insurance carrier or financing provider.
+          </p>
+
+          <h3>Health Care Operations</h3>
+          <p>
+            We may use and disclose your PHI for our practice's operations, such as quality assessment,
+            staff training, and administrative activities necessary to run our practice and support your care.
+          </p>
+
+          <h3>Other Permitted or Required Uses</h3>
+          <p>We may also use or disclose your PHI, without your written authorization, as required or permitted by law, including for:</p>
+          <ul>
+            <li>Public health and safety activities</li>
+            <li>Health oversight and regulatory activities</li>
+            <li>Judicial and administrative proceedings, when legally required</li>
+            <li>Law enforcement purposes, in limited circumstances</li>
+            <li>To avert a serious threat to health or safety</li>
+          </ul>
+          <p>
+            Any other use or disclosure of your PHI will only be made with your written authorization, which
+            you may revoke at any time.
+          </p>
+
+          <h2>Your Rights Regarding Your Health Information</h2>
+          <p>You have the right to:</p>
+          <ul>
+            <li>Request to inspect and obtain a copy of your health records</li>
+            <li>Request an amendment to your health information if you believe it is incomplete or inaccurate</li>
+            <li>Request an accounting of certain disclosures we have made of your PHI</li>
+            <li>Request restrictions on certain uses and disclosures of your PHI</li>
+            <li>Request confidential communications by an alternative means or at an alternative location</li>
+            <li>Obtain a paper copy of this notice upon request</li>
+          </ul>
+
+          <h2>Our Responsibilities</h2>
+          <p>
+            We are required to maintain the privacy of your PHI, provide you with this notice describing our
+            legal duties and privacy practices, and notify you if a breach of your unsecured PHI occurs. We
+            will not use or share your information other than as described here unless you provide written
+            authorization to do so.
+          </p>
+
+          <h2>Complaints</h2>
+          <p>
+            If you believe your privacy rights have been violated, you may file a complaint with our practice
+            or with the U.S. Department of Health and Human Services, Office for Civil Rights. You will not be
+            penalized for filing a complaint.
+          </p>
+
+          <h2>Changes to This Notice</h2>
+          <p>
+            We reserve the right to change this notice and to make the revised notice effective for PHI we
+            already maintain, as well as any information we receive in the future. The current notice will
+            always be available on this page and at our office.
+          </p>
+
+          <h2>Contact Us</h2>
+          <p>
+            To exercise any of the rights described in this notice, or if you have questions about our privacy
+            practices, please contact:
+          </p>
+          <p>
+            <strong>{businessName}</strong><br />
+            10500 Wayzata Blvd., Minnetonka, MN 55305<br />
+            Phone: <a href="tel:9525939310">952-593-9310</a><br />
+            Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+          </p>
+
+          <p class="pending-note">
+            This notice will be finalized in coordination with our compliance team as part of our ongoing
+            legal review.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .last-updated {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+  .pending-note {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+</style>

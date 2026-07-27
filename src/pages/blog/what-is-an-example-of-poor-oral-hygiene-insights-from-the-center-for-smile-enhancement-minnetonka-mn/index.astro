@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'What Is an Example of Poor Oral Hygiene?',
+  author: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  datePublished: "2025-04-02",
+  description: "See real examples of poor oral hygiene, the consequences of neglect, and simple fixes — insights from Center for Smile Enhancement in Minnetonka, MN.",
+  url: "https://www.drsudit.com/blog/what-is-an-example-of-poor-oral-hygiene-insights-from-the-center-for-smile-enhancement-minnetonka-mn/",
+};
+---
+
+<BaseLayout
+  title="Examples of Poor Oral Hygiene | Minnetonka, MN"
+  description="See real examples of poor oral hygiene, the consequences of neglect, and simple fixes — insights from Center for Smile Enhancement in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Patient Education"
+      title="What Is an Example of Poor Oral Hygiene?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'What Is an Example of Poor Oral Hygiene?' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            Poor oral hygiene isn't usually one dramatic decision — it's a pattern of small, everyday choices
+            that add up over time. At Center for Smile Enhancement in Minnetonka, we find that the good news
+            outweighs the bad: most examples of poor oral hygiene are entirely preventable, and small changes to
+            your daily routine can make a big difference.
+          </p>
+
+          <h2>What Does Poor Oral Hygiene Look Like?</h2>
+          <p>
+            In practice, poor oral hygiene usually shows up as a combination of the following:
+          </p>
+          <ul>
+            <li>Skipping daily brushing and flossing</li>
+            <li>Avoiding regular dental visits</li>
+            <li>Regularly consuming sugary or acidic foods and drinks</li>
+            <li>Using a worn-out or frayed toothbrush well past its useful life</li>
+          </ul>
+          <p>
+            Individually, any one of these might seem minor. Together, and over time, they're a common path to
+            tooth decay, gum disease, and eventually tooth loss.
+          </p>
+
+          <h2>A Closer Look at Common Examples</h2>
+          <ul>
+            <li>
+              <strong>Infrequent brushing.</strong> Brushing less than twice a day gives plaque time to build up
+              on tooth surfaces. Brushing twice daily with fluoride toothpaste, for at least two minutes each
+              time, is the baseline for protecting your teeth.
+            </li>
+            <li>
+              <strong>Skipping floss.</strong> Floss reaches between teeth where a brush can't. Without it,
+              bacteria linger in those spaces, raising the risk of decay and inflamed gums.
+            </li>
+            <li>
+              <strong>Using a worn-out toothbrush.</strong> Frayed bristles clean less effectively and can
+              harbor bacteria. We recommend replacing your toothbrush every three to four months.
+            </li>
+            <li>
+              <strong>A sugary, acidic diet.</strong> Frequent snacking on sugary or acidic foods and drinks
+              erodes enamel and feeds the bacteria that cause decay.
+            </li>
+            <li>
+              <strong>Skipping dental visits.</strong> Regular cleanings, generally twice a year, catch problems
+              while they're still small and easy to treat.
+            </li>
+          </ul>
+
+          <h2>What Neglect Can Lead To</h2>
+          <ul>
+            <li>Cavities from ongoing plaque and tartar buildup</li>
+            <li>Gum disease, ranging from early gingivitis to more advanced periodontitis</li>
+            <li>Persistent bad breath caused by bacteria</li>
+            <li>Tooth loss from decay that goes untreated for too long</li>
+          </ul>
+
+          <h2>Simple Ways to Improve</h2>
+          <ul>
+            <li>Brush twice daily with fluoride toothpaste for at least two minutes</li>
+            <li>Floss once a day</li>
+            <li>Replace your toothbrush every three to four months</li>
+            <li>Keep a balanced, lower-sugar diet</li>
+            <li>Schedule regular checkups and cleanings</li>
+          </ul>
+          <p>
+            If it's been longer than you'd like to admit since your last cleaning, our Minnetonka team is happy
+            to help you get back on track — no judgment, just a plan to move forward.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Let's Get Your Smile Back on Track"
+      sub="Schedule a cleaning and exam with our Minnetonka team and start building healthier habits today."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

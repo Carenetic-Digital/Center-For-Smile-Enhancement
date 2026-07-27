@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'Esthetic Dentistry vs. Cosmetic Dentistry: What\'s the Difference?',
+  author: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Center for Smile Enhancement",
+  },
+  datePublished: "2025-04-16",
+  description: "Esthetic and cosmetic dentistry are often used interchangeably, but they describe two different approaches. Learn the distinction from our Minnetonka, MN team.",
+  url: "https://www.drsudit.com/blog/is-there-a-difference-between-esthetic-dentistry-and-cosmetic-dentistry/",
+};
+---
+
+<BaseLayout
+  title="Esthetic vs. Cosmetic Dentistry | Minnetonka, MN"
+  description="What's the real difference between esthetic dentistry and cosmetic dentistry? Our Minnetonka, MN team breaks down the terminology and what each approach prioritizes."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="Is There a Difference Between Esthetic Dentistry and Cosmetic Dentistry?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Is There a Difference Between Esthetic Dentistry and Cosmetic Dentistry?' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            "Esthetic dentistry" and "cosmetic dentistry" are often used as if they mean exactly the same thing —
+            and in casual conversation, they usually do. But at Center for Smile Enhancement, we think the
+            distinction is worth understanding, because it reflects two slightly different ways of thinking
+            about a beautiful smile.
+          </p>
+
+          <h2>What Cosmetic Dentistry Focuses On</h2>
+          <p>
+            Cosmetic dentistry is primarily concerned with how your smile looks. It addresses issues like
+            discolored, chipped, or misaligned teeth through treatments such as teeth whitening, porcelain
+            veneers, bonding, clear aligners, and gum contouring. The goal is a visibly improved smile.
+          </p>
+
+          <h2>What Esthetic Dentistry Focuses On</h2>
+          <p>
+            Esthetic dentistry takes a broader view. It's both an art and a science — one that considers your
+            facial features, tooth shape, skin tone, and smile dynamics in order to design a result that looks
+            natural on you specifically, not just "whiter" or "straighter" in the abstract.
+          </p>
+          <p>
+            Esthetic dentistry also tends to coordinate across multiple areas of care at once, balancing beauty,
+            structure, and longevity together. Rather than treating appearance as a standalone goal, it supports
+            your bite, your alignment, and your long-term oral health alongside how your smile looks.
+          </p>
+
+          <h2>Why the Distinction Matters</h2>
+          <p>
+            In practice, the two overlap constantly — a cosmetic treatment done well is usually also an esthetic
+            one. But understanding the difference helps set expectations: cosmetic dentistry is about the
+            enhancement itself, while esthetic dentistry is about how that enhancement fits your whole smile and
+            supports its function over time.
+          </p>
+          <p>
+            If you're weighing your options, the best next step is a personalized consultation, where we can
+            look at your smile as a whole and help you understand which approach — or combination of the two —
+            makes the most sense for your goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready to Talk About Your Smile?"
+      sub="Schedule a consultation with our Minnetonka team to discuss the right cosmetic or esthetic approach for you."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

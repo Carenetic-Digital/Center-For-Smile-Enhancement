@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Cleanings & Checkups Aftercare | Smile Enhancement"
+  description="What to expect after your cleaning or checkup at the Center for Smile Enhancement in Minnetonka, MN, plus tips for sensitive teeth, gums, and jaw muscles."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aftercare Instructions"
+      title="Cleanings & Checkups Aftercare"
+      lede="A little extra care in the day or two after your cleaning can help keep your smile comfortable while your gums settle."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+        { label: 'Cleanings & Checkups' },
+      ]}
+    />
+
+    <section class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <h2>Sensitive Teeth</h2>
+          <p>
+            It's common to notice temporary sensitivity to hot, cold, acidic, or spicy foods after plaque and tartar removal. Daily, thorough, yet gentle brushing and flossing — along with a fluoridated toothpaste and mouthwash — can help ease this sensitivity as your teeth adjust.
+          </p>
+
+          <h2>Sensitive Gums</h2>
+          <p>
+            Depending on the health of your gums going into your appointment, you may notice some tenderness or bleeding afterward. Over-the-counter pain relievers such as ibuprofen, naproxen sodium, or acetaminophen can help — they work best when taken before discomfort sets in.
+          </p>
+          <p>A gentle rinse two to three times daily, for one to two minutes each time, can also soothe tender gums:</p>
+          <ul>
+            <li>A warm salt water rinse (about 1 teaspoon of salt in 8 ounces of water)</li>
+            <li>A 50/50 mixture of hydrogen peroxide and water, or a pre-mixed product such as Peroxyl</li>
+            <li>If we've prescribed a chlorhexidine antibacterial mouthwash, use the measuring cup provided — never drink directly from the bottle</li>
+          </ul>
+
+          <h2>Jaw and Muscle Tenderness</h2>
+          <p>
+            Keeping your mouth open for an extended time can leave your jaw muscles feeling tired or sore. A warm, moist compress, some rest, softer foods, and an over-the-counter pain reliever can help. Let Dr. Sudit or your hygienist know if this happens so we can adjust your next visit to help prevent it.
+          </p>
+
+          <h2>Everyday Oral Hygiene</h2>
+          <p>
+            Brush twice a day for two to three minutes and floss once daily. We recommend an electric toothbrush, or gentle circular brushing with a soft-bristled brush, for the healthiest results.
+          </p>
+
+          <h2>After a Fluoride Treatment</h2>
+          <p>
+            If you received a standard fluoride treatment, avoid eating, drinking, or rinsing for 30 minutes afterward. If you received a fluoride varnish, avoid brushing, flossing, and hot liquids or hard foods for four to six hours. If you feel nauseous or vomit after a fluoride treatment, drink some water or milk and call our office right away.
+          </p>
+
+          <h2>When to Call Us</h2>
+          <p>
+            Contact our office at <a href="tel:9525939310">952-593-9310</a> if gum bleeding or tenderness doesn't improve, or if you experience nausea or vomiting after a fluoride treatment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Questions About Your Recovery?"
+      sub="If anything feels off after your cleaning or checkup, we're happy to help."
+      primaryCta={{ label: 'Contact Our Office', href: '/contact/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

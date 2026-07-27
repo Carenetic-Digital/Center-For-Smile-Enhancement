@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Bruise Management Aftercare | Center for Smile Enhancement"
+  description="Aftercare guidance for managing bruising after cosmetic injections at the Center for Smile Enhancement in Minnetonka, MN, including care tips and contact info."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aftercare Instructions"
+      title="Bruise Management Aftercare"
+      lede="Bruising is a common, temporary side effect of cosmetic injections. These steps can help minimize it and speed up healing."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+        { label: 'Bruise Management' },
+      ]}
+    />
+
+    <section class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <h2>What to Expect</h2>
+          <p>
+            Mild to moderate bruising at injection sites is a normal part of recovery from Botox and dermal filler treatments. The tips below, followed in the week surrounding your appointment, can help reduce bruising and support faster healing.
+          </p>
+
+          <h2>Do's and Don'ts</h2>
+          <ul>
+            <li>In the week before and after your appointment, try to avoid alcoholic beverages, which can increase bruising and bleeding.</li>
+            <li>If you take a blood-thinning medication such as warfarin or Coumadin, or supplements like vitamin E or St. John's Wort, let our team know — these can also increase bruising. Never stop a prescribed medication without talking to the prescribing physician first.</li>
+            <li>Where appropriate and approved by our team, avoiding NSAIDs such as ibuprofen, naproxen, and aspirin in the days surrounding treatment can also help minimize bruising.</li>
+            <li>Apply a cold compress to injection sites on and off for the first 48 hours after your appointment.</li>
+            <li>Ask our team about Arnica Montana, available as oral pellets or a topical cream/gel, which many patients use in the days before and after treatment to help reduce bruising.</li>
+          </ul>
+
+          <h2>Camouflaging Bruises</h2>
+          <p>
+            If you'd like to conceal any bruising while it heals, color-correcting makeup such as the Jane Iredale Corrective Colors Kit or Dermablend can be effective options.
+          </p>
+
+          <h2>When to Call Us</h2>
+          <p>
+            Call our office at <a href="tel:9525939310">952-593-9310</a> if bruising seems unusually severe, doesn't begin to improve after several days, or you have any other questions or concerns.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Questions About Your Recovery?"
+      sub="If you're concerned about bruising after a recent treatment, our team is happy to help."
+      primaryCta={{ label: 'Contact Our Office', href: '/contact/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

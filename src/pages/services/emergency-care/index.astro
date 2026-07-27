@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import RelatedGrid from '../../../components/RelatedGrid.astro';
+import CTABand from '../../../components/CTABand.astro';
+
+const situations = [
+  { title: 'Severe Toothache', body: 'Persistent or intense tooth pain can signal decay, infection, or a cracked tooth that needs prompt attention.' },
+  { title: 'Knocked-Out Tooth', body: 'Time matters. Call us immediately — keeping the tooth moist and getting in quickly gives it the best chance.' },
+  { title: 'Broken or Chipped Tooth', body: 'Whether from an accident, a fall, or biting into something hard, a broken tooth should be evaluated right away.' },
+  { title: 'Lost Filling or Crown', body: 'An exposed tooth is more vulnerable to pain and further damage — we can get you seen quickly to protect it.' },
+  { title: 'Facial or Gum Swelling', body: 'Swelling can indicate infection and should never be ignored, especially if it comes with fever or pain.' },
+  { title: 'Uncontrolled Bleeding', body: 'Bleeding that doesn’t subside with gentle pressure after an injury or extraction warrants an immediate call.' },
+];
+
+const relatedItems = [
+  {
+    title: 'Teledentistry',
+    description: 'Not sure if it’s an emergency? Connect with us remotely for quick advice.',
+    href: '/services/teledentistry/',
+  },
+  {
+    title: 'General & Family Dentistry',
+    description: 'Follow-up care and routine treatment once your emergency is resolved.',
+    href: '/services/general-family-dentistry/',
+  },
+];
+---
+
+<BaseLayout
+  title="Emergency Dental Care | Center for Smile Enhancement, MN"
+  description="Same-day and after-hours emergency dental care in Minnetonka, MN. Center for Smile Enhancement is here when you need us most — call 952-593-9310 today."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Emergency Care"
+      title="Dental Emergencies, Handled Right Away"
+      lede="We've got your back, whether you're in our office or at home. Same-day and walk-in access, plus after-hours phone support — you're just a phone call away from help."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Emergency Care' },
+      ]}
+      primaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      secondaryCta={{ label: 'Schedule Online', href: '/schedule/' }}
+      image="/images/service-emergency.png"
+      imageAlt="Child with a surprised expression needing dental care"
+    />
+
+    <!-- ── Prominent phone callout ──────────────────────── -->
+    <section aria-labelledby="phone-callout-heading" class="section-white">
+      <div class="site-container">
+        <div class="phone-callout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--onDark">Just a Phone Call Away</span>
+            <h2 id="phone-callout-heading" class="phone-callout-heading">Call Us First — We'll Guide You From There</h2>
+            <p class="phone-callout-sub">
+              If you're dealing with a dental emergency, don't wait. Call our office directly and we'll help you understand next steps and get you seen as quickly as possible.
+            </p>
+          </div>
+          <a href="tel:9525939310" class="phone-callout-number">952-593-9310</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What Counts as an Emergency ───────────────────── -->
+    <section aria-labelledby="situations-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">When to Call</span>
+          <h2 id="situations-heading" class="section-heading page-h2">
+            What Counts as a Dental Emergency
+          </h2>
+          <p class="section-sub">
+            Not every dental issue can't wait — but these situations generally warrant a same-day call.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          {situations.map((s) => (
+            <div class="card">
+              <h3 class="feature-title">{s.title}</h3>
+              <p class="feature-body">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Here When You Need Us ────────────────────────── -->
+    <section aria-labelledby="here-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="here-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Here When You Need Us</span>
+            <h2 id="here-heading" class="section-heading page-h2">Same-Day Access, After-Hours Support</h2>
+            <p class="section-sub" style="margin-left: 0;">
+              Every patient is a VIP — that doesn't change when something goes wrong. We prioritize same-day and walk-in appointments for dental emergencies, and our after-hours phone line means you're never without a way to reach us.
+            </p>
+          </div>
+          <div class="card here-card">
+            <h3 class="feature-title">Office Hours</h3>
+            <p class="feature-body">Monday&ndash;Thursday: 8am&ndash;5pm<br />Friday: 8am&ndash;12pm<br />Closed Saturday &amp; Sunday</p>
+            <h3 class="feature-title" style="margin-top: 1.5rem;">Location</h3>
+            <p class="feature-body">10500 Wayzata Blvd.<br />Minnetonka, MN 55305</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Related Care"
+      heading="Not Sure If It's an Emergency?"
+      items={relatedItems}
+    />
+
+    <CTABand
+      eyebrow="Emergency Care"
+      heading="A Dental Emergency Can't Wait"
+      sub="Call us now and we'll help you right away — or reach out online and our team will follow up as quickly as possible."
+      primaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      secondaryCta={{ label: 'Schedule Online', href: '/schedule/' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+  .page-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .feature-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .feature-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .feature-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  /* ── Phone callout island ─────────────────────────────── */
+  .phone-callout {
+    background-color: var(--color-primary);
+    border-radius: 2.5rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    box-shadow: 0 32px 64px rgba(30, 52, 96, 0.24);
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .phone-callout { grid-template-columns: 3fr 2fr; text-align: left; }
+  }
+  .phone-callout-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.8vw, 2.125rem);
+    color: #ffffff;
+    line-height: 1.25;
+    margin-top: 1rem;
+  }
+  .phone-callout-sub {
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.7;
+    margin-top: 1rem;
+    max-width: 34rem;
+  }
+  .phone-callout-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    padding: 1.25rem 2rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .phone-callout-number:hover {
+    background-color: rgba(255,255,255,0.2);
+    border-color: #ffffff;
+  }
+
+  /* ── Here layout ───────────────────────────────────────── */
+  .here-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (min-width: 768px) {
+    .here-layout { grid-template-columns: 3fr 2fr; }
+  }
+  .here-card { height: 100%; }
+</style>

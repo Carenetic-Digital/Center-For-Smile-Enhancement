@@ -1,0 +1,329 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import RelatedGrid from '../../../components/RelatedGrid.astro';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const issuesTreated = [
+  'Crooked or crowded teeth',
+  'Overbites',
+  'Underbites',
+  'Crossbites',
+  'Open bites',
+  'Gaps and spacing',
+];
+
+const journeySteps = [
+  {
+    step: '1',
+    title: 'Complimentary Consultation',
+    body: 'We evaluate your smile, discuss your goals, and confirm whether Invisalign is the right fit for your bite.',
+  },
+  {
+    step: '2',
+    title: 'Custom Aligner Series',
+    body: 'A digital scan maps your unique treatment plan, and your series of clear, custom-molded aligners is created.',
+  },
+  {
+    step: '3',
+    title: 'Steady, Gentle Progress',
+    body: 'Wear each aligner about 22 hours a day, switching to the next set in the series every 10 to 14 days.',
+  },
+  {
+    step: '4',
+    title: 'Brief Check-Ins',
+    body: 'Quick visits every two to four weeks let us track your progress and hand off your next round of aligners.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'What is the Invisalign treatment process, and how long does it take?',
+    answer: 'Invisalign uses a series of custom, removable clear aligners that gradually shift your teeth into place. Most patients wear each aligner about 22 hours a day, switching to a new one every 10 to 14 days. Depending on your treatment plan, the full process typically takes six months to two years.',
+  },
+  {
+    question: "What dental issues can Invisalign treat — and what's beyond its scope?",
+    answer: "Invisalign effectively corrects crooked teeth, overbites, underbites, crossbites, open bites, and crowding for most teens and adults. For cases involving larger space closures (2mm or more) or significant tooth rotation, traditional metal wire braces are generally the more effective option. We don't offer metal braces in-office, so if your case calls for them, we'll let you know at your consultation and can refer you to a trusted specialist.",
+  },
+  {
+    question: 'Can Invisalign work if I already have veneers, crowns, implants, or bridges?',
+    answer: "It depends. Invisalign can often move teeth that have veneers or crowns. Teeth restored with implants or bridges, however, are anchored in place and typically can't be shifted with clear aligners. We'll evaluate your specific situation during a complimentary consultation.",
+  },
+  {
+    question: 'How often will I need to come in during treatment?',
+    answer: 'We schedule brief check-in visits every two to four weeks so we can monitor your progress and provide your next set of aligners.',
+  },
+  {
+    question: 'Can treatment focus on just my top or bottom teeth?',
+    answer: "It's rare. Your bite depends on how your upper and lower teeth meet, so treating only one arch can throw that relationship off and lead to complications like a misaligned bite. We typically treat both arches together for the most predictable result.",
+  },
+  {
+    question: 'What are the biggest benefits of choosing Invisalign?',
+    answer: 'Invisalign aligners are nearly invisible, removable for eating and cleaning (no food restrictions), and more comfortable than traditional wire-and-bracket braces — all while delivering reliable, precise results for the right candidates.',
+  },
+];
+
+const relatedItems = [
+  {
+    title: 'Invisalign for Adults',
+    description: 'Discreet, professional-friendly clear aligner treatment designed around a busy adult schedule.',
+    href: '/services/orthodontics/invisalign-adults/',
+  },
+  {
+    title: 'Invisalign for Teens',
+    description: 'Removable clear aligners that fit school, sports, and social life better than metal brackets.',
+    href: '/services/orthodontics/invisalign-teens/',
+  },
+  {
+    title: 'Implant Dentistry',
+    description: 'Restorative, natural-looking solutions for replacing a missing tooth permanently.',
+    href: '/services/implant-dentistry/',
+  },
+];
+
+const serviceSchema = {
+  name: 'Invisalign Clear Aligner Therapy',
+  serviceType: 'Orthodontics',
+  description: 'Invisalign clear aligner therapy for teens and adults, offered at Center for Smile Enhancement in Minnetonka, MN.',
+  areaServed: {
+    '@type': 'City',
+    name: 'Minnetonka, MN',
+  },
+  provider: {
+    '@type': 'Dentist',
+    name: 'Center for Smile Enhancement',
+    telephone: '+19525939310',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '10500 Wayzata Blvd.',
+      addressLocality: 'Minnetonka',
+      addressRegion: 'MN',
+      postalCode: '55305',
+      addressCountry: 'US',
+    },
+  },
+};
+---
+
+<BaseLayout
+  title="Invisalign Orthodontics | Center for Smile Enhancement, MN"
+  description="Invisalign clear aligner therapy for teens and adults in Minnetonka, MN. Discreet, removable treatment from Center for Smile Enhancement — no metal braces."
+>
+  <StructuredData type="Service" data={serviceSchema} />
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Orthodontics"
+      title="Invisalign Clear Aligner Therapy"
+      lede="A modern, nearly invisible way to straighten your smile — no metal brackets, no wires. Just a custom series of clear aligners designed around your life."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Orthodontics' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      image="/images/service-orthodontics.png"
+      imageAlt="Patient placing a clear Invisalign aligner"
+    />
+
+    <!-- ── Metal-free approach ─────────────────────────── -->
+    <section aria-labelledby="approach-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="approach-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Our Approach</span>
+            <h2 id="approach-heading" class="svc-h2">Invisalign — Without the Metal Wires and Brackets</h2>
+            <p class="svc-body">
+              At Center for Smile Enhancement, we straighten crooked and misaligned teeth exclusively with Invisalign clear aligner therapy. We don't offer traditional metal braces in-office. For the vast majority of our patients, Invisalign delivers precise, reliable results without the metal, the mouth irritation, or the dietary restrictions that come with wire braces.
+            </p>
+            <p class="svc-body">
+              A small number of complex cases — those requiring large space closures or significant tooth rotation — are still better served by traditional braces. If that applies to you, we'll tell you honestly at your consultation and point you toward a trusted specialist.
+            </p>
+          </div>
+          <div class="issues-card">
+            <h3 class="issues-title">Invisalign Can Treat</h3>
+            <ul class="issues-grid">
+              {issuesTreated.map((issue) => (
+                <li class="issue-item">
+                  <svg class="issue-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{issue}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Treatment journey ──────────────────────────── -->
+    <section aria-labelledby="journey-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">What to Expect</span>
+          <h2 id="journey-heading" class="svc-h2">Your Invisalign Treatment Journey</h2>
+          <p class="svc-sub">
+            Treatment typically takes six months to two years, depending on your starting point and goals.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+          {journeySteps.map((s) => (
+            <div class="card journey-card">
+              <span class="journey-step">{s.step}</span>
+              <h3 class="journey-title">{s.title}</h3>
+              <p class="journey-body">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────── -->
+    <section aria-labelledby="faq-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Common Questions</span>
+          <h2 id="faq-heading" class="svc-h2">Invisalign FAQ</h2>
+        </div>
+        <FAQAccordion items={faqItems} idPrefix="ortho-faq" />
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Invisalign"
+      heading="Invisalign for Every Age"
+      items={relatedItems}
+    />
+
+    <CTABand
+      heading="Ready to Start Your Invisalign Journey?"
+      sub="Schedule a complimentary consultation and find out if Invisalign is the right fit for your smile."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 38rem;
+    margin: 0 auto 3rem;
+  }
+  .svc-h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .svc-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  .svc-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-top: 1.25rem;
+  }
+
+  /* ── Approach + issues card ───────────────────────── */
+  .approach-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (min-width: 1024px) {
+    .approach-layout { grid-template-columns: 3fr 2fr; gap: 3.5rem; }
+  }
+  .issues-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(30, 52, 96, 0.07);
+    box-shadow: 0 2px 8px rgba(30, 52, 96, 0.06), 0 12px 32px rgba(30, 52, 96, 0.14);
+  }
+  .issues-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+  }
+  .issues-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+  .issue-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-base);
+    line-height: 1.5;
+  }
+  .issue-check {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    color: var(--color-primary);
+  }
+
+  /* ── Journey steps ─────────────────────────────────── */
+  .journey-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .journey-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .journey-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .journey-card { display: flex; flex-direction: column; }
+  .journey-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    margin-bottom: 1.25rem;
+  }
+  .journey-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .journey-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+</style>

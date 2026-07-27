@@ -8,17 +8,15 @@ test('homepage loads', async ({ page }) => {
 test('all navigation links work', async ({ page }) => {
   await page.goto('/');
 
-  const navLinks = page.locator('nav a');
-  const count = await navLinks.count();
+  // Collect hrefs up front and navigate directly rather than clicking —
+  // several nav items (e.g. the Services dropdown) are only visible on
+  // hover/focus-within, so a direct click reliably times out on them.
+  const hrefs = await page.locator('nav a').evaluateAll((links) =>
+    links.map((el) => el.getAttribute('href')).filter((href): href is string => !!href && href.startsWith('/'))
+  );
 
-  for (let i = 0; i < count; i++) {
-    const link = navLinks.nth(i);
-    const href = await link.getAttribute('href');
-
-    if (href && href.startsWith('/')) {
-      await link.click();
-      await expect(page).not.toHaveURL(/404/);
-      await page.goto('/');
-    }
+  for (const href of [...new Set(hrefs)]) {
+    await page.goto(href);
+    await expect(page).not.toHaveURL(/404/);
   }
 });

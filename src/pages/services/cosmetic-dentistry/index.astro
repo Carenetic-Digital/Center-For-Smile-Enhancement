@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import RelatedGrid from '../../../components/RelatedGrid.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const subServices = [
+  {
+    title: 'Teeth Whitening',
+    description: 'ZOOM in-office bleaching and take-home options to lift years of staining in a single visit.',
+    href: '/services/cosmetic-dentistry/teeth-whitening/',
+  },
+  {
+    title: 'Porcelain Veneers',
+    description: 'Ultra-thin, stain-resistant porcelain shells that reshape and brighten your smile.',
+    href: '/services/cosmetic-dentistry/porcelain-veneers/',
+  },
+  {
+    title: 'Dental Bonding',
+    description: 'Tooth-colored composite resin to repair chips, gaps, and minor imperfections in a single visit.',
+    href: '/services/cosmetic-dentistry/dental-bonding/',
+  },
+  {
+    title: 'Smile Makeovers',
+    description: 'A comprehensive, personalized treatment plan combining multiple procedures for a complete transformation.',
+    href: '/services/cosmetic-dentistry/smile-makeovers/',
+  },
+];
+
+const serviceData = {
+  name: 'Cosmetic Dentistry',
+  serviceType: 'Cosmetic Dentistry',
+  provider: {
+    "@type": "Dentist",
+    name: "Center for Smile Enhancement",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Minnetonka, MN",
+  },
+  description: "Teeth whitening, porcelain veneers, dental bonding, and complete smile makeovers at the Center for Smile Enhancement in Minnetonka, MN.",
+  url: "https://www.drsudit.com/services/cosmetic-dentistry/",
+};
+---
+
+<BaseLayout
+  title="Cosmetic Dentistry | Center for Smile Enhancement, Minnetonka, MN"
+  description="Transform your smile with ZOOM whitening, porcelain veneers, bonding, and full smile makeovers at the Center for Smile Enhancement in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="Enhance the Natural Beauty of Your Smile"
+      lede="From subtle refinements to complete transformations, our cosmetic dentistry services are designed to make aesthetic improvements easy, comfortable, and attainable — without compromising your oral health."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Cosmetic Dentistry' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      image="/images/service-cosmetic-smile.png"
+      imageAlt="Woman with a confident, beautiful smile"
+    />
+
+    <!-- ── Intro / Philosophy ─────────────────────────────── -->
+    <section aria-labelledby="intro-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="intro-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Our Approach</span>
+            <h2 id="intro-heading" class="section-heading section-heading-size">
+              Beautiful, Natural-Looking Results
+            </h2>
+          </div>
+          <div class="intro-copy">
+            <p>
+              Cosmetic dentistry is about more than appearance — it's about enhancing the natural beauty of your smile while protecting the health of your teeth and gums. Dr. Sudit takes a conservative, detail-oriented approach to every cosmetic case, working closely with an artisan dental laboratory to ensure results that look — and feel — completely natural.
+            </p>
+            <p>
+              Achieving beautiful cosmetic results requires extensive training, education, and experience. Every recommendation we make is grounded first in what is healthy for your teeth and gums, and second in what will give you the smile you've always wanted.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sub-services grid ──────────────────────────────── -->
+    <section aria-labelledby="services-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">What We Offer</span>
+          <h2 id="services-heading" class="section-heading section-heading-size">
+            Our Cosmetic Dentistry Services
+          </h2>
+          <p class="section-sub">
+            Every treatment plan begins with a complimentary consultation so we can understand your goals and recommend the right path forward.
+          </p>
+        </div>
+
+        <div class="subservice-grid">
+          {subServices.map((s) => (
+            <a href={s.href} class="card subservice-card">
+              <h3 class="subservice-card-title">{s.title}</h3>
+              <p class="subservice-card-body">{s.description}</p>
+              <span class="subservice-card-cta" aria-hidden="true">
+                Learn more
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why choose us ──────────────────────────────────── -->
+    <section aria-labelledby="why-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Why Choose Us</span>
+          <h2 id="why-heading" class="section-heading section-heading-size">
+            The Center for Smile Enhancement Difference
+          </h2>
+        </div>
+
+        <div class="why-grid">
+          <div class="card">
+            <h3 class="subservice-card-title">Every Patient Is a VIP</h3>
+            <p class="subservice-card-body">
+              VIP means Very Individual Patient. We take time to understand your unique goals and design a cosmetic plan built specifically around your smile, your face, and your lifestyle.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="subservice-card-title">Complimentary Consultations</h3>
+            <p class="subservice-card-body">
+              We offer complimentary cosmetic consultations so you can explore your options, ask questions, and understand your treatment plan before making any commitment.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="subservice-card-title">Artisan Craftsmanship</h3>
+            <p class="subservice-card-body">
+              Dr. Sudit partners with a skilled dental laboratory technician on every veneer, crown, and bonding case, ensuring results that blend seamlessly with your natural teeth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Related Services"
+      items={[
+        { title: 'Orthodontics', description: 'Invisalign clear aligners to straighten teeth without metal brackets.', href: '/services/orthodontics/' },
+        { title: 'Masterpiece Aesthetics', description: 'Botox, dermal fillers, and medical-grade skincare for a refreshed look.', href: '/services/masterpiece-aesthetics/' },
+        { title: 'General & Family Dentistry', description: 'Preventive care and exams that keep your foundation healthy.', href: '/services/general-family-dentistry/' },
+      ]}
+    />
+
+    <CTABand
+      heading="Ready to Enhance Your Smile?"
+      sub="Schedule a complimentary cosmetic consultation and let's discuss which options are right for you."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (min-width: 768px) {
+    .intro-layout { grid-template-columns: 1fr 1.4fr; gap: 3.5rem; }
+  }
+  .intro-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+  .intro-copy p:last-child { margin-bottom: 0; }
+
+  .subservice-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .subservice-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .subservice-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+  .subservice-card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .subservice-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+  }
+  .subservice-card-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .why-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

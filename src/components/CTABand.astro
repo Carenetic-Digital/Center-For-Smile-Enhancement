@@ -1,0 +1,110 @@
+---
+// component-builder: CTABand
+// Purpose: Sitewide dual-CTA "island" band — matches homepage final CTA styling. Drop at the bottom of any page.
+
+interface CTA {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  sub?: string;
+  primaryCta?: CTA;
+  secondaryCta?: CTA;
+}
+
+const {
+  eyebrow = 'Minnetonka, MN',
+  heading = 'Ready to Experience the Difference?',
+  sub = 'New and returning patients are welcome. Call us or schedule online — we look forward to exceeding your expectations.',
+  primaryCta = { label: 'Schedule an Appointment', href: '/schedule/' },
+  secondaryCta = { label: 'Call 952-593-9310', href: 'tel:9525939310' },
+} = Astro.props;
+---
+
+<section aria-labelledby="cta-band-heading" class="cta-outer">
+  <div class="site-container">
+    <div class="cta-island">
+      <span class="section-eyebrow section-eyebrow--onDark">{eyebrow}</span>
+      <h2 id="cta-band-heading" class="cta-heading">{heading}</h2>
+      {sub && <p class="cta-sub">{sub}</p>}
+      <div class="cta-ctas">
+        {primaryCta && <a href={primaryCta.href} class="btn-pill btn-pill-onDark-primary">{primaryCta.label}</a>}
+        {secondaryCta && <a href={secondaryCta.href} class="btn-pill btn-pill-onDark-outline">{secondaryCta.label}</a>}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-outer { padding-top: 4rem; padding-bottom: 5rem; background-color: #ffffff; }
+  .cta-island {
+    background-color: var(--color-primary);
+    border-radius: 2.5rem;
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
+    text-align: center;
+    box-shadow: 0 32px 64px rgba(30, 52, 96, 0.28);
+  }
+  .cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .cta-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.78);
+    max-width: 32rem;
+    margin: 0 auto 2.25rem;
+    line-height: 1.7;
+  }
+  .cta-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  /* ── Pill buttons (onDark variants only — .btn/.btn-primary/.btn-outline
+     already exist globally for light backgrounds) ─────────────────── */
+  .btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9375rem 2rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .btn-pill-onDark-primary {
+    background-color: #ffffff;
+    color: var(--color-primary);
+    border-color: #ffffff;
+  }
+  .btn-pill-onDark-primary:hover {
+    background-color: transparent;
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+  .btn-pill-onDark-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: rgba(255,255,255,0.6);
+  }
+  .btn-pill-onDark-outline:hover {
+    background-color: rgba(255,255,255,0.14);
+    border-color: #ffffff;
+  }
+</style>

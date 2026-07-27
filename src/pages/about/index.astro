@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
+import RelatedGrid from '../../components/RelatedGrid.astro';
+
+const relatedItems = [
+  {
+    title: 'Meet Dr. Sudit',
+    description: "Learn about Dr. Michael Sudit's background, training, and 35+ years of clinical experience.",
+    href: '/about/our-doctors/',
+  },
+  {
+    title: 'Our Services',
+    description: 'Explore our full range of general, cosmetic, and aesthetic dental services.',
+    href: '/services/',
+  },
+  {
+    title: 'New Patients',
+    description: 'Everything you need to know before your first visit to our Minnetonka office.',
+    href: '/patients/new-patients/',
+  },
+];
+---
+
+<BaseLayout
+  title="About Us | Center for Smile Enhancement | Minnetonka, MN"
+  description="Meet the team behind Center for Smile Enhancement in Minnetonka, MN — 35+ years of clinical excellence paired with Disney-inspired, VIP patient care here."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="About Us"
+      title="Where Clinical Excellence Meets Genuine Care"
+      lede="For more than 35 years, Dr. Michael Sudit and our team have provided boutique dental care in Minnetonka built on trust, artistry, and a service philosophy inspired by the world's finest hospitality brands."
+      breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
+      primaryCta={{ label: 'Meet Dr. Sudit', href: '/about/our-doctors/' }}
+      secondaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+      image="/images/doctor-sudit.jpg"
+      imageAlt="Dr. Michael Sudit, DDS, of Center for Smile Enhancement"
+    />
+
+    <!-- ── Our Story ─────────────────────────────────── -->
+    <section aria-labelledby="story-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="prose-block">
+          <span class="section-eyebrow section-eyebrow--muted">Our Story</span>
+          <h2 id="story-heading" class="page-heading">"A Smile Is the Most Beautiful Thing You Can Wear"</h2>
+          <p>
+            Center for Smile Enhancement is led by Dr. Michael Sudit, DDS, who has provided patient care in
+            Minnetonka for more than 35 years. Patients describe him as a knowledgeable, kind, and experienced
+            artisan — equally at home with comprehensive treatment planning and the fine details of clinical
+            work.
+          </p>
+          <p>
+            Our practice is a comprehensive home for your dental and aesthetic needs, encompassing general and
+            family dentistry, cosmetic dentistry, and our Masterpiece Aesthetics and TMJ &amp; facial pain
+            services — all under one roof, and all delivered with the same unwavering attention to detail.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What Guides Our Care ──────────────────────── -->
+    <section aria-labelledby="guides-heading" class="section-wash">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow">Our Philosophy</span>
+          <h2 id="guides-heading" class="page-heading">What Guides Our Care</h2>
+        </div>
+
+        <div class="guides-grid">
+          <div class="card">
+            <h3 class="card-title">The Disney Difference</h3>
+            <p class="card-body">
+              Since 2001, Dr. Sudit has studied at the Disney Institute for Health Care Professionals and
+              infused that culture of nurturing long-term relationships into every visit — from your first
+              phone call to your final follow-up.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Every Patient Is a VIP</h3>
+            <p class="card-body">
+              VIP means Very Individual Patient. All patients are VIPs at Center for Smile Enhancement — we
+              take the time to understand your unique goals, preferences, and concerns before recommending any
+              treatment.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">The Total Health Connection</h3>
+            <p class="card-body">
+              We treat the whole person, not just the teeth. That whole-health philosophy is also why we're
+              proud to be the first dental practice in Minnesota to offer the Galleri® multi-cancer early
+              detection blood test.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Our Team ──────────────────────────────────── -->
+    <section aria-labelledby="team-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="prose-block">
+          <span class="section-eyebrow section-eyebrow--muted">Our Team</span>
+          <h2 id="team-heading" class="page-heading">It Takes a Village to Care for Our Patients</h2>
+          <p>
+            Behind every visit is a team dedicated to making your experience as comfortable and reassuring as
+            the care itself. Every member of our team maintains the highest level of professional
+            accreditation and pursues ongoing education to stay well informed and on the leading edge of
+            advancements — so that the warmth you feel in our office is backed by real expertise.
+          </p>
+          <p>
+            We're looking forward to updating this page with a new team photo soon — in the meantime, know
+            that the friendly faces who greet you at the front desk, clean your teeth, and assist Dr. Sudit
+            chairside are as committed to your care as he is.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Continue Exploring"
+      items={relatedItems}
+    />
+
+    <CTABand />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-wash { background-color: #ebeef5; }
+
+  .prose-block {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+  .prose-block p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-base);
+    margin-top: 1.25rem;
+  }
+
+  .page-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.25;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3.5rem;
+  }
+
+  .guides-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .guides-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+</style>

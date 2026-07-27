@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Dermal Filler Aftercare | Center for Smile Enhancement"
+  description="Recovery guidance after dermal filler treatment at the Center for Smile Enhancement in Minnetonka, MN — what to expect, care tips, and when to call us."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Aftercare Instructions"
+      title="Dermal Filler Aftercare"
+      lede="A few simple precautions in the days after your filler appointment will help minimize swelling and support your results."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+        { label: 'Dermal Filler Injections' },
+      ]}
+    />
+
+    <section class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <h2>What to Expect</h2>
+          <p>
+            Redness, swelling, and tenderness in the treated areas are typical after dermal filler injections and generally resolve within two to three days.
+          </p>
+
+          <h2>Immediate Aftercare</h2>
+          <ul>
+            <li>Avoid touching the treated area for six hours. After that, gentle cleansing with a mild soap is fine.</li>
+            <li>Apply a cold compress to the area to help minimize swelling.</li>
+            <li>If you'd like to wear makeup, use only a light, water-based product, and avoid anything containing AHA, glycolic acid, BHA, or retinoids for six hours.</li>
+          </ul>
+
+          <h2>Do's and Don'ts</h2>
+          <ul>
+            <li>Avoid exercise and alcohol for two days after treatment.</li>
+            <li>Drink plenty of water — about eight glasses a day — for the first two days.</li>
+            <li>Avoid intense heat exposure, such as tanning or sunbathing, until any swelling has subsided.</li>
+            <li>Avoid NSAIDs, St. John's Wort, and vitamin E supplements for one week after treatment.</li>
+            <li>Skip facials, waxing, chemical peels, and laser treatments in the treated area for 7–10 days.</li>
+            <li>Once any swelling has resolved, you can gently massage small lumps with clean fingers. If you'd like to maintain your results, consider scheduling a follow-up treatment before the filler fully dissipates.</li>
+          </ul>
+
+          <h2>When to Call Us</h2>
+          <p>
+            Call our office at <a href="tel:9525939310">952-593-9310</a> if discomfort persists beyond two to three days, or if you notice any other reaction that concerns you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Questions About Your Recovery?"
+      sub="Our team is happy to answer any questions about your filler recovery."
+      primaryCta={{ label: 'Contact Our Office', href: '/contact/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

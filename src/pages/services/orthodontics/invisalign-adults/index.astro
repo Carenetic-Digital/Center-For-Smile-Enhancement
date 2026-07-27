@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const reasons = [
+  {
+    title: 'Fits Your Professional Life',
+    body: "Clear, nearly invisible aligners mean colleagues and clients notice your smile — not your orthodontic treatment.",
+  },
+  {
+    title: 'No Food Restrictions',
+    body: 'Aligners come out to eat and drink, so there’s nothing to avoid and nothing to get stuck in metal brackets.',
+  },
+  {
+    title: 'Removable for Any Occasion',
+    body: 'Take them out for a wedding toast, a big presentation, or a photo — then pop them back in and keep moving forward.',
+  },
+  {
+    title: 'More Comfortable Than Wires',
+    body: 'Smooth plastic aligners avoid the mouth irritation that can come with metal brackets and wires.',
+  },
+];
+
+const relatedItems = [
+  {
+    title: 'Invisalign for Teens',
+    description: 'Removable clear aligners built around school, sports, and social life.',
+    href: '/services/orthodontics/invisalign-teens/',
+  },
+  {
+    title: 'Orthodontics Overview',
+    description: 'How Invisalign clear aligner therapy works at Center for Smile Enhancement.',
+    href: '/services/orthodontics/',
+  },
+  {
+    title: 'Implant Dentistry',
+    description: 'Restorative, natural-looking solutions for replacing a missing tooth permanently.',
+    href: '/services/implant-dentistry/',
+  },
+];
+
+const serviceSchema = {
+  name: 'Invisalign for Adults',
+  serviceType: 'Orthodontics',
+  description: 'Invisalign clear aligner therapy tailored to adult patients at Center for Smile Enhancement in Minnetonka, MN.',
+  areaServed: {
+    '@type': 'City',
+    name: 'Minnetonka, MN',
+  },
+  provider: {
+    '@type': 'Dentist',
+    name: 'Center for Smile Enhancement',
+    telephone: '+19525939310',
+  },
+};
+---
+
+<BaseLayout
+  title="Invisalign for Adults | Center for Smile Enhancement, MN"
+  description="Straighten your smile discreetly with Invisalign for adults at Center for Smile Enhancement in Minnetonka, MN. Removable, comfortable clear aligner treatment."
+>
+  <StructuredData type="Service" data={serviceSchema} />
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Orthodontics · Adults"
+      title="Invisalign for Adults"
+      lede="It's never too late to straighten your smile. Invisalign lets adult patients correct crowding, spacing, and bite issues discreetly — without disrupting a busy professional or personal life."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Orthodontics', href: '/services/orthodontics/' },
+        { label: 'Invisalign for Adults' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── Why adults choose Invisalign ─────────────────── -->
+    <section aria-labelledby="reasons-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Why Adults Choose Invisalign</span>
+          <h2 id="reasons-heading" class="svc-h2">Straighten Your Smile on Your Own Terms</h2>
+          <p class="svc-sub">
+            Many adults come to us with teeth that have shifted over the years, relapsed after childhood orthodontics, or simply never got the attention they deserved. Invisalign offers a way to address it that fits an adult schedule.
+          </p>
+        </div>
+
+        <div class="reasons-grid">
+          {reasons.map((r) => (
+            <div class="card reason-card">
+              <h3 class="reason-title">{r.title}</h3>
+              <p class="reason-body">{r.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Existing dental work note ─────────────────────── -->
+    <section aria-labelledby="existing-work-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="existing-work-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">A Note for Patients With Existing Dental Work</span>
+            <h2 id="existing-work-heading" class="svc-h2">Already Have Veneers, Crowns, or Implants?</h2>
+            <p class="svc-body">
+              Invisalign can often move teeth that have veneers or crowns. Teeth restored with dental implants or bridges, however, are permanently anchored and generally cannot be repositioned with clear aligners. During your complimentary consultation, we'll review your dental history and let you know exactly what Invisalign can — and can't — do for your specific smile.
+            </p>
+          </div>
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Typical Timeline</span>
+            <h2 class="svc-h2">Six Months to Two Years</h2>
+            <p class="svc-body">
+              Most adult treatment plans run six months to two years, depending on your starting alignment and goals. You'll wear each aligner about 22 hours a day, switching to the next set every 10 to 14 days, with brief check-ins every two to four weeks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore More"
+      heading="More Orthodontic Options"
+      items={relatedItems}
+    />
+
+    <CTABand
+      heading="Ready to Straighten Your Smile?"
+      sub="Schedule a complimentary consultation to find out if Invisalign for adults is right for you."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3rem;
+  }
+  .svc-h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .svc-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  .svc-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-top: 1.25rem;
+  }
+
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .reasons-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .reasons-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .reason-card { display: flex; flex-direction: column; }
+  .reason-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .reason-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .existing-work-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 768px) {
+    .existing-work-layout { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+  }
+</style>

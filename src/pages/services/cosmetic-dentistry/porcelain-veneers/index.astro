@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const serviceData = {
+  name: 'Porcelain Veneers',
+  serviceType: 'Porcelain Veneers',
+  provider: {
+    "@type": "Dentist",
+    name: "Center for Smile Enhancement",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Minnetonka, MN",
+  },
+  description: "Custom porcelain veneers to reshape, brighten, and refine your smile at the Center for Smile Enhancement in Minnetonka, MN.",
+  url: "https://www.drsudit.com/services/cosmetic-dentistry/porcelain-veneers/",
+};
+---
+
+<BaseLayout
+  title="Porcelain Veneers | Center for Smile Enhancement, Minnetonka, MN"
+  description="Custom porcelain veneers reshape and brighten your smile with stain-resistant, natural-looking results. Complimentary consultations in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="Porcelain Veneers"
+      lede="Porcelain veneers are thin, custom-crafted shells bonded to the front of your teeth — designed to correct chips, gaps, discoloration, and uneven shape while looking completely natural."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Cosmetic Dentistry', href: '/services/cosmetic-dentistry/' },
+        { label: 'Porcelain Veneers' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── What veneers are ───────────────────────────────── -->
+    <section aria-labelledby="what-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="intro-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Veneers vs. Crowns</span>
+            <h2 id="what-heading" class="section-heading section-heading-size">
+              A Conservative Way to Transform Your Smile
+            </h2>
+          </div>
+          <div class="intro-copy">
+            <p>
+              A porcelain veneer covers only the front surface of a tooth, while a crown envelops the entire tooth. Because veneers require less alteration of the natural tooth, they're often the more conservative choice when the goal is purely cosmetic — improving shape, color, or alignment rather than restoring a damaged or heavily decayed tooth.
+            </p>
+            <p>
+              Porcelain crowns and veneers are impervious to stains and do not yellow over time, so the bright, uniform look you choose is the look you'll keep — with good home care and regular checkups.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Benefits ───────────────────────────────────────── -->
+    <section aria-labelledby="benefits-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Benefits</span>
+          <h2 id="benefits-heading" class="section-heading section-heading-size">
+            Why Patients Choose Veneers
+          </h2>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="card">
+            <h3 class="card-title">Stain-Resistant</h3>
+            <p class="card-body">Porcelain resists staining from coffee, tea, and wine far better than natural enamel, keeping your smile bright for years.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Naturally Beautiful</h3>
+            <p class="card-body">Each veneer is custom-shaded and shaped by an artisan dental lab technician to blend seamlessly with your surrounding teeth.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Corrects Minor Misalignment</h3>
+            <p class="card-body">Veneers can make teeth appear straighter and, in mild cases, help patients avoid lengthy orthodontic treatment — though they cannot correct significant crowding or crookedness on their own.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Durable Results</h3>
+            <p class="card-body">With proper care, porcelain veneers offer a long-lasting solution that holds up well to everyday wear.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What to Expect ─────────────────────────────────── -->
+    <section aria-labelledby="expect-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Your Treatment</span>
+          <h2 id="expect-heading" class="section-heading section-heading-size">
+            What to Expect
+          </h2>
+        </div>
+
+        <ol class="steps-list">
+          <li class="steps-item">
+            <span class="steps-number">1</span>
+            <div>
+              <h3 class="card-title">Consultation &amp; Smile Design</h3>
+              <p class="card-body">We discuss your goals, examine your teeth and bite, and plan the shape, shade, and size of your new veneers.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">2</span>
+            <div>
+              <h3 class="card-title">Minimal Tooth Preparation</h3>
+              <p class="card-body">A thin layer of enamel is gently prepared on the treated teeth to make room for the veneer while preserving as much natural tooth as possible.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">3</span>
+            <div>
+              <h3 class="card-title">Custom Fabrication</h3>
+              <p class="card-body">Impressions are sent to our dental laboratory, where an artisan technician hand-crafts your veneers while you wear temporaries.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">4</span>
+            <div>
+              <h3 class="card-title">Final Bonding</h3>
+              <p class="card-body">Once ready, your custom veneers are carefully fitted, adjusted, and permanently bonded in place for a natural, comfortable finish.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Other Cosmetic Dentistry Services"
+      items={[
+        { title: 'Cosmetic Dentistry Overview', description: 'See the full range of smile-enhancing treatments we offer.', href: '/services/cosmetic-dentistry/' },
+        { title: 'Dental Bonding', description: 'A conservative, single-visit option for minor chips and gaps.', href: '/services/cosmetic-dentistry/dental-bonding/' },
+        { title: 'Smile Makeovers', description: 'A comprehensive plan combining multiple treatments for a complete transformation.', href: '/services/cosmetic-dentistry/smile-makeovers/' },
+      ]}
+    />
+
+    <CTABand
+      heading="Curious if Veneers Are Right for You?"
+      sub="Schedule a complimentary consultation and let's design your ideal smile together."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (min-width: 768px) {
+    .intro-layout { grid-template-columns: 1fr 1.4fr; gap: 3.5rem; }
+  }
+  .intro-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+  .intro-copy p:last-child { margin-bottom: 0; }
+
+  .card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .benefit-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .benefit-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .steps-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .steps-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .steps-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+  }
+</style>

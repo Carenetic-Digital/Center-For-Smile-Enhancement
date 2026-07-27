@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const businessName = 'Center for Smile Enhancement';
+const contactEmail = 'TheCenterforSmileEnhancement@PDPSmiles.com';
+const lastUpdated = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title="Accessibility Statement | Center for Smile Enhancement, MN"
+  description="Center for Smile Enhancement is committed to digital accessibility for all visitors. Learn about our ongoing WCAG 2.1 AA efforts and accommodation requests."
+  noindex={true}
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Legal"
+      title="Accessibility Statement"
+      breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Accessibility' }]}
+    />
+
+    <section aria-labelledby="accessibility-content-heading" class="section-white">
+      <div class="site-container section-py">
+        <h2 id="accessibility-content-heading" class="sr-only">Accessibility Statement Details</h2>
+        <div class="article-prose">
+          <p class="last-updated">Last updated: {lastUpdated}</p>
+
+          <h2>Our Commitment</h2>
+          <p>
+            {businessName} is committed to ensuring digital accessibility for all visitors, including
+            patients with disabilities. We believe everyone should be able to browse our website, learn about
+            our services, and request an appointment with ease, and we are continually working to improve the
+            accessibility and usability of our site.
+          </p>
+
+          <h2>Conformance Standard</h2>
+          <p>
+            We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA, and we track
+            WCAG 2.2 as it becomes the widely adopted standard. These guidelines explain how to make web
+            content more accessible for people with a wide range of disabilities, including visual, auditory,
+            physical, speech, cognitive, and neurological conditions.
+          </p>
+
+          <h2>Ongoing Efforts</h2>
+          <p>Our accessibility efforts include, but are not limited to:</p>
+          <ul>
+            <li>Providing meaningful alternative text for images</li>
+            <li>Maintaining sufficient color contrast between text and background</li>
+            <li>Ensuring the site is fully operable using a keyboard</li>
+            <li>Using clear headings and consistent navigation to aid screen reader users</li>
+            <li>Periodically reviewing and testing the site against accessibility standards</li>
+          </ul>
+          <p>
+            Accessibility is an ongoing effort, and we recognize that some areas of our website may not yet
+            be fully accessible. We are actively working to identify and address any such issues.
+          </p>
+
+          <h2>Feedback and Accommodation Requests</h2>
+          <p>
+            We welcome your feedback on the accessibility of our website. If you encounter an accessibility
+            barrier, or if you need assistance accessing any content or need an accommodation to schedule or
+            attend an appointment, please contact us — we will do our best to address your concern promptly.
+          </p>
+
+          <h2>Contact Us</h2>
+          <p>
+            <strong>{businessName}</strong><br />
+            10500 Wayzata Blvd., Minnetonka, MN 55305<br />
+            Phone: <a href="tel:9525939310">952-593-9310</a><br />
+            Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+          </p>
+
+          <p class="pending-note">
+            This statement will be finalized in coordination with our compliance team as part of our ongoing
+            legal review.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .last-updated {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+  .pending-note {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+</style>

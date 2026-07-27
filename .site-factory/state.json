@@ -1,66 +1,391 @@
 {
-  "phase": "homepage_pending_approval",
+  "phase": "pages_pending_approval",
   "created_at": "2026-06-30",
   "intake_processed_at": "2026-06-30",
   "homepage_generated_at": "2026-06-30",
-  "homepage_approved_at": null,
-  "pages_generated_at": null,
+  "homepage_approved_at": "2026-07-27",
+  "pages_generated_at": "2026-07-27",
   "completed_at": null,
   "pages": {
     "discovered": [
-      {"path": "/", "title": "Home", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/general-family-dentistry", "title": "General Family Dentistry", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/cosmetic-dentistry", "title": "Cosmetic Dentistry", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/orthodontics", "title": "Orthodontics", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/implant-dentistry", "title": "Implant Dentistry", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/masterpiece-aesthetics", "title": "Masterpiece Aesthetics", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/masterpiece-tmj-facial-pain-and-sleep-management", "title": "Masterpiece TMJ, Facial Pain, and Sleep Management", "in_nav": true, "is_blog": false, "do_not_migrate": true, "note": "Sleep apnea content fully intertwined — cannot be surgically extracted. New TMJ pages must be written from scratch."},
-      {"path": "/teledentistry", "title": "Teledentistry", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/emergency-care", "title": "Emergency Care", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/about-us", "title": "About Us", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/ourdoctors", "title": "Our Doctors", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/our-team", "title": "Our Team", "in_nav": true, "is_blog": false, "do_not_migrate": true},
-      {"path": "/our-aesthetics-professional", "title": "Our Aesthetics Professional", "in_nav": true, "is_blog": false, "do_not_migrate": true},
-      {"path": "/faq", "title": "FAQ", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/reviews", "title": "Reviews", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/promotions-1", "title": "Promotions", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/payment-options", "title": "Payment Options", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/after-care-instructions", "title": "After-Care Instructions", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/botox-injections", "title": "Botox Injections (After-Care)", "in_nav": false, "is_blog": false, "do_not_migrate": false},
-      {"path": "/bruise-management", "title": "Bruise Management (After-Care)", "in_nav": false, "is_blog": false, "do_not_migrate": false},
-      {"path": "/cleanings-and-checkups", "title": "Cleanings and Checkups (After-Care)", "in_nav": false, "is_blog": false, "do_not_migrate": false},
-      {"path": "/crowns-and-bridges", "title": "Crowns and Bridges (After-Care)", "in_nav": false, "is_blog": false, "do_not_migrate": false},
-      {"path": "/dermal-filler-injections", "title": "Dermal Filler Injections (After-Care)", "in_nav": false, "is_blog": false, "do_not_migrate": false},
-      {"path": "/root-canals", "title": "Root Canals (After-Care)", "in_nav": false, "is_blog": false, "do_not_migrate": false},
-      {"path": "/routine-fillings", "title": "Routine Fillings (After-Care)", "in_nav": false, "is_blog": false, "do_not_migrate": false},
-      {"path": "/veneers", "title": "Veneers (After-Care)", "in_nav": false, "is_blog": false, "do_not_migrate": false},
-      {"path": "/contact-us", "title": "Contact Us", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/advanced-technology", "title": "Advanced Technology", "in_nav": false, "is_blog": false, "do_not_migrate": false, "note": "Stub page — content will be rewritten"},
-      {"path": "/expertise", "title": "Expertise", "in_nav": false, "is_blog": false, "do_not_migrate": true, "note": "Stub — redirect to /about/"},
-      {"path": "/blog", "title": "Blog", "in_nav": true, "is_blog": false, "do_not_migrate": false},
-      {"path": "/blog/how-to-choose-the-best-cosmetic-dentist-in-minnetonka-mn", "title": "How to Choose the Best Cosmetic Dentist in Minnetonka, MN", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/your-guide-to-porcelain-veneers-in-minnetonka-mn", "title": "Your Guide to Porcelain Veneers in Minnetonka, MN", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/professional-teeth-whitening-in-minnetonka-mn-restore-your-sparkling-smile", "title": "Professional Teeth Whitening in Minnetonka, MN", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/nurturing-healthy-smiles-for-every-generation-your-guide-to-general-amp-family-dentistry-in-minnetonka", "title": "Nurturing Healthy Smiles for Every Generation: General & Family Dentistry in Minnetonka", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/rejuvenate-your-look-exploring-masterpiece-aesthetics-at-our-minnetonka-clinic", "title": "Rejuvenate Your Look: Exploring Masterpiece Aesthetics at Our Minnetonka Clinic", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/your-dentist-from-anywhere-discover-the-convenience-of-teledentistry-in-minnetonk", "title": "Your Dentist, From Anywhere: Teledentistry in Minnetonka", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/does-insurance-cover-aesthetic-dentistry", "title": "Does Insurance Cover Aesthetic Dentistry?", "in_nav": false, "is_blog": true, "do_not_migrate": false, "note": "Flagged duplicate — consolidate with does-insurance-cover-cosmetic-dentistry"},
-      {"path": "/blog/can-dentists-repair-severely-damaged-teeth", "title": "Can Dentists Repair Severely Damaged Teeth?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/does-insurance-cover-cosmetic-dentistry", "title": "Does Insurance Cover Cosmetic Dentistry?", "in_nav": false, "is_blog": true, "do_not_migrate": false, "note": "Flagged duplicate — consolidate with does-insurance-cover-aesthetic-dentistry"},
-      {"path": "/blog/what-are-common-preventive-dentistry-services", "title": "What Are Common Preventive Dentistry Services?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/what-are-the-risk-factors-associated-with-poor-oral-hygiene", "title": "What Are the Risk Factors Associated with Poor Oral Hygiene?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/how-do-i-choose-the-best-dentist-for-me", "title": "How Do I Choose the Best Dentist for Me?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/what-is-the-least-expensive-smile-makeover", "title": "What Is the Least Expensive Smile Makeover?", "in_nav": false, "is_blog": true, "do_not_migrate": false, "note": "Flagged — may contain pricing; review before migration"},
-      {"path": "/blog/what-are-the-three-levels-of-prevention-in-dentistry", "title": "What Are the Three Levels of Prevention in Dentistry?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/what-are-the-8-risk-factors-for-poor-oral-hygiene", "title": "What Are the 8 Risk Factors for Poor Oral Hygiene?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/can-you-walk-in-for-dental-care", "title": "Can You Walk In for Dental Care?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/what-is-the-most-popular-cosmetic-dental-procedure", "title": "What Is the Most Popular Cosmetic Dental Procedure?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/is-there-a-difference-between-esthetic-dentistry-and-cosmetic-dentistry", "title": "Is There a Difference Between Esthetic Dentistry and Cosmetic Dentistry?", "in_nav": false, "is_blog": true, "do_not_migrate": false, "note": "Flagged duplicate — consolidate with does-insurance-cover-aesthetic-dentistry post"},
-      {"path": "/blog/what-counts-as-emergency-dental", "title": "What Counts as Emergency Dental?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/what-are-bad-oral-habits", "title": "What Are Bad Oral Habits?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/whats-the-difference-between-a-dentist-and-a-cosmetic-dentist", "title": "What's the Difference Between a Dentist and a Cosmetic Dentist?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/what-is-the-difference-between-preventive-and-routine-dental-care", "title": "What Is the Difference Between Preventive and Routine Dental Care?", "in_nav": false, "is_blog": true, "do_not_migrate": false},
-      {"path": "/blog/what-is-an-example-of-poor-oral-hygiene-insights-from-the-center-for-smile-enhancement-minnetonka-mn", "title": "What Is an Example of Poor Oral Hygiene?", "in_nav": false, "is_blog": true, "do_not_migrate": false}
+      {
+        "path": "/",
+        "title": "Home",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/general-family-dentistry",
+        "title": "General Family Dentistry",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/cosmetic-dentistry",
+        "title": "Cosmetic Dentistry",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/orthodontics",
+        "title": "Orthodontics",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/implant-dentistry",
+        "title": "Implant Dentistry",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/masterpiece-aesthetics",
+        "title": "Masterpiece Aesthetics",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/masterpiece-tmj-facial-pain-and-sleep-management",
+        "title": "Masterpiece TMJ, Facial Pain, and Sleep Management",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": true,
+        "note": "Sleep apnea content fully intertwined \u2014 cannot be surgically extracted. New TMJ pages must be written from scratch."
+      },
+      {
+        "path": "/teledentistry",
+        "title": "Teledentistry",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/emergency-care",
+        "title": "Emergency Care",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/about-us",
+        "title": "About Us",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/ourdoctors",
+        "title": "Our Doctors",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/our-team",
+        "title": "Our Team",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": true
+      },
+      {
+        "path": "/our-aesthetics-professional",
+        "title": "Our Aesthetics Professional",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": true
+      },
+      {
+        "path": "/faq",
+        "title": "FAQ",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/reviews",
+        "title": "Reviews",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/promotions-1",
+        "title": "Promotions",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/payment-options",
+        "title": "Payment Options",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/after-care-instructions",
+        "title": "After-Care Instructions",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/botox-injections",
+        "title": "Botox Injections (After-Care)",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/bruise-management",
+        "title": "Bruise Management (After-Care)",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/cleanings-and-checkups",
+        "title": "Cleanings and Checkups (After-Care)",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/crowns-and-bridges",
+        "title": "Crowns and Bridges (After-Care)",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/dermal-filler-injections",
+        "title": "Dermal Filler Injections (After-Care)",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/root-canals",
+        "title": "Root Canals (After-Care)",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/routine-fillings",
+        "title": "Routine Fillings (After-Care)",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/veneers",
+        "title": "Veneers (After-Care)",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/contact-us",
+        "title": "Contact Us",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/advanced-technology",
+        "title": "Advanced Technology",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": false,
+        "note": "Stub page \u2014 content will be rewritten"
+      },
+      {
+        "path": "/expertise",
+        "title": "Expertise",
+        "in_nav": false,
+        "is_blog": false,
+        "do_not_migrate": true,
+        "note": "Stub \u2014 redirect to /about/"
+      },
+      {
+        "path": "/blog",
+        "title": "Blog",
+        "in_nav": true,
+        "is_blog": false,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/how-to-choose-the-best-cosmetic-dentist-in-minnetonka-mn",
+        "title": "How to Choose the Best Cosmetic Dentist in Minnetonka, MN",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/your-guide-to-porcelain-veneers-in-minnetonka-mn",
+        "title": "Your Guide to Porcelain Veneers in Minnetonka, MN",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/professional-teeth-whitening-in-minnetonka-mn-restore-your-sparkling-smile",
+        "title": "Professional Teeth Whitening in Minnetonka, MN",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/nurturing-healthy-smiles-for-every-generation-your-guide-to-general-amp-family-dentistry-in-minnetonka",
+        "title": "Nurturing Healthy Smiles for Every Generation: General & Family Dentistry in Minnetonka",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/rejuvenate-your-look-exploring-masterpiece-aesthetics-at-our-minnetonka-clinic",
+        "title": "Rejuvenate Your Look: Exploring Masterpiece Aesthetics at Our Minnetonka Clinic",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/your-dentist-from-anywhere-discover-the-convenience-of-teledentistry-in-minnetonk",
+        "title": "Your Dentist, From Anywhere: Teledentistry in Minnetonka",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/does-insurance-cover-aesthetic-dentistry",
+        "title": "Does Insurance Cover Aesthetic Dentistry?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false,
+        "note": "Flagged duplicate \u2014 consolidate with does-insurance-cover-cosmetic-dentistry"
+      },
+      {
+        "path": "/blog/can-dentists-repair-severely-damaged-teeth",
+        "title": "Can Dentists Repair Severely Damaged Teeth?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/does-insurance-cover-cosmetic-dentistry",
+        "title": "Does Insurance Cover Cosmetic Dentistry?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false,
+        "note": "Flagged duplicate \u2014 consolidate with does-insurance-cover-aesthetic-dentistry"
+      },
+      {
+        "path": "/blog/what-are-common-preventive-dentistry-services",
+        "title": "What Are Common Preventive Dentistry Services?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/what-are-the-risk-factors-associated-with-poor-oral-hygiene",
+        "title": "What Are the Risk Factors Associated with Poor Oral Hygiene?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/how-do-i-choose-the-best-dentist-for-me",
+        "title": "How Do I Choose the Best Dentist for Me?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/what-is-the-least-expensive-smile-makeover",
+        "title": "What Is the Least Expensive Smile Makeover?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false,
+        "note": "Flagged \u2014 may contain pricing; review before migration"
+      },
+      {
+        "path": "/blog/what-are-the-three-levels-of-prevention-in-dentistry",
+        "title": "What Are the Three Levels of Prevention in Dentistry?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/what-are-the-8-risk-factors-for-poor-oral-hygiene",
+        "title": "What Are the 8 Risk Factors for Poor Oral Hygiene?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/can-you-walk-in-for-dental-care",
+        "title": "Can You Walk In for Dental Care?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/what-is-the-most-popular-cosmetic-dental-procedure",
+        "title": "What Is the Most Popular Cosmetic Dental Procedure?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/is-there-a-difference-between-esthetic-dentistry-and-cosmetic-dentistry",
+        "title": "Is There a Difference Between Esthetic Dentistry and Cosmetic Dentistry?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false,
+        "note": "Flagged duplicate \u2014 consolidate with does-insurance-cover-aesthetic-dentistry post"
+      },
+      {
+        "path": "/blog/what-counts-as-emergency-dental",
+        "title": "What Counts as Emergency Dental?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/what-are-bad-oral-habits",
+        "title": "What Are Bad Oral Habits?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/whats-the-difference-between-a-dentist-and-a-cosmetic-dentist",
+        "title": "What's the Difference Between a Dentist and a Cosmetic Dentist?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/what-is-the-difference-between-preventive-and-routine-dental-care",
+        "title": "What Is the Difference Between Preventive and Routine Dental Care?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      },
+      {
+        "path": "/blog/what-is-an-example-of-poor-oral-hygiene-insights-from-the-center-for-smile-enhancement-minnetonka-mn",
+        "title": "What Is an Example of Poor Oral Hygiene?",
+        "in_nav": false,
+        "is_blog": true,
+        "do_not_migrate": false
+      }
     ],
     "planned": [
       "/",
@@ -69,6 +394,7 @@
       "/blog/",
       "/contact/",
       "/schedule/",
+      "/patients/",
       "/services/",
       "/services/general-family-dentistry/",
       "/services/general-family-dentistry/cleanings-exams/",
@@ -115,40 +441,211 @@
       "/accessibility/",
       "/terms/"
     ],
-    "built": [],
+    "built": [
+      "/",
+      "/about/",
+      "/about/our-doctors/",
+      "/accessibility/",
+      "/aftercare/botox-injections/",
+      "/aftercare/bruise-management/",
+      "/aftercare/cleanings-checkups/",
+      "/aftercare/crowns-bridges/",
+      "/aftercare/dermal-filler-injections/",
+      "/aftercare/root-canals/",
+      "/aftercare/routine-fillings/",
+      "/aftercare/veneers/",
+      "/blog/",
+      "/blog/can-dentists-repair-severely-damaged-teeth/",
+      "/blog/can-you-walk-in-for-dental-care/",
+      "/blog/does-insurance-cover-aesthetic-dentistry/",
+      "/blog/does-insurance-cover-cosmetic-dentistry/",
+      "/blog/how-do-i-choose-the-best-dentist-for-me/",
+      "/blog/how-to-choose-the-best-cosmetic-dentist-in-minnetonka-mn/",
+      "/blog/is-there-a-difference-between-esthetic-dentistry-and-cosmetic-dentistry/",
+      "/blog/nurturing-healthy-smiles-for-every-generation-your-guide-to-general-amp-family-dentistry-in-minnetonka/",
+      "/blog/professional-teeth-whitening-in-minnetonka-mn-restore-your-sparkling-smile/",
+      "/blog/rejuvenate-your-look-exploring-masterpiece-aesthetics-at-our-minnetonka-clinic/",
+      "/blog/what-are-bad-oral-habits/",
+      "/blog/what-are-common-preventive-dentistry-services/",
+      "/blog/what-are-the-8-risk-factors-for-poor-oral-hygiene/",
+      "/blog/what-are-the-risk-factors-associated-with-poor-oral-hygiene/",
+      "/blog/what-are-the-three-levels-of-prevention-in-dentistry/",
+      "/blog/what-counts-as-emergency-dental/",
+      "/blog/what-is-an-example-of-poor-oral-hygiene-insights-from-the-center-for-smile-enhancement-minnetonka-mn/",
+      "/blog/what-is-the-difference-between-preventive-and-routine-dental-care/",
+      "/blog/what-is-the-least-expensive-smile-makeover/",
+      "/blog/what-is-the-most-popular-cosmetic-dental-procedure/",
+      "/blog/whats-the-difference-between-a-dentist-and-a-cosmetic-dentist/",
+      "/blog/your-dentist-from-anywhere-discover-the-convenience-of-teledentistry-in-minnetonk/",
+      "/blog/your-guide-to-porcelain-veneers-in-minnetonka-mn/",
+      "/contact/",
+      "/hipaa/",
+      "/patients/",
+      "/patients/faq/",
+      "/patients/insurance-payment/",
+      "/patients/new-patients/",
+      "/patients/patient-forms/",
+      "/patients/promotions/",
+      "/patients/reviews/",
+      "/privacy/",
+      "/schedule/",
+      "/services/",
+      "/services/advanced-technology/",
+      "/services/cosmetic-dentistry/",
+      "/services/cosmetic-dentistry/dental-bonding/",
+      "/services/cosmetic-dentistry/porcelain-veneers/",
+      "/services/cosmetic-dentistry/smile-makeovers/",
+      "/services/cosmetic-dentistry/teeth-whitening/",
+      "/services/emergency-care/",
+      "/services/galleri-oral-cancer-detection/",
+      "/services/general-family-dentistry/",
+      "/services/general-family-dentistry/cleanings-exams/",
+      "/services/general-family-dentistry/crowns-bridges/",
+      "/services/general-family-dentistry/extractions/",
+      "/services/general-family-dentistry/root-canal-therapy/",
+      "/services/general-family-dentistry/routine-fillings/",
+      "/services/implant-dentistry/",
+      "/services/masterpiece-aesthetics/",
+      "/services/masterpiece-aesthetics/botox-injections/",
+      "/services/masterpiece-aesthetics/bruise-management/",
+      "/services/masterpiece-aesthetics/dermal-filler-injections/",
+      "/services/orthodontics/",
+      "/services/orthodontics/invisalign-adults/",
+      "/services/orthodontics/invisalign-teens/",
+      "/services/teledentistry/",
+      "/services/tmj-facial-pain/",
+      "/services/tmj-facial-pain/custom-night-guards/",
+      "/services/tmj-facial-pain/tmj-diagnosis-treatment/",
+      "/terms/"
+    ],
     "redirects": [
-      {"from": "/about-us", "to": "/about/"},
-      {"from": "/ourdoctors", "to": "/about/our-doctors/"},
-      {"from": "/our-team", "to": "/about/"},
-      {"from": "/our-aesthetics-professional", "to": "/services/masterpiece-aesthetics/"},
-      {"from": "/general-family-dentistry", "to": "/services/general-family-dentistry/"},
-      {"from": "/cosmetic-dentistry", "to": "/services/cosmetic-dentistry/"},
-      {"from": "/orthodontics", "to": "/services/orthodontics/"},
-      {"from": "/implant-dentistry", "to": "/services/implant-dentistry/"},
-      {"from": "/masterpiece-aesthetics", "to": "/services/masterpiece-aesthetics/"},
-      {"from": "/masterpiece-tmj-facial-pain-and-sleep-management", "to": "/services/tmj-facial-pain/"},
-      {"from": "/teledentistry", "to": "/services/teledentistry/"},
-      {"from": "/emergency-care", "to": "/services/emergency-care/"},
-      {"from": "/advanced-technology", "to": "/services/advanced-technology/"},
-      {"from": "/faq", "to": "/patients/faq/"},
-      {"from": "/reviews", "to": "/patients/reviews/"},
-      {"from": "/promotions-1", "to": "/patients/promotions/"},
-      {"from": "/payment-options", "to": "/patients/insurance-payment/"},
-      {"from": "/after-care-instructions", "to": "/"},
-      {"from": "/botox-injections", "to": "/aftercare/botox-injections/"},
-      {"from": "/bruise-management", "to": "/aftercare/bruise-management/"},
-      {"from": "/cleanings-and-checkups", "to": "/aftercare/cleanings-checkups/"},
-      {"from": "/crowns-and-bridges", "to": "/aftercare/crowns-bridges/"},
-      {"from": "/dermal-filler-injections", "to": "/aftercare/dermal-filler-injections/"},
-      {"from": "/root-canals", "to": "/aftercare/root-canals/"},
-      {"from": "/routine-fillings", "to": "/aftercare/routine-fillings/"},
-      {"from": "/veneers", "to": "/aftercare/veneers/"},
-      {"from": "/contact-us", "to": "/contact/"},
-      {"from": "/expertise", "to": "/about/"},
-      {"from": "/patient-login", "to": "/"},
-      {"from": "/masterpiece-pain-management", "to": "/"}
+      {
+        "from": "/about-us",
+        "to": "/about/"
+      },
+      {
+        "from": "/ourdoctors",
+        "to": "/about/our-doctors/"
+      },
+      {
+        "from": "/our-team",
+        "to": "/about/"
+      },
+      {
+        "from": "/our-aesthetics-professional",
+        "to": "/services/masterpiece-aesthetics/"
+      },
+      {
+        "from": "/general-family-dentistry",
+        "to": "/services/general-family-dentistry/"
+      },
+      {
+        "from": "/cosmetic-dentistry",
+        "to": "/services/cosmetic-dentistry/"
+      },
+      {
+        "from": "/orthodontics",
+        "to": "/services/orthodontics/"
+      },
+      {
+        "from": "/implant-dentistry",
+        "to": "/services/implant-dentistry/"
+      },
+      {
+        "from": "/masterpiece-aesthetics",
+        "to": "/services/masterpiece-aesthetics/"
+      },
+      {
+        "from": "/masterpiece-tmj-facial-pain-and-sleep-management",
+        "to": "/services/tmj-facial-pain/"
+      },
+      {
+        "from": "/teledentistry",
+        "to": "/services/teledentistry/"
+      },
+      {
+        "from": "/emergency-care",
+        "to": "/services/emergency-care/"
+      },
+      {
+        "from": "/advanced-technology",
+        "to": "/services/advanced-technology/"
+      },
+      {
+        "from": "/faq",
+        "to": "/patients/faq/"
+      },
+      {
+        "from": "/reviews",
+        "to": "/patients/reviews/"
+      },
+      {
+        "from": "/promotions-1",
+        "to": "/patients/promotions/"
+      },
+      {
+        "from": "/payment-options",
+        "to": "/patients/insurance-payment/"
+      },
+      {
+        "from": "/after-care-instructions",
+        "to": "/"
+      },
+      {
+        "from": "/botox-injections",
+        "to": "/aftercare/botox-injections/"
+      },
+      {
+        "from": "/bruise-management",
+        "to": "/aftercare/bruise-management/"
+      },
+      {
+        "from": "/cleanings-and-checkups",
+        "to": "/aftercare/cleanings-checkups/"
+      },
+      {
+        "from": "/crowns-and-bridges",
+        "to": "/aftercare/crowns-bridges/"
+      },
+      {
+        "from": "/dermal-filler-injections",
+        "to": "/aftercare/dermal-filler-injections/"
+      },
+      {
+        "from": "/root-canals",
+        "to": "/aftercare/root-canals/"
+      },
+      {
+        "from": "/routine-fillings",
+        "to": "/aftercare/routine-fillings/"
+      },
+      {
+        "from": "/veneers",
+        "to": "/aftercare/veneers/"
+      },
+      {
+        "from": "/contact-us",
+        "to": "/contact/"
+      },
+      {
+        "from": "/expertise",
+        "to": "/about/"
+      },
+      {
+        "from": "/patient-login",
+        "to": "/"
+      },
+      {
+        "from": "/masterpiece-pain-management",
+        "to": "/"
+      }
     ]
   },
-  "test_results": null,
+  "test_results": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 1,
+    "note": "forms.spec.ts contact-form test self-skips: /contact/ intentionally has no <form> yet pending JotForm embed ID from client"
+  },
   "seo_issues": []
 }

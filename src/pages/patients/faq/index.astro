@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
+const faqs = [
+  {
+    question: 'Why do I need dental x-rays?',
+    answer: "X-rays let Dr. Sudit see what isn't visible during a visual exam — decay between teeth, bone loss, injuries, and the position of teeth that haven't yet erupted. They're an important tool for planning treatments such as fillings, root canals, implants, orthodontics, and extractions, and for catching problems early, while they're still simple to treat.",
+  },
+  {
+    question: 'What are dental sealants, and how long do they last?',
+    answer: 'A sealant is a thin, protective coating painted onto the chewing surfaces of your back teeth to help block out the food and bacteria that cause decay. The American Dental Association recommends sealants for cavity-prone patients on permanent molars and premolars, and a well-maintained sealant can last up to 10 years.',
+  },
+  {
+    question: 'What can I do to prevent tooth decay?',
+    answer: 'Tooth decay is the second most common disease in the United States, after the common cold. The good news is that it is highly preventable: brushing twice a day, flossing daily, eating a healthy diet, and keeping up with regular checkups and cleanings go a long way toward keeping your teeth cavity-free.',
+  },
+  {
+    question: 'What are the signs of gum (periodontal) disease?',
+    answer: 'Gum disease typically begins as gingivitis — red, swollen, or bleeding gums — and, if left untreated, can advance to periodontitis, a leading cause of tooth loss in adults. Regular checkups, twice-daily brushing, and daily flossing are the most effective ways to prevent it and catch it early.',
+  },
+  {
+    question: 'Should I be screened for oral cancer?',
+    answer: "Yes. Anyone 40 or older, or with a history of smoking or cancer, is at meaningfully higher risk — and more than 27% of people diagnosed with oral cancer have no lifestyle risk factors at all. Oral cancer is highly curable when caught early, which is why we build screening into your routine checkups, including our Galleri® multi-cancer early detection blood test.",
+  },
+  {
+    question: 'Why are my teeth sensitive?',
+    answer: 'Tooth sensitivity — a sharp reaction to sweets, cold, heat, or even brushing — affects millions of people and can result from worn enamel, exposed roots, or tooth erosion caused by acid. It is usually very treatable, so let us know if you experience it and we can identify the cause and the right solution.',
+  },
+];
+---
+
+<BaseLayout
+  title="FAQ | Center for Smile Enhancement | Minnetonka, MN"
+  description="Answers about x-rays, sealants, tooth decay, gum disease, oral cancer screening, and sensitivity from the Center for Smile Enhancement in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Frequently Asked Questions"
+      title="Answers to Your Dental Health Questions"
+      lede="Here are answers to some of the questions we hear most often from patients. If you don't see what you're looking for, we're always happy to talk it through in person."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Patients', href: '/patients/' },
+        { label: 'FAQ' },
+      ]}
+    />
+
+    <section aria-labelledby="faq-heading" class="section-white">
+      <div class="site-container section-py">
+        <h2 id="faq-heading" class="sr-only">Frequently asked questions</h2>
+        <FAQAccordion items={faqs} idPrefix="patient-faq" />
+
+        <p class="galleri-note">
+          Learn more about our <a href="/services/galleri-oral-cancer-detection/">Galleri® multi-cancer early detection screening</a>, offered as part of our commitment to catching health concerns early — we're the first dental practice in Minnesota to offer it.
+        </p>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Still Have Questions?"
+      sub="Our team is happy to talk through anything on your mind before your visit. Call us or schedule an appointment to get started."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+
+  .galleri-note {
+    max-width: 48rem;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .galleri-note a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

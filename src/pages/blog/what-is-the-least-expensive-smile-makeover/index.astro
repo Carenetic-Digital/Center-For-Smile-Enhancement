@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'What Is the Least Expensive Smile Makeover?',
+  description: 'How to build a budget-conscious smile makeover in Minnetonka, MN — from whitening to bonding — with financing and value-focused options.',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  datePublished: '2025-05-23',
+  mainEntityOfPage: 'https://www.drsudit.com/blog/what-is-the-least-expensive-smile-makeover/',
+};
+---
+
+<BaseLayout
+  title="Least Expensive Smile Makeover Options | MN"
+  description="A smile makeover doesn't have to break the bank. Explore budget-friendly options and financing for a more confident smile in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="What Is the Least Expensive Smile Makeover?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'What Is the Least Expensive Smile Makeover?' },
+      ]}
+    />
+
+    <article>
+      <div class="site-container">
+        <div class="article-prose">
+          <p>
+            A smile makeover can dramatically improve your confidence — but it doesn't have to drain your wallet. At Center for Smile Enhancement in Minnetonka, MN, we believe everyone deserves a beautiful smile, and we work with each patient to find an approach that fits their goals and budget.
+          </p>
+
+          <h2>What Is a Smile Makeover?</h2>
+          <p>
+            A smile makeover is a customized treatment plan that may include a combination of cosmetic and restorative dental procedures to enhance the overall look of your smile. Depending on your needs, this could involve:
+          </p>
+          <ul>
+            <li>Teeth whitening</li>
+            <li>Dental bonding</li>
+            <li>Veneers</li>
+            <li>Composite fillings</li>
+            <li>Invisalign® or other orthodontics</li>
+          </ul>
+
+          <h2>Budget-Conscious Smile Makeover Treatments</h2>
+          <p>
+            <strong>Professional teeth whitening</strong> is often the most affordable and effective way to enhance your smile, with both in-office and take-home options available.
+          </p>
+          <p>
+            <strong>Dental bonding</strong> uses tooth-colored resin to address chipped, cracked, or slightly gapped teeth, and is typically one of the more accessible cosmetic options depending on the extent of work needed.
+          </p>
+          <p>
+            <strong>Composite fillings</strong> restore decayed or damaged teeth with a natural-looking, tooth-colored material.
+          </p>
+          <p>
+            <strong>Invisalign®</strong> remains a more budget-conscious alternative to traditional braces for patients looking to straighten their smile discreetly.
+          </p>
+          <p>
+            Because every smile and treatment plan is different, the true cost of any of these options depends on your specific needs. The best way to understand what's right for you — and what it will cost — is a complimentary consultation, where we'll review your goals and lay out transparent options before you commit to anything.
+          </p>
+
+          <h2>Ways to Make Your Smile Makeover More Affordable</h2>
+          <ul>
+            <li><strong>Schedule a complimentary consultation</strong> to get a personalized, transparent treatment plan and cost estimate.</li>
+            <li><strong>Ask about current offers</strong> — we periodically run seasonal specials on select cosmetic services.</li>
+            <li><strong>Use flexible financing</strong> — we accept CareCredit and Cherry financing, and offer a prepay discount of up to 10% on major procedures.</li>
+          </ul>
+
+          <h2>How to Maintain Your Smile Makeover</h2>
+          <ul>
+            <li>Brush and floss daily</li>
+            <li>Visit the office every six months for checkups and cleanings</li>
+            <li>Avoid staining foods and drinks like coffee, red wine, and soda</li>
+            <li>Wear a nightguard if you grind your teeth</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <CTABand
+      heading="Ready to Talk Through Your Options?"
+      sub="Schedule a complimentary consultation to build a smile makeover plan that fits your goals and your budget."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

@@ -1,0 +1,366 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import RelatedGrid from '../../../components/RelatedGrid.astro';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const journeySteps = [
+  {
+    step: '1',
+    title: 'Evaluation & Planning',
+    body: 'At a complimentary consultation, we review your health history and imaging, and map out a personalized treatment plan.',
+    location: 'At Center for Smile Enhancement',
+  },
+  {
+    step: '2',
+    title: 'Surgical Placement',
+    body: 'Dr. Sudit coordinates your care with a trusted partner oral surgeon or periodontist, who surgically places the implant post — typically about an hour for a single tooth, plus bone grafting beforehand if needed.',
+    location: 'At a partner specialist office',
+  },
+  {
+    step: '3',
+    title: 'Healing & Integration',
+    body: 'The implant post fuses with your jawbone over several months (osseointegration) before it can support a permanent crown.',
+    location: 'Typically 3+ months',
+  },
+  {
+    step: '4',
+    title: 'Your Custom Restoration',
+    body: 'Once healed, you return to our office, where Dr. Sudit designs and places your final, natural-looking crown or prosthetic.',
+    location: 'At Center for Smile Enhancement',
+  },
+];
+
+const candidacyPoints = [
+  'Missing one or more teeth',
+  'Good general health, without conditions that impair healing',
+  'Adequate jawbone density — or willingness to undergo grafting',
+  'Fully developed adult jaw and healthy oral tissue',
+  'Able to commit to a multi-month treatment and healing timeline',
+  'Non-smoker, or willing to quit during treatment',
+];
+
+const faqItems = [
+  {
+    question: 'Who is a candidate for dental implants?',
+    answer: "Good candidates are missing one or more teeth, are in good general health without conditions that impair bone healing, have adequate jawbone density (or are willing to undergo grafting), are adults with a fully developed jaw and healthy oral tissue, can commit several months to treatment and healing, and are non-smokers or willing to quit during treatment. We evaluate candidacy at a complimentary consultation, which includes a review of your medical history and imaging.",
+  },
+  {
+    question: 'What other options exist besides implants?',
+    answer: "While implants are generally the longest-lasting and most predictable way to replace a missing tooth, other options exist, including dental bridges and removable options such as dentures. We'll walk you through the tradeoffs for your specific situation during your consultation.",
+  },
+  {
+    question: 'How does the implant process work, from evaluation to final restoration?',
+    answer: "Center for Smile Enhancement handles your candidacy evaluation and your final restoration in-office. The surgical placement of the implant post itself is performed by one of our trusted partner oral surgeons or periodontists — typically about an hour for a single tooth. Once the implant has healed and fused with your jawbone (usually three months or more), you'll return to our office, where Dr. Sudit designs and places your custom, natural-looking restorative crown.",
+  },
+  {
+    question: 'Will I need a bone graft?',
+    answer: "If your jawbone isn't dense enough to support an implant, a bone grafting procedure may be recommended beforehand. This is assessed during your consultation and, if needed, coordinated with our surgical partner ahead of your implant placement.",
+  },
+  {
+    question: "What's the difference between an implant and a bridge?",
+    answer: "An implant replaces the missing tooth's root, fusing with the jawbone before we attach your custom crown — a permanent, long-term solution. A bridge is a shorter-term, less expensive alternative that spans the gap using neighboring teeth for support, but it doesn't prevent the bone loss that occurs underneath a missing tooth over time.",
+  },
+  {
+    question: 'How long do implants last, and are they safe?',
+    answer: 'With proper care — regular brushing, flossing, and dental cleanings — an implant can last a lifetime. Implant posts are made from biocompatible materials such as titanium or zirconia and, unlike some alternatives, do not damage your existing healthy bone.',
+  },
+  {
+    question: 'Are dental implants expensive?',
+    answer: 'The cost of a single implant is often comparable to that of a three-tooth bridge. While upfront costs vary by case, implants tend to offer superior longevity and help prevent the bone loss associated with other tooth-replacement options.',
+  },
+];
+
+const relatedItems = [
+  {
+    title: 'Invisalign Orthodontics',
+    description: 'Clear aligner therapy for teens and adults — no metal braces.',
+    href: '/services/orthodontics/',
+  },
+  {
+    title: 'Invisalign for Adults',
+    description: 'Discreet, professional-friendly clear aligner treatment for grown-up smiles.',
+    href: '/services/orthodontics/invisalign-adults/',
+  },
+  {
+    title: 'Invisalign for Teens',
+    description: 'Removable clear aligners built around school, sports, and social life.',
+    href: '/services/orthodontics/invisalign-teens/',
+  },
+];
+
+const serviceSchema = {
+  name: 'Restorative Implant Dentistry',
+  serviceType: 'Restorative dentistry',
+  description: 'Restorative dental implant care in Minnetonka, MN. Center for Smile Enhancement partners with trusted oral surgeons for surgical placement and provides the custom crown restoration in-office.',
+  areaServed: {
+    '@type': 'City',
+    name: 'Minnetonka, MN',
+  },
+  provider: {
+    '@type': 'Dentist',
+    name: 'Center for Smile Enhancement',
+    telephone: '+19525939310',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '10500 Wayzata Blvd.',
+      addressLocality: 'Minnetonka',
+      addressRegion: 'MN',
+      postalCode: '55305',
+      addressCountry: 'US',
+    },
+  },
+};
+---
+
+<BaseLayout
+  title="Implant Dentistry | Center for Smile Enhancement, MN"
+  description="Restorative dental implant care in Minnetonka, MN. Center for Smile Enhancement partners with trusted oral surgeons for placement, then restores your smile."
+>
+  <StructuredData type="Service" data={serviceSchema} />
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Implant Dentistry"
+      title="Restorative Implant Dentistry"
+      lede="A permanent, natural-looking way to replace a missing tooth. Dr. Sudit partners with trusted oral surgeons for implant placement, then designs and delivers your custom restoration in-office."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Implant Dentistry' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      image="/images/service-cosmetic.jpg"
+      imageAlt="Patient with a beautiful, confident smile after restorative dental care"
+    />
+
+    <!-- ── How implants work ─────────────────────────────── -->
+    <section aria-labelledby="how-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">How It Works</span>
+          <h2 id="how-heading" class="svc-h2">A Tooth Replacement That Feels Like Your Own</h2>
+          <p class="svc-sub">
+            A dental implant replaces the root of a missing tooth with a biocompatible post, topped with a custom crown that looks, feels, and functions like a natural tooth. Unlike a bridge or denture, an implant stimulates the jawbone the way a natural tooth root does — helping prevent the bone loss that follows tooth loss over time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Our collaborative approach (correction) ──────────── -->
+    <section aria-labelledby="approach-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Our Approach</span>
+          <h2 id="approach-heading" class="svc-h2">Restorative Care, Backed by Trusted Surgical Partners</h2>
+          <p class="svc-sub">
+            Center for Smile Enhancement provides restorative implant dentistry. Dr. Sudit evaluates your candidacy, coordinates with an experienced partner oral surgeon or periodontist for the surgical placement itself, and then designs and delivers your final crown or prosthetic once you've healed — all with the same personal attention you expect from our office.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+          {journeySteps.map((s) => (
+            <div class="card journey-card">
+              <span class="journey-step">{s.step}</span>
+              <h3 class="journey-title">{s.title}</h3>
+              <p class="journey-body">{s.body}</p>
+              <span class="journey-location">{s.location}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Candidacy + comparison ────────────────────────── -->
+    <section aria-labelledby="candidacy-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="candidacy-layout">
+          <div class="issues-card">
+            <h2 id="candidacy-heading" class="issues-title">Am I a Candidate?</h2>
+            <ul class="issues-grid">
+              {candidacyPoints.map((point) => (
+                <li class="issue-item">
+                  <svg class="issue-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="issues-footnote">We confirm candidacy at a complimentary consultation, including a review of your medical history and imaging.</p>
+          </div>
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Implants vs. Bridges</span>
+            <h2 class="svc-h2">Weighing Your Options</h2>
+            <p class="svc-body">
+              A single implant is often comparable in cost to a three-tooth bridge. Bridges are a shorter-term, less expensive option that spans a gap using neighboring teeth for support — but they don't prevent the bone loss that occurs underneath a missing tooth over time. An implant replaces the tooth root directly, and with proper care can last a lifetime.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────── -->
+    <section aria-labelledby="faq-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Common Questions</span>
+          <h2 id="faq-heading" class="svc-h2">Implant Dentistry FAQ</h2>
+        </div>
+        <FAQAccordion items={faqItems} idPrefix="implant-faq" />
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Also at Center for Smile Enhancement"
+      heading="Explore More Services"
+      items={relatedItems}
+    />
+
+    <CTABand
+      heading="Ready to Restore Your Smile?"
+      sub="Schedule a complimentary consultation to find out if implant-supported restoration is right for you."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+  }
+  .svc-h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .svc-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  .svc-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-top: 1.25rem;
+  }
+
+  /* ── Journey steps ─────────────────────────────────── */
+  .journey-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .journey-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .journey-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .journey-card { display: flex; flex-direction: column; }
+  .journey-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    margin-bottom: 1.25rem;
+  }
+  .journey-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .journey-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+  }
+  .journey-location {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  /* ── Candidacy + comparison ────────────────────────── */
+  .candidacy-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (min-width: 1024px) {
+    .candidacy-layout { grid-template-columns: 3fr 2fr; gap: 3.5rem; }
+  }
+  .issues-card {
+    background-color: var(--color-surface);
+    border-radius: 1.5rem;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(30, 52, 96, 0.07);
+  }
+  .issues-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.375rem;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+  }
+  .issues-grid {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+  .issue-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-base);
+    line-height: 1.5;
+  }
+  .issue-check {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    color: var(--color-primary);
+  }
+  .issues-footnote {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+</style>

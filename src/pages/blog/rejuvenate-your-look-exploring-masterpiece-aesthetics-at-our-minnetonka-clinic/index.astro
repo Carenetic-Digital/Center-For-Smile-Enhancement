@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'Rejuvenate Your Look: Exploring Masterpiece Aesthetics at Our Minnetonka Clinic',
+  description:
+    'Explore Masterpiece Aesthetics at Center for Smile Enhancement — Botox, dermal fillers, microneedling, and skin treatments in Minnetonka, MN.',
+  datePublished: '2025-09-19',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+};
+---
+
+<BaseLayout
+  title="Rejuvenate Your Look with Masterpiece Aesthetics, Minnetonka"
+  description="Explore Masterpiece Aesthetics at Center for Smile Enhancement — Botox, dermal fillers, microneedling, and skin treatments in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Masterpiece Aesthetics"
+      title="Rejuvenate Your Look: Exploring Masterpiece Aesthetics at Our Minnetonka Clinic"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Masterpiece Aesthetics' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            Your smile and your skin work together to shape the way you look and feel.
+            Masterpiece Aesthetics brings a comprehensive suite of non-surgical cosmetic
+            treatments to Center for Smile Enhancement — designed to rejuvenate your appearance
+            and enhance your natural beauty, all in the same trusted setting where you already
+            receive your dental care.
+          </p>
+
+          <h2>A Whole-Patient Approach to Beauty</h2>
+          <p>
+            Just as we treat the whole patient rather than just the teeth in our dental care,
+            Masterpiece Aesthetics extends that same whole-patient philosophy to facial harmony —
+            integrating skin and smile expertise so your results look balanced and natural, never
+            treated in isolation.
+          </p>
+
+          <h2>Neuromodulators (Botox® &amp; Dysport®)</h2>
+          <p>
+            These treatments relax the small facial muscles responsible for dynamic wrinkles —
+            the lines that form around the eyes, forehead, and brow with expression — while
+            preserving natural movement and expression.
+          </p>
+
+          <h2>Dermal Fillers</h2>
+          <p>
+            As we age, we naturally lose volume in the cheeks, lips, and under-eye area. Dermal
+            fillers restore that volume, softening hollows and refreshing your profile.
+          </p>
+
+          <h2>SkinPen® Microneedling</h2>
+          <p>
+            Microneedling stimulates your skin's own collagen production, improving the
+            appearance of acne scars, fine lines, and enlarged pores over a series of treatments.
+          </p>
+
+          <h2>Viora Treatments</h2>
+          <p>
+            Using radiofrequency energy, Viora treatments offer non-surgical options for skin
+            tightening, cellulite reduction, and body contouring.
+          </p>
+
+          <h2>Why Choose Masterpiece Aesthetics at Center for Smile Enhancement?</h2>
+          <p>
+            Because your smile and facial aesthetics are cared for under one roof, treatment
+            plans can be coordinated for a result that looks cohesive — never disconnected from
+            the rest of your care. Every new aesthetics patient begins with a complimentary
+            consultation to discuss goals and design a plan suited to you.
+          </p>
+
+          <p>
+            Ready to explore Masterpiece Aesthetics?
+            <a href="/schedule/">Schedule a complimentary consultation</a> or call us at
+            952-593-9310.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready to Rejuvenate Your Look?"
+      sub="Schedule a complimentary Masterpiece Aesthetics consultation to discuss your goals."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

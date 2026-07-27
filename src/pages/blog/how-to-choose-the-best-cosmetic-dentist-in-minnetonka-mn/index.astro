@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'How to Choose the Best Cosmetic Dentist in Minnetonka, MN',
+  description:
+    'Five factors to weigh when choosing a cosmetic dentist in Minnetonka, MN — experience, technology, real results, and personalized communication.',
+  datePublished: '2025-11-19',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+};
+---
+
+<BaseLayout
+  title="How to Choose the Best Cosmetic Dentist in Minnetonka, MN"
+  description="Choosing a cosmetic dentist in Minnetonka, MN? Here are five factors — experience, technology, results, and communication — to weigh before you book."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="How to Choose the Best Cosmetic Dentist in Minnetonka, MN"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Choosing a Cosmetic Dentist' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            A confident smile can shape the way you're perceived — in photos, at work, and in
+            everyday conversation. If you're considering veneers, teeth whitening, bonding, or a
+            complete smile makeover, choosing the right cosmetic dentist is the single most
+            important decision you'll make in that process. Here's what to look for as you
+            evaluate cosmetic dentists in Minnetonka, MN.
+          </p>
+
+          <h2>1. Experience and Credentials</h2>
+          <p>
+            Cosmetic dentistry blends technical precision with an artist's eye for proportion,
+            color, and facial harmony. Look for a dentist with dedicated advanced training in
+            aesthetic procedures and a long track record of cosmetic cases — not just general
+            dentistry experience. Dr. Michael Sudit has practiced in Minnetonka for more than 35
+            years and has been recognized among the area's top dentists for over a decade.
+          </p>
+
+          <h2>2. Technology and Technique</h2>
+          <p>
+            Modern cosmetic dentistry relies on digital imaging, intraoral scanning, and
+            minimally invasive techniques that preserve as much natural tooth structure as
+            possible. Ask any prospective dentist what technology they use to plan and preview
+            your results before treatment begins.
+          </p>
+
+          <h2>3. A Portfolio of Real Results</h2>
+          <p>
+            Before-and-after photos of actual patients are one of the best ways to evaluate a
+            cosmetic dentist's aesthetic sensibility. Look for a range of cases similar to what
+            you're considering, and results that look natural rather than uniformly "perfect."
+          </p>
+
+          <h2>4. Personalized Care and Communication</h2>
+          <p>
+            The best cosmetic outcomes start with a dentist who listens. A thorough consultation
+            should cover your goals, your concerns, and a treatment plan customized to your face
+            and smile — never a one-size-fits-all recommendation.
+          </p>
+
+          <h2>5. Comprehensive Services Under One Roof</h2>
+          <p>
+            Cosmetic work is often part of a larger picture of oral health. Choosing a
+            full-service practice that also offers preventive, restorative, and general dentistry
+            means your cosmetic plan is built on a healthy foundation — and any underlying issues
+            are caught and addressed along the way.
+          </p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How much does cosmetic dentistry cost?</h3>
+          <p>
+            Cost varies significantly depending on the procedure, materials used, and the extent
+            of treatment. The best way to get an accurate picture is a consultation, where your
+            dentist can walk you through options that fit your goals.
+          </p>
+
+          <h3>Does insurance cover cosmetic dentistry?</h3>
+          <p>
+            Most cosmetic procedures are considered elective and are not covered by dental
+            insurance, though some treatments with a functional benefit may be partially covered.
+            Our team is happy to help you understand your specific plan.
+          </p>
+
+          <h3>How long do cosmetic dentistry results last?</h3>
+          <p>
+            Longevity depends on the procedure and how well you care for your smile. Veneers and
+            crowns can last a decade or more with good oral hygiene, while whitening results
+            typically last 12–18 months.
+          </p>
+
+          <h3>Why do patients choose Center for Smile Enhancement?</h3>
+          <p>
+            Patients return to Dr. Sudit and our team for a combination of clinical expertise,
+            genuine warmth, and a boutique, unhurried patient experience — informed by decades of
+            Disney Institute–inspired service training.
+          </p>
+
+          <p>
+            Ready to explore your options?
+            <a href="/schedule/">Schedule a complimentary consultation</a> and let's talk about
+            the smile you've been picturing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready to Enhance Your Smile?"
+      sub="Schedule a complimentary cosmetic consultation and let's discuss which options are right for you."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

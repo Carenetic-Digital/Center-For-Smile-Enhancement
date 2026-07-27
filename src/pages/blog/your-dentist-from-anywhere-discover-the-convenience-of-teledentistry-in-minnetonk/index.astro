@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'Your Dentist, From Anywhere: Discover the Convenience of Teledentistry in Minnetonka',
+  description:
+    'Virtual dental visits let you connect with our Minnetonka team for urgent questions, follow-ups, and more — without leaving home.',
+  datePublished: '2025-09-17',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+};
+---
+
+<BaseLayout
+  title="Teledentistry in Minnetonka, MN: Care From Anywhere"
+  description="Virtual dental visits let you connect with our Minnetonka team for urgent questions, follow-ups, and more — without leaving home. Here's how it works."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Teledentistry"
+      title="Your Dentist, From Anywhere: Discover the Convenience of Teledentistry in Minnetonka"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Teledentistry' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            Not every dental concern requires an in-person visit — and getting expert guidance
+            quickly can make all the difference. Center for Smile Enhancement offers
+            teledentistry: secure video and phone consultations that connect you with our team
+            from wherever you are.
+          </p>
+
+          <h2>What Is Teledentistry?</h2>
+          <p>
+            Teledentistry is a virtual dental visit conducted over secure video conferencing or
+            by phone, giving you a convenient way to connect with our team without commuting to
+            the office.
+          </p>
+
+          <h2>What Teledentistry Can Help With</h2>
+          <ul>
+            <li>Assessing urgent concerns such as pain, swelling, or a broken tooth</li>
+            <li>Post-operative check-ins to monitor healing after a procedure</li>
+            <li>Second opinions on recommended cosmetic or restorative treatment</li>
+            <li>General oral hygiene questions and guidance</li>
+            <li>Prescription refills, when clinically appropriate</li>
+          </ul>
+
+          <h2>Benefits of a Virtual Visit</h2>
+          <p>
+            Teledentistry lets you skip the commute and save time, get faster access to expert
+            guidance, reduce in-person exposure when it matters, and stay connected to your
+            ongoing care — often at a lower cost than an in-person visit for a quick, preliminary
+            question.
+          </p>
+
+          <h2>What Teledentistry Can't Replace</h2>
+          <p>
+            A virtual visit is a valuable complement to your care, but it doesn't replace a
+            comprehensive in-person exam, cleaning, or hands-on procedure. Our team will always
+            let you know if what you're describing needs to be seen in person.
+          </p>
+
+          <h2>Is Teledentistry Right for You?</h2>
+          <p>
+            If you're dealing with a dental question, a minor concern, or want a professional
+            opinion without leaving home, contact our office to find out whether a virtual
+            consultation is a good fit for your situation.
+          </p>
+
+          <p>
+            <a href="/schedule/">Schedule a virtual or in-person visit</a>, or call us at
+            952-593-9310 to ask if teledentistry is right for your concern.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready to Connect With Our Team?"
+      sub="Schedule a virtual or in-person visit and let us know how we can help."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

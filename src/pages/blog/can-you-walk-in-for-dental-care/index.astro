@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'Can You Walk In for Dental Care?',
+  description: 'What walk-in dental care means, when it makes sense, and what to expect when you need care without a pre-scheduled appointment.',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+  datePublished: '2025-04-24',
+  mainEntityOfPage: 'https://www.drsudit.com/blog/can-you-walk-in-for-dental-care/',
+};
+---
+
+<BaseLayout
+  title="Can You Walk In for Dental Care? | Minnetonka, MN"
+  description="Dental issues don't wait for appointments. Learn how walk-in dental care works and when it makes sense in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Patient Education"
+      title="Can You Walk In for Dental Care?"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Can You Walk In for Dental Care?' },
+      ]}
+    />
+
+    <article>
+      <div class="site-container">
+        <div class="article-prose">
+          <p>
+            Dental issues are unpredictable — a cracked tooth, sudden pain, or a lost filling rarely waits for a convenient time. So can you simply walk in for dental care? At Center for Smile Enhancement in Minnetonka, MN, we make it a priority to provide flexible care options, including same-day and walk-in appointments when possible.
+          </p>
+
+          <h2>What Does "Walk-In" Mean?</h2>
+          <p>
+            Walk-in services refer to care provided without a pre-scheduled appointment. This kind of flexibility is especially useful for dental emergencies or for busy patients who need care on short notice.
+          </p>
+
+          <h2>Benefits of Walk-In Care</h2>
+          <ul>
+            <li>Immediate relief for dental pain</li>
+            <li>Quick treatment for accidents or injuries</li>
+            <li>Access to preventive and restorative care on short notice</li>
+          </ul>
+
+          <h2>Common Walk-In Services</h2>
+          <p>
+            Emergency dental care, dental restorations, tooth extractions, and routine exams and cleanings are all services patients commonly seek on a walk-in basis.
+          </p>
+
+          <h2>Important Considerations</h2>
+          <p>
+            While we welcome walk-ins whenever possible, there are a few things to keep in mind: wait times may be longer during peak hours, some specialized procedures may require a scheduled consultation, and it's a good idea to bring your insurance information with you.
+          </p>
+
+          <h2>Ideal Walk-In Scenarios</h2>
+          <ul>
+            <li>Sudden, intense dental pain</li>
+            <li>Dental trauma</li>
+            <li>Swelling or bleeding</li>
+            <li>Last-minute cleanings</li>
+            <li>Unexpected issues between scheduled visits</li>
+          </ul>
+
+          <p>
+            If you're dealing with a dental issue and aren't sure whether to wait for an appointment, give us a call or stop by — our team in Minnetonka is ready to help.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <CTABand
+      heading="Need Care Right Away?"
+      sub="Call our Minnetonka office to check same-day availability, or schedule your next visit online."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

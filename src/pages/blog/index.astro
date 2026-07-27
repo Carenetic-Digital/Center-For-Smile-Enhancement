@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
+
+// Card grid lists whatever post directories exist under src/pages/blog/ at build time.
+const posts = [
+  {
+    title: 'Can Dentists Repair Severely Damaged Teeth?',
+    excerpt: "Severe tooth decay, trauma, or damage doesn't mean extraction is the only option. Learn how modern restorative dentistry can save and rebuild your smile.",
+    category: 'Restorative Dentistry',
+    href: '/blog/can-dentists-repair-severely-damaged-teeth/',
+  },
+  {
+    title: 'Can You Walk In for Dental Care?',
+    excerpt: "Dental issues don't wait for appointments. Learn how walk-in dental care works and when it makes sense in Minnetonka, MN.",
+    category: 'Patient Education',
+    href: '/blog/can-you-walk-in-for-dental-care/',
+  },
+  {
+    title: 'Does Insurance Cover Aesthetic Dentistry?',
+    excerpt: "Botox, fillers, and other facial aesthetic treatments are usually cosmetic, not medical — which affects insurance coverage. Here's what's typically covered.",
+    category: 'Aesthetic Dentistry',
+    href: '/blog/does-insurance-cover-aesthetic-dentistry/',
+  },
+  {
+    title: 'Does Insurance Cover Cosmetic Dentistry?',
+    excerpt: 'Learn what dental insurance typically covers, when cosmetic procedures may qualify, and how our team helps you plan.',
+    category: 'Cosmetic Dentistry',
+    href: '/blog/does-insurance-cover-cosmetic-dentistry/',
+  },
+  {
+    title: 'How Do I Choose the Best Dentist for Me?',
+    excerpt: 'A practical guide to choosing the right dentist in Minnetonka, MN — what to ask, what to look for, and how to find a provider you can trust.',
+    category: 'Patient Education',
+    href: '/blog/how-do-i-choose-the-best-dentist-for-me/',
+  },
+  {
+    title: 'How to Choose the Best Cosmetic Dentist in Minnetonka, MN',
+    excerpt: 'Five factors to weigh when choosing a cosmetic dentist — experience, technology, real results, and personalized communication.',
+    category: 'Cosmetic Dentistry',
+    href: '/blog/how-to-choose-the-best-cosmetic-dentist-in-minnetonka-mn/',
+  },
+  {
+    title: 'Esthetic vs. Cosmetic Dentistry: What’s the Difference?',
+    excerpt: "What's the real difference between esthetic dentistry and cosmetic dentistry? We break down the terminology and what each approach prioritizes.",
+    category: 'Cosmetic Dentistry',
+    href: '/blog/is-there-a-difference-between-esthetic-dentistry-and-cosmetic-dentistry/',
+  },
+  {
+    title: 'Your Guide to General & Family Dentistry in Minnetonka',
+    excerpt: "From a child's first checkup to lifelong preventive care, explore general and family dentistry services for every generation.",
+    category: 'General & Family Dentistry',
+    href: '/blog/nurturing-healthy-smiles-for-every-generation-your-guide-to-general-amp-family-dentistry-in-minnetonka/',
+  },
+  {
+    title: 'Professional Teeth Whitening: Restore Your Sparkling Smile',
+    excerpt: 'Safe, dentist-supervised professional teeth whitening options — brighter results without the sensitivity of over-the-counter kits.',
+    category: 'Cosmetic Dentistry',
+    href: '/blog/professional-teeth-whitening-in-minnetonka-mn-restore-your-sparkling-smile/',
+  },
+  {
+    title: 'Rejuvenate Your Look With Masterpiece Aesthetics',
+    excerpt: 'Explore Masterpiece Aesthetics at Center for Smile Enhancement — Botox, dermal fillers, microneedling, and skin treatments.',
+    category: 'Masterpiece Aesthetics',
+    href: '/blog/rejuvenate-your-look-exploring-masterpiece-aesthetics-at-our-minnetonka-clinic/',
+  },
+  {
+    title: 'Common Bad Oral Habits to Avoid',
+    excerpt: 'From skipping flossing to using teeth as tools, learn the common bad oral habits that damage your smile — and how to fix them.',
+    category: 'Patient Education',
+    href: '/blog/what-are-bad-oral-habits/',
+  },
+  {
+    title: 'Common Preventive Dentistry Services',
+    excerpt: 'Discover the preventive dentistry services — check-ups, cleanings, fluoride, sealants, and screenings — that keep your smile healthy.',
+    category: 'Preventive Dentistry',
+    href: '/blog/what-are-common-preventive-dentistry-services/',
+  },
+  {
+    title: '8 Risk Factors for Poor Oral Hygiene',
+    excerpt: 'From diet to stress to skipped checkups, learn the 8 risk factors behind poor oral hygiene and how to protect your smile.',
+    category: 'Patient Education',
+    href: '/blog/what-are-the-8-risk-factors-for-poor-oral-hygiene/',
+  },
+  {
+    title: 'Risk Factors Associated With Poor Oral Hygiene',
+    excerpt: 'Poor oral hygiene affects more than your smile. Learn the dental, systemic, and financial risk factors — and how to protect your health.',
+    category: 'Patient Education',
+    href: '/blog/what-are-the-risk-factors-associated-with-poor-oral-hygiene/',
+  },
+  {
+    title: 'The Three Levels of Prevention in Dentistry',
+    excerpt: 'Learn about primary, secondary, and tertiary prevention in dentistry, and how each stage protects your smile.',
+    category: 'Preventive Dentistry',
+    href: '/blog/what-are-the-three-levels-of-prevention-in-dentistry/',
+  },
+  {
+    title: 'What Counts as a Dental Emergency?',
+    excerpt: "Not sure if your dental issue is an emergency? Learn the warning signs and when to call us for urgent care.",
+    category: 'Emergency Dentistry',
+    href: '/blog/what-counts-as-emergency-dental/',
+  },
+  {
+    title: 'Examples of Poor Oral Hygiene',
+    excerpt: 'See real examples of poor oral hygiene, the consequences of neglect, and simple fixes for a healthier smile.',
+    category: 'Patient Education',
+    href: '/blog/what-is-an-example-of-poor-oral-hygiene-insights-from-the-center-for-smile-enhancement-minnetonka-mn/',
+  },
+  {
+    title: 'Preventive vs. Routine Dental Care',
+    excerpt: "Preventive and routine dental care overlap, but they aren't the same thing. Learn the difference and why both matter.",
+    category: 'Preventive Dentistry',
+    href: '/blog/what-is-the-difference-between-preventive-and-routine-dental-care/',
+  },
+  {
+    title: 'The Least Expensive Smile Makeover Options',
+    excerpt: "A smile makeover doesn't have to break the bank. Explore budget-friendly options and financing for a more confident smile.",
+    category: 'Cosmetic Dentistry',
+    href: '/blog/what-is-the-least-expensive-smile-makeover/',
+  },
+  {
+    title: 'The Most Popular Cosmetic Dental Procedure',
+    excerpt: 'Professional teeth whitening is the most requested cosmetic dental treatment at our practice. See how it works and what else is available.',
+    category: 'Cosmetic Dentistry',
+    href: '/blog/what-is-the-most-popular-cosmetic-dental-procedure/',
+  },
+  {
+    title: 'Dentist vs. Cosmetic Dentist: What’s the Difference?',
+    excerpt: 'General dentists and cosmetic dentists both hold a DDS or DMD, so what sets them apart? We explain the difference in training and focus.',
+    category: 'Cosmetic Dentistry',
+    href: '/blog/whats-the-difference-between-a-dentist-and-a-cosmetic-dentist/',
+  },
+  {
+    title: 'Your Dentist, From Anywhere: Teledentistry in Minnetonka',
+    excerpt: 'Virtual dental visits let you connect with our team for urgent questions, follow-ups, and more — without leaving home.',
+    category: 'Teledentistry',
+    href: '/blog/your-dentist-from-anywhere-discover-the-convenience-of-teledentistry-in-minnetonk/',
+  },
+  {
+    title: 'Your Guide to Porcelain Veneers in Minnetonka, MN',
+    excerpt: 'How porcelain veneers work, what to expect from the process, and how to care for your new smile.',
+    category: 'Cosmetic Dentistry',
+    href: '/blog/your-guide-to-porcelain-veneers-in-minnetonka-mn/',
+  },
+];
+---
+
+<BaseLayout
+  title="Dental Health Blog | Center for Smile Enhancement"
+  description="Read the latest articles on cosmetic, restorative, and family dentistry, plus patient education from Center for Smile Enhancement in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Patient Education"
+      title="The Center for Smile Enhancement Blog"
+      lede="Insights on cosmetic, restorative, and family dentistry, plus practical guidance for keeping your smile healthy — from Dr. Sudit and our Minnetonka team."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog' },
+      ]}
+    />
+
+    <section aria-labelledby="blog-grid-heading" class="section-surface">
+      <div class="site-container section-py">
+        <h2 id="blog-grid-heading" class="sr-only">All Blog Articles</h2>
+
+        <div class="blog-grid">
+          {posts.map((post) => (
+            <a href={post.href} class="card blog-card">
+              <span class="blog-card-category">{post.category}</span>
+              <h3 class="blog-card-title">{post.title}</h3>
+              <p class="blog-card-excerpt">{post.excerpt}</p>
+              <span class="blog-card-cta" aria-hidden="true">
+                Read More
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Have a Question We Didn't Cover?"
+      sub="Reach out to our team — we're happy to help, whether you're a new or returning patient."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-surface { background-color: var(--color-surface); }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .blog-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .blog-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-card-category {
+    display: inline-flex;
+    align-self: flex-start;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    background-color: var(--color-brand-light);
+    border-radius: 999px;
+    padding: 0.3125rem 0.8125rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-bottom: 0.625rem;
+  }
+
+  .blog-card-excerpt {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+  }
+
+  .blog-card-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+</style>

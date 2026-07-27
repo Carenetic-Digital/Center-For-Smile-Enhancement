@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import RelatedGrid from '../../../components/RelatedGrid.astro';
+
+const relatedItems = [
+  {
+    title: 'About Us',
+    description: 'Learn about our story, our patient-first philosophy, and the team behind your care.',
+    href: '/about/',
+  },
+  {
+    title: 'Our Services',
+    description: 'Explore our full range of general, cosmetic, and aesthetic dental services.',
+    href: '/services/',
+  },
+  {
+    title: 'New Patients',
+    description: 'Everything you need to know before your first visit to our Minnetonka office.',
+    href: '/patients/new-patients/',
+  },
+];
+---
+
+<BaseLayout
+  title="Our Doctors | Center for Smile Enhancement | Minnetonka, MN"
+  description="Meet Dr. Michael Sudit, DDS — 35+ years of clinical excellence, University of Minnesota dental training, and Disney-inspired patient care in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Our Doctors"
+      title="Meet Dr. Michael Sudit, DDS"
+      lede="A knowledgeable, kind, and experienced artisan, Dr. Sudit has delivered comprehensive and detailed dental care in Minnetonka for more than 35 years."
+      breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about/' }, { label: 'Our Doctors' }]}
+      primaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+      secondaryCta={{ label: 'About Our Practice', href: '/about/' }}
+      image="/images/doctor-sudit.jpg"
+      imageAlt="Dr. Michael Sudit, DDS, of Center for Smile Enhancement"
+    />
+
+    <!-- ── Background & Training ─────────────────────── -->
+    <section aria-labelledby="background-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="prose-block">
+          <span class="section-eyebrow section-eyebrow--muted">Background &amp; Training</span>
+          <h2 id="background-heading" class="page-heading">Education &amp; Credentials</h2>
+          <p>
+            Dr. Sudit earned his dental degree from the University of Minnesota School of Dentistry and
+            completed an Advanced General Dentistry residency there as well. He maintains active licensure to
+            practice dentistry in both Minnesota and Colorado.
+          </p>
+          <p>
+            In 2001, Dr. Sudit began studying at the Disney Institute for Health Care Professionals, and has
+            infused that culture of nurturing long-term relationships into every aspect of the practice ever
+            since — the foundation of the VIP, "Very Individual Patient," experience every patient receives
+            here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Areas of Advanced Focus ────────────────────── -->
+    <section aria-labelledby="focus-heading" class="section-wash">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow">Areas of Advanced Focus</span>
+          <h2 id="focus-heading" class="page-heading">Beyond General &amp; Cosmetic Dentistry</h2>
+          <p class="section-sub">
+            Dr. Sudit has pursued advanced training well beyond the dental chair, including:
+          </p>
+        </div>
+
+        <div class="focus-grid">
+          <div class="card">
+            <h3 class="card-title">Facial Rejuvenation</h3>
+            <p class="card-body">Advanced training in facial rejuvenation using injectables, including Botox and dermal fillers.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">TMJ &amp; Craniofacial Pain</h3>
+            <p class="card-body">Diagnosis and treatment of temporomandibular joint disorders and craniofacial pain management.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Orthodontics</h3>
+            <p class="card-body">Training in orthodontic care, including clear aligner therapy for teens and adults.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Academic & Professional Service ────────────── -->
+    <section aria-labelledby="service-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="prose-block">
+          <span class="section-eyebrow section-eyebrow--muted">Academic &amp; Professional Service</span>
+          <h2 id="service-heading" class="page-heading">Giving Back to the Profession</h2>
+          <p>
+            Dr. Sudit served nearly 30 years on the University of Minnesota School of Dentistry's Admissions
+            Committee, taught in the Department of Oral Diagnosis and Radiology, and served on the school's
+            Alumni Society Board.
+          </p>
+          <p>
+            He is a member of the American Dental Association, the Minnesota Dental Association, the Colorado
+            Dental Association, the American Orthodontic Society, and the American Academy of Cosmetic
+            Dentistry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Recognition & Personal ─────────────────────── -->
+    <section aria-labelledby="recognition-heading" class="section-wash">
+      <div class="site-container section-py">
+        <div class="prose-block">
+          <span class="section-eyebrow section-eyebrow--muted">Recognition</span>
+          <h2 id="recognition-heading" class="page-heading">Achievements &amp; Honors</h2>
+          <p>
+            Dr. Sudit has been named a "Top Dentist" and inducted into the Hall of Fame by <em>Mpls. St. Paul
+            Magazine</em>. In 2014, the University of Minnesota honored him with its Alumni Service Award. He
+            also holds a patent for an iontophoretic transdermal drug delivery device and co-founded the
+            Active Therapeutics Institute.
+          </p>
+          <p>
+            Outside the office, Dr. Sudit lives in Minnetonka with his wife, Cheri, and enjoys spending time
+            with their four grandchildren.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Continue Exploring"
+      items={relatedItems}
+    />
+
+    <CTABand
+      heading="Ready to Meet Dr. Sudit?"
+      sub="Schedule your visit today and experience 35+ years of clinical excellence paired with genuine, VIP care."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-wash { background-color: #ebeef5; }
+
+  .prose-block {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+  .prose-block p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-base);
+    margin-top: 1.25rem;
+  }
+
+  .page-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.25;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .focus-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+</style>

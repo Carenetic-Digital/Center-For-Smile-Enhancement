@@ -1,0 +1,372 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+
+const processSteps = [
+  {
+    step: '1',
+    title: 'Request the Test',
+    body: "Ask about Galleri® at your next visit. Availability is determined by your healthcare provider, and a prescription is required to order the test.",
+  },
+  {
+    step: '2',
+    title: 'Complete a Blood Draw',
+    body: 'A simple blood sample is collected in-office or at a partner lab — no special preparation is required.',
+  },
+  {
+    step: '3',
+    title: 'Receive Your Results',
+    body: 'Results typically arrive about two weeks after your sample is received at the GRAIL laboratory, and are reviewed with you by your provider.',
+  },
+];
+
+const resultCards = [
+  {
+    label: 'No Cancer Signal Detected',
+    body: "This result means cancer-associated DNA fragments were not found in your blood sample. It means a cancer signal is unlikely to be present — but, as with any screening test, it does not completely rule out the possibility of cancer. Continuing with your routine, provider-recommended cancer screenings is still the best next step.",
+  },
+  {
+    label: 'Cancer Signal Detected',
+    body: "This result means cancer-associated DNA fragments were found. It is not a diagnosis — it includes a Cancer Signal Origin prediction to help guide follow-up, and your healthcare provider will recommend additional diagnostic testing (such as imaging or lab work) to confirm whether cancer is present.",
+  },
+];
+---
+
+<BaseLayout
+  title="Galleri® Test | Center for Smile Enhancement, Minnetonka, MN"
+  description="Center for Smile Enhancement in Minnetonka, MN is the first dental practice in Minnesota to offer the Galleri® multi-cancer early detection blood test."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Advanced Health Screening"
+      title="The Galleri® Multi-Cancer Early Detection Test"
+      lede="Center for Smile Enhancement is proud to be the first dental practice in Minnesota to offer the Galleri® test — a single blood test that screens for a signal shared by more than 50 types of cancer, many of which have no routine screening today."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Galleri® Cancer Detection' },
+      ]}
+      primaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      image="/images/GrailSampleBocx-crop.webp"
+      imageAlt="Box for the Galleri multi-cancer early detection blood test, made by GRAIL"
+    />
+
+    <!-- ── Why We Offer It ─────────────────────────────── -->
+    <section aria-labelledby="why-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="content-columns">
+          <div class="content-col">
+            <span class="section-eyebrow section-eyebrow--muted">First in Minnesota</span>
+            <h2 id="why-heading" class="page-heading">A Proactive Step Toward Whole-Body Health</h2>
+            <p class="body-copy">
+              At Center for Smile Enhancement, we believe your mouth is a window into the rest of your health — our <strong>Total Health Connection</strong> philosophy. That's why we're proud to be the first dental practice in Minnesota to offer patients access to Galleri®, GRAIL's multi-cancer early detection blood test.
+            </p>
+            <p class="body-copy">
+              Galleri is a proactive tool for adults who want to take a more active role in their long-term health — used alongside, not in place of, the cancer screenings your physician already recommends.
+            </p>
+          </div>
+          <div class="content-col">
+            <div class="card info-card">
+              <h3 class="info-card-title">What the test looks for</h3>
+              <p class="body-copy">
+                The Galleri test looks for DNA fragments shed into the bloodstream by cancer cells. These fragments carry a unique molecular "fingerprint" that can signal the presence of cancer — often before symptoms appear.
+              </p>
+              <p class="body-copy" style="margin-top: 1rem;">
+                In clinical studies, the test evaluated a signal shared by more than 50 types of cancer, including a group of 12 aggressive cancers responsible for roughly two-thirds of cancer deaths.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Only 5 Cancers Have Recommended Screening ────── -->
+    <section aria-labelledby="screening-gap-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Closing a Screening Gap</span>
+          <h2 id="screening-gap-heading" class="page-heading">A Test That Complements, Not Replaces, Routine Screening</h2>
+          <p class="section-sub">
+            Today, only five cancers have a routine, recommended screening test — for every other type, most people are only diagnosed after symptoms appear. Adding Galleri to your existing cancer screenings can increase your chance of finding cancer earlier, when it may be more treatable.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="soft-card">
+            <div class="icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v6h.01M18 2v6h.01M4 22h16M4 10h16M4 14h16M4 18h16"/></svg>
+            </div>
+            <h3 class="soft-card-title">A Single Blood Sample</h3>
+            <p class="soft-card-body">One simple blood draw screens for a signal shared across dozens of cancer types — no imaging, no scans, no special preparation.</p>
+          </div>
+          <div class="soft-card">
+            <div class="icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="soft-card-title">Dependable Results</h3>
+            <p class="soft-card-body">In clinical validation, Galleri had a low false-positive rate of just 0.5% — about 1 in 200 people without cancer — helping minimize unnecessary follow-up procedures.</p>
+          </div>
+          <div class="soft-card">
+            <div class="icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="soft-card-title">Predicts Signal Origin</h3>
+            <p class="soft-card-body">When a cancer signal is detected, the test also predicts the tissue or organ it's associated with, helping your provider direct follow-up testing efficiently.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Test Process ──────────────────────────────────── -->
+    <section aria-labelledby="process-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">How It Works</span>
+          <h2 id="process-heading" class="page-heading">What to Expect</h2>
+        </div>
+
+        <div class="process-grid">
+          {processSteps.map((s) => (
+            <div class="process-step">
+              <span class="process-number">{s.step}</span>
+              <h3 class="soft-card-title">{s.title}</h3>
+              <p class="soft-card-body">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Understanding Results ─────────────────────────── -->
+    <section aria-labelledby="results-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Understanding Your Results</span>
+          <h2 id="results-heading" class="page-heading">Two Possible Outcomes</h2>
+        </div>
+
+        <div class="results-grid">
+          {resultCards.map((r) => (
+            <div class="card result-card">
+              <h3 class="result-card-title">{r.label}</h3>
+              <p class="body-copy">{r.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Who Should Consider It + Safety Info ──────────── -->
+    <section aria-labelledby="safety-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="content-columns">
+          <div class="content-col">
+            <span class="section-eyebrow section-eyebrow--muted">Is Galleri Right for You?</span>
+            <h2 id="safety-heading" class="page-heading">Who Should Consider This Test</h2>
+            <p class="body-copy">
+              Galleri is recommended for adults with an elevated risk for cancer, such as those aged 50 or older. People without symptoms can take the test, and your healthcare provider can help determine whether it's right for you.
+            </p>
+            <p class="body-copy">
+              Most health insurance plans do not currently cover the cost of the Galleri test, though FSA/HSA funds and payment plans may be available. Ask our office about cost and availability at your next visit.
+            </p>
+          </div>
+          <div class="content-col">
+            <div class="notice-card">
+              <h3 class="notice-card-title">Important Safety Information</h3>
+              <p class="notice-card-body">
+                The Galleri test is a screening test and does not diagnose cancer. It is intended for use in addition to, not in place of, routine cancer screenings your healthcare provider recommends. Not all cancers can be detected in the blood, and Galleri does not detect all cancers — false-positive and false-negative results can occur. A "No Cancer Signal Detected" result does not rule out cancer; diagnostic evaluation by a healthcare provider is needed to confirm a cancer diagnosis. Galleri is available by prescription only (Rx only). Learn more at <a href="https://www.galleri.com" target="_blank" rel="noopener noreferrer">Galleri.com</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      eyebrow="Total Health Connection"
+      heading="Ask About Galleri® at Your Next Visit"
+      sub="Speak with our team about whether the Galleri multi-cancer early detection test is right for you — as part of the same visit where we care for your smile."
+      primaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  .page-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-top: 1.25rem;
+  }
+  .body-copy:first-of-type { margin-top: 1.25rem; }
+  .body-copy strong { color: var(--color-primary); font-weight: 600; }
+
+  /* ── Two-column content layout ───────────────────────── */
+  .content-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (min-width: 900px) {
+    .content-columns { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+  }
+  .content-col .page-heading { margin-top: 0.25rem; }
+
+  .info-card {
+    padding: 2rem 1.75rem;
+  }
+  .info-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+  }
+  .info-card .body-copy:first-of-type { margin-top: 1rem; }
+
+  /* ── Feature cards (reused pattern) ───────────────────── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .features-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .soft-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(30, 52, 96, 0.07);
+    box-shadow: 0 2px 8px rgba(30, 52, 96, 0.06), 0 12px 32px rgba(30, 52, 96, 0.14);
+  }
+  .soft-card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .soft-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .icon-badge {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--color-primary);
+  }
+
+  /* ── Process steps ─────────────────────────────────────── */
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    counter-reset: step;
+  }
+  @media (min-width: 768px) {
+    .process-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .process-step {
+    position: relative;
+    padding: 2rem 1.75rem 1.75rem;
+    background-color: var(--color-surface);
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-border);
+  }
+  .process-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Results cards ─────────────────────────────────────── */
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .results-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .result-card { border-top: 4px solid var(--color-brand-light); }
+  .result-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  .result-card .body-copy { margin-top: 0.5rem; }
+
+  /* ── Safety notice ─────────────────────────────────────── */
+  .notice-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 1rem;
+    padding: 1.75rem 1.75rem;
+  }
+  .notice-card-title {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+  .notice-card-body {
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .notice-card-body a { color: var(--color-primary); text-decoration: underline; }
+</style>

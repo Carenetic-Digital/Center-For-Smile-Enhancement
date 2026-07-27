@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StructuredData from '../../../components/StructuredData.astro';
+
+const articleData = {
+  headline: 'Professional Teeth Whitening in Minnetonka, MN: Restore Your Sparkling Smile',
+  description:
+    'Safe, dentist-supervised professional teeth whitening options at Center for Smile Enhancement in Minnetonka, MN — brighter results without the sensitivity.',
+  datePublished: '2025-11-14',
+  author: {
+    '@type': 'Organization',
+    name: 'Center for Smile Enhancement',
+  },
+};
+---
+
+<BaseLayout
+  title="Professional Teeth Whitening in Minnetonka, MN"
+  description="Discover professional teeth whitening options in Minnetonka, MN — safe, dentist-supervised treatments that brighten your smile without sensitivity."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="Professional Teeth Whitening in Minnetonka, MN: Restore Your Sparkling Smile"
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Professional Teeth Whitening' },
+      ]}
+    />
+
+    <section aria-label="Article content" class="section-white">
+      <div class="site-container section-py">
+        <div class="article-prose">
+          <p>
+            A bright, white smile can make a lasting first impression — but not all whitening
+            methods are created equal. At Center for Smile Enhancement, professional teeth
+            whitening is a safe, effective way to lift years of staining, often in a single
+            visit, without the sensitivity or uneven results that can come with store-bought
+            kits.
+          </p>
+
+          <h2>Why Choose Professional Whitening?</h2>
+          <p>
+            Over-the-counter strips and gels are formulated to be safe for unsupervised use —
+            which also means they're far less concentrated than what a dentist can provide.
+            Professional whitening, supervised by our team, offers:
+          </p>
+          <ul>
+            <li>Even, consistent color across every tooth</li>
+            <li>Custom-fit trays for take-home treatment</li>
+            <li>Dentist oversight to minimize sensitivity</li>
+            <li>Longer-lasting brightness than drugstore alternatives</li>
+          </ul>
+
+          <h2>Whitening Options We Offer</h2>
+          <h3>In-Office Whitening</h3>
+          <p>Dramatic results in about an hour, ideal for patients who want a fast turnaround before a big event.</p>
+          <h3>Take-Home Trays</h3>
+          <p>Custom-fitted trays and professional-strength gel let you whiten gradually, on your own schedule.</p>
+          <h3>Combination Whitening</h3>
+          <p>Pairing an in-office treatment with take-home trays for a bright result that's easier to maintain over time.</p>
+
+          <h2>What Causes Teeth to Stain?</h2>
+          <p>
+            Common culprits include coffee, tea, red wine, tobacco use, natural aging (which
+            thins enamel and reveals the yellower dentin beneath), certain medications, and
+            inconsistent oral hygiene.
+          </p>
+
+          <h2>After Your Treatment</h2>
+          <p>
+            To keep your smile bright, avoid deeply pigmented foods and drinks for the first 48
+            hours, brush twice daily, rinse after meals, and keep up with regular professional
+            cleanings.
+          </p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Is professional whitening safe?</h3>
+          <p>
+            Yes. Performed under the supervision of Dr. Sudit and our team, professional
+            whitening is formulated to protect your enamel while lifting stains.
+          </p>
+
+          <h3>How long do results last?</h3>
+          <p>
+            Most patients enjoy brighter teeth for 12–18 months with proper care, though this
+            varies by lifestyle and habits.
+          </p>
+
+          <h3>Will whitening make my teeth sensitive?</h3>
+          <p>
+            Some patients notice mild, temporary sensitivity. We use gentler formulas and adjust
+            treatment time to keep you comfortable.
+          </p>
+
+          <h3>Will whitening work on veneers or crowns?</h3>
+          <p>
+            No — whitening only affects natural tooth enamel. If you have veneers or crowns, we
+            can discuss options for keeping your whole smile looking uniform.
+          </p>
+
+          <h3>How often can I whiten?</h3>
+          <p>We generally recommend touch-up whitening every 6–12 months, depending on your diet and habits.</p>
+
+          <p>
+            Ready for a brighter smile?
+            <a href="/schedule/">Schedule an appointment</a> to discuss which whitening option is
+            right for you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready for a Brighter Smile?"
+      sub="Schedule an appointment to discuss professional teeth whitening options in Minnetonka."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Article" data={articleData} />
+</BaseLayout>

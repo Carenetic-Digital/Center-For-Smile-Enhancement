@@ -1,0 +1,288 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const mapEmbedSrc = 'https://www.google.com/maps?q=10500+Wayzata+Blvd,+Minnetonka,+MN+55305&output=embed';
+const mapDirectionsUrl = 'https://www.google.com/maps/search/?api=1&query=10500+Wayzata+Blvd,+Minnetonka,+MN+55305';
+---
+
+<BaseLayout
+  title="Contact Us | Center for Smile Enhancement | Minnetonka, MN"
+  description="Contact Center for Smile Enhancement, a boutique dental practice in Minnetonka, MN. Find our address, phone, email, office hours, and directions here today."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Get in Touch"
+      title="Contact Us"
+      lede="Whether you have a question about our services, want to plan your first visit, or need to reach the office, we'd love to hear from you."
+      breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
+      primaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+      secondaryCta={{ label: 'Email Us', href: 'mailto:TheCenterforSmileEnhancement@PDPSmiles.com' }}
+    />
+
+    <!-- ── Contact Details + Map ─────────────────────────── -->
+    <section aria-labelledby="details-heading" class="section-wash">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Visit Our Office</span>
+          <h2 id="details-heading" class="page-heading">Find Us in Minnetonka</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card contact-info-card">
+            <ul class="info-list" role="list">
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <div>
+                  <span class="info-label">Address</span>
+                  <address class="info-value">
+                    10500 Wayzata Blvd.<br />
+                    Minnetonka, MN 55305
+                  </address>
+                  <a href={mapDirectionsUrl} target="_blank" rel="noopener noreferrer" class="info-directions-link">Get Directions</a>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <div>
+                  <span class="info-label">Phone</span>
+                  <p class="info-value"><a href="tel:9525939310" class="info-link">952-593-9310</a></p>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                <div>
+                  <span class="info-label">Email</span>
+                  <p class="info-value">
+                    <a href="mailto:TheCenterforSmileEnhancement@PDPSmiles.com" class="info-link info-link--email">TheCenterforSmileEnhancement@PDPSmiles.com</a>
+                  </p>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <div>
+                  <span class="info-label">Office Hours</span>
+                  <p class="info-value">
+                    Monday–Thursday: 8am–5pm<br />
+                    Friday: 8am–12pm<br />
+                    Saturday–Sunday: Closed
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="map-frame">
+            <iframe
+              src={mapEmbedSrc}
+              title="Map showing Center for Smile Enhancement at 10500 Wayzata Blvd., Minnetonka, MN 55305"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Send a Message ─────────────────────────────────── -->
+    <section aria-labelledby="form-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow">Send a Message</span>
+          <h2 id="form-heading" class="page-heading">Get in Touch Online</h2>
+          <p class="section-sub">
+            Fill out the form below and a member of our team will follow up with you shortly.
+          </p>
+        </div>
+
+        <!-- JotForm embed placeholder — insert <script is:inline> embed here once form ID is provided by client; see docs/third-party-scripts.md for is:inline + CSP requirements -->
+        <div class="card form-fallback-card">
+          <div class="form-fallback-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="form-fallback-title">Our online contact form is being finalized</h3>
+          <p class="form-fallback-body">
+            In the meantime, please call us at <a href="tel:9525939310" class="info-link">952-593-9310</a> or email us directly at
+            <a href="mailto:TheCenterforSmileEnhancement@PDPSmiles.com" class="info-link info-link--email">TheCenterforSmileEnhancement@PDPSmiles.com</a>
+            &mdash; we'd love to hear from you.
+          </p>
+          <div class="form-fallback-ctas">
+            <a href="tel:9525939310" class="btn btn-primary">Call 952-593-9310</a>
+            <a href="mailto:TheCenterforSmileEnhancement@PDPSmiles.com" class="btn btn-outline">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABand />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-wash { background-color: #ebeef5; }
+
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  .page-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.25;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  /* ── Contact details + map ────────────────────────────── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  @media (min-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  }
+
+  .contact-info-card {
+    display: flex;
+    align-items: center;
+  }
+  .info-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    width: 100%;
+  }
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .info-icon {
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.375rem;
+  }
+  .info-value {
+    font-style: normal;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-base);
+    margin: 0;
+  }
+  .info-link {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .info-link--email {
+    word-break: break-word;
+  }
+  .info-directions-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .map-frame {
+    position: relative;
+    min-height: 280px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(30, 52, 96, 0.06), 0 16px 40px rgba(30, 52, 96, 0.16);
+    border: 1px solid rgba(30, 52, 96, 0.07);
+  }
+  .map-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ── Form fallback card ───────────────────────────────── */
+  .form-fallback-card {
+    max-width: 36rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .form-fallback-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+  }
+  .form-fallback-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+  .form-fallback-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.75rem;
+  }
+  .form-fallback-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+</style>

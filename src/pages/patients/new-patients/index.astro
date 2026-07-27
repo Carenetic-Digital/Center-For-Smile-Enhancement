@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+
+const steps = [
+  {
+    title: 'A Warm Welcome',
+    description: 'Arrive a little early and our front desk team will greet you personally, get you settled in, and answer any questions before your appointment begins.',
+  },
+  {
+    title: 'Intake & Health History',
+    description: "If you haven't already completed your paperwork in advance, we'll help you fill out a short health history so Dr. Sudit has the full picture of your health and dental goals.",
+  },
+  {
+    title: 'Comprehensive Exam',
+    description: 'Dr. Sudit performs a thorough exam — including digital imaging as needed — to evaluate your teeth, gums, bite, and overall oral health.',
+  },
+  {
+    title: 'A Personal Consultation',
+    description: "We'll walk you through what we find, answer your questions, and, if any treatment is recommended, discuss options, timing, and cost together before moving forward.",
+  },
+];
+---
+
+<BaseLayout
+  title="New Patients | Center for Smile Enhancement | Minnetonka, MN"
+  description="What to expect at your first visit to the Center for Smile Enhancement in Minnetonka, MN — from intake to exam to a personal consultation with Dr. Sudit."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="New Patients"
+      title="Welcome to the Center for Smile Enhancement"
+      lede="Starting care with a new dental practice is a big decision. Here's what you can expect at your first visit, and the philosophy of care that shapes every appointment after it."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Patients', href: '/patients/' },
+        { label: 'New Patients' },
+      ]}
+      primaryCta={{ label: 'Schedule Your Visit', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── What to expect ──────────────────────────────────── -->
+    <section aria-labelledby="visit-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Your First Visit</span>
+          <h2 id="visit-heading" class="section-heading section-heading-size">
+            What to Expect
+          </h2>
+          <p class="section-sub">
+            We've designed your first visit to be unhurried and thorough, so Dr. Sudit and our team can get to know you before recommending any care.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          {steps.map((step, i) => (
+            <div class="card step-card">
+              <span class="step-number">{i + 1}</span>
+              <h3 class="step-card-title">{step.title}</h3>
+              <p class="step-card-body">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Practice philosophy ────────────────────────────── -->
+    <section aria-labelledby="philosophy-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="philosophy-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Our Philosophy</span>
+            <h2 id="philosophy-heading" class="section-heading section-heading-size">
+              Service Inspired by the World's Best
+            </h2>
+          </div>
+          <div class="philosophy-copy">
+            <p>
+              Since 2001, our practice has been infused with the Disney Institute's approach to customer service. Every detail of your visit — from the first phone call to your last follow-up — is designed with the same intention and warmth found in the world's finest hospitality experiences.
+            </p>
+            <p>
+              At the Center for Smile Enhancement, VIP means Very Individual Patient. We take the time to understand your unique goals, preferences, and concerns, because we believe excellent dentistry and exceptional service should never be separate things.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Practical info ─────────────────────────────────── -->
+    <section aria-labelledby="practical-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Before You Arrive</span>
+          <h2 id="practical-heading" class="section-heading section-heading-size">
+            A Few Things to Know
+          </h2>
+        </div>
+
+        <div class="practical-grid">
+          <div class="card">
+            <h3 class="step-card-title">Save Time With Forms</h3>
+            <p class="step-card-body">
+              You can get a head start on your paperwork before you arrive. Visit our <a href="/patients/patient-forms/">Patient Forms</a> page or call us and we'll help you get started.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="step-card-title">Insurance & Payment</h3>
+            <p class="step-card-body">
+              We're an out-of-network, fee-for-service practice. Learn more about financing and payment options on our <a href="/patients/insurance-payment/">Insurance & Payment</a> page.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="step-card-title">Office Hours</h3>
+            <p class="step-card-body">
+              We're open Monday–Thursday, 8am–5pm, and Friday, 8am–12pm. Our office is located at 10500 Wayzata Blvd., Minnetonka, MN 55305.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      heading="Ready to Join Our Practice Family?"
+      sub="We'd love to welcome you. Schedule your first visit online or give us a call — we look forward to meeting you."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .step-card { position: relative; }
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .step-card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .step-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .step-card-body a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .philosophy-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (min-width: 768px) {
+    .philosophy-layout { grid-template-columns: 1fr 1.4fr; gap: 3.5rem; }
+  }
+  .philosophy-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+  .philosophy-copy p:last-child { margin-bottom: 0; }
+
+  .practical-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .practical-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const reasons = [
+  {
+    title: 'Sports & Instruments Welcome',
+    body: 'Aligners come out for football, band practice, or a swim meet — no worrying about broken brackets or wires.',
+  },
+  {
+    title: 'Easier to Keep Clean',
+    body: 'Without brackets and wires trapping food, brushing and flossing stay simple — good for developing lifelong habits.',
+  },
+  {
+    title: 'Discreet for School and Social Life',
+    body: 'Clear aligners are far less noticeable than metal braces in photos, at school, and with friends.',
+  },
+  {
+    title: 'Comfortable, Predictable Treatment',
+    body: 'Smooth plastic aligners avoid the mouth irritation that can come with metal brackets and wires.',
+  },
+];
+
+const relatedItems = [
+  {
+    title: 'Invisalign for Adults',
+    description: 'Discreet, professional-friendly clear aligner treatment for grown-up smiles.',
+    href: '/services/orthodontics/invisalign-adults/',
+  },
+  {
+    title: 'Orthodontics Overview',
+    description: 'How Invisalign clear aligner therapy works at Center for Smile Enhancement.',
+    href: '/services/orthodontics/',
+  },
+  {
+    title: 'Implant Dentistry',
+    description: 'Restorative, natural-looking solutions for replacing a missing tooth permanently.',
+    href: '/services/implant-dentistry/',
+  },
+];
+
+const serviceSchema = {
+  name: 'Invisalign for Teens',
+  serviceType: 'Orthodontics',
+  description: 'Invisalign clear aligner therapy tailored to teen patients at Center for Smile Enhancement in Minnetonka, MN.',
+  areaServed: {
+    '@type': 'City',
+    name: 'Minnetonka, MN',
+  },
+  provider: {
+    '@type': 'Dentist',
+    name: 'Center for Smile Enhancement',
+    telephone: '+19525939310',
+  },
+};
+---
+
+<BaseLayout
+  title="Invisalign for Teens | Center for Smile Enhancement, MN"
+  description="Invisalign clear aligners built for teens' busy lives — removable for sports and school photos. Offered at Center for Smile Enhancement in Minnetonka, MN."
+>
+  <StructuredData type="Service" data={serviceSchema} />
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Orthodontics · Teens"
+      title="Invisalign for Teens"
+      lede="A discreet, removable way for teens to get a confident, straight smile — without brackets and wires getting in the way of sports, instruments, or school photos."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Orthodontics', href: '/services/orthodontics/' },
+        { label: 'Invisalign for Teens' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── Why teens choose Invisalign ─────────────────── -->
+    <section aria-labelledby="reasons-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Why Teens Choose Invisalign</span>
+          <h2 id="reasons-heading" class="svc-h2">Straightening That Fits a Teenager's Life</h2>
+          <p class="svc-sub">
+            Invisalign treats the same range of issues as traditional braces — crooked teeth, crowding, and bite problems — with aligners that fit around activities, not the other way around.
+          </p>
+        </div>
+
+        <div class="reasons-grid">
+          {reasons.map((r) => (
+            <div class="card reason-card">
+              <h3 class="reason-title">{r.title}</h3>
+              <p class="reason-body">{r.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── For parents ───────────────────────────────────── -->
+    <section aria-labelledby="parents-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="parents-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">A Note for Parents</span>
+            <h2 id="parents-heading" class="svc-h2">Success Depends on Consistent Wear</h2>
+            <p class="svc-body">
+              Invisalign works best when aligners are worn about 22 hours a day and swapped for the next set in the series every 10 to 14 days. We'll walk your teen through exactly what's expected, and we're always available if questions come up along the way.
+            </p>
+          </div>
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Typical Timeline</span>
+            <h2 class="svc-h2">Six Months to Two Years</h2>
+            <p class="svc-body">
+              Treatment length depends on your teen's starting alignment and goals. We schedule brief check-in visits every two to four weeks to track progress and provide the next round of aligners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore More"
+      heading="More Orthodontic Options"
+      items={relatedItems}
+    />
+
+    <CTABand
+      heading="Ready to Get Your Teen Started?"
+      sub="Schedule a complimentary consultation to find out if Invisalign for teens is the right fit."
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3rem;
+  }
+  .svc-h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .svc-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  .svc-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-top: 1.25rem;
+  }
+
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .reasons-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .reasons-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .reason-card { display: flex; flex-direction: column; }
+  .reason-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .reason-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .parents-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 768px) {
+    .parents-layout { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+  }
+</style>

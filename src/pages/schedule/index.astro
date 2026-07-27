@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const zocdocUrl = "https://www.zocdoc.com/practice/the-center-for-smile-enhancement-129577?lock=true&referrerType=widget";
+
+const reassurances = [
+  {
+    title: 'New Patients Welcome',
+    description: "First time at Center for Smile Enhancement? We're happy to have you — booking online takes just a couple of minutes.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  },
+  {
+    title: 'Returning Patients, Too',
+    description: 'Already part of our patient family? Choose the day and time that works best for your next visit.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  },
+  {
+    title: 'Simple & Secure',
+    description: 'Our online scheduling is powered by ZocDoc, so you can pick a time and get confirmation right away.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Schedule | Center for Smile Enhancement | Minnetonka, MN"
+  description="Schedule your visit at Center for Smile Enhancement in Minnetonka, MN. Book online via ZocDoc or call 952-593-9310 — new and returning patients welcome."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Book Online"
+      title="Schedule an Appointment"
+      lede="New and returning patients are welcome. Choose a day and time that works for you — our online scheduling makes it easy to get on the calendar in just a few minutes."
+      breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Schedule' }]}
+    />
+
+    <!-- ── Primary booking action ────────────────────────── -->
+    <section aria-labelledby="book-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="book-island">
+          <span class="section-eyebrow section-eyebrow--onDark">Minnetonka, MN</span>
+          <h2 id="book-heading" class="book-heading">Ready When You Are</h2>
+          <p class="book-sub">
+            Pick your appointment time online through our secure ZocDoc scheduler — no phone call required.
+          </p>
+          <div class="book-ctas">
+            <a
+              href={zocdocUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-pill btn-pill-onDark-primary btn-pill-lg"
+            >
+              Schedule Online via ZocDoc
+            </a>
+          </div>
+          <p class="book-alt">
+            Prefer to call? <a href="tel:9525939310" class="book-alt-link">952-593-9310</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Reassurance points ─────────────────────────────── -->
+    <section aria-labelledby="expect-heading" class="section-wash">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">What to Expect</span>
+          <h2 id="expect-heading" class="page-heading">A Booking Experience as Considerate as Our Care</h2>
+          <p class="section-sub">
+            For more than 35 years and with Disney Institute–inspired service since 2001, our team brings the same warmth to scheduling your visit as we do to every appointment.
+          </p>
+        </div>
+
+        <div class="reassure-grid">
+          {reassurances.map((item) => (
+            <div class="card reassure-card">
+              <div class="icon-badge" set:html={item.icon} />
+              <h3 class="card-title">{item.title}</h3>
+              <p class="card-body">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-wash { background-color: #ebeef5; }
+
+  .section-intro {
+    text-align: center;
+    max-width: 38rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  .page-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.25;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  /* ── Primary booking island ───────────────────────────── */
+  .book-island {
+    background-color: var(--color-primary);
+    border-radius: 2.5rem;
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
+    text-align: center;
+    box-shadow: 0 32px 64px rgba(30, 52, 96, 0.28);
+  }
+  .book-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .book-sub {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 32rem;
+    margin: 0 auto 2.25rem;
+    line-height: 1.7;
+  }
+  .book-ctas {
+    display: flex;
+    justify-content: center;
+  }
+  .book-alt {
+    margin-top: 1.75rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .book-alt-link {
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* ── Pill buttons (onDark variants) ───────────────────── */
+  .btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9375rem 2rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .btn-pill-lg {
+    padding: 1.125rem 2.75rem;
+    font-size: 0.875rem;
+  }
+  .btn-pill-onDark-primary {
+    background-color: #ffffff;
+    color: var(--color-primary);
+    border-color: #ffffff;
+  }
+  .btn-pill-onDark-primary:hover {
+    background-color: transparent;
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  /* ── Reassurance cards ─────────────────────────────────── */
+  .reassure-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .reassure-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .reassure-card { text-align: left; }
+  .icon-badge {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--color-primary);
+  }
+  .card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+</style>

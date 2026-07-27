@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTABand from '../../../components/CTABand.astro';
+
+const paymentMethods = [
+  'Cash',
+  'All major credit and debit cards',
+  'HSA (Health Savings Account) cards',
+  'Personal checks',
+  'Online financing',
+];
+
+const financingOptions = [
+  {
+    title: 'CareCredit',
+    description: 'A healthcare credit card offering short- and long-term financing plans for treatment. Apply online at carecredit.com or ask our team for details.',
+  },
+  {
+    title: 'Cherry Financing',
+    description: 'A simple, flexible financing option that lets you spread the cost of treatment over time. Ask our team whether Cherry is a good fit for your care plan.',
+  },
+];
+---
+
+<BaseLayout
+  title="Insurance & Payment | Center for Smile Enhancement, MN"
+  description="Learn about insurance, CareCredit, Cherry financing, and our prepay discount at this out-of-network, fee-for-service dental practice in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Insurance & Payment"
+      title="Investing in Your Smile, Made Simple"
+      lede="We believe you deserve the best care available, regardless of your insurance network. Here's how insurance, financing, and payment work at the Center for Smile Enhancement."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Patients', href: '/patients/' },
+        { label: 'Insurance & Payment' },
+      ]}
+    />
+
+    <!-- ── Insurance policy ─────────────────────────────────── -->
+    <section aria-labelledby="insurance-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="intro-layout">
+          <div>
+            <span class="section-eyebrow section-eyebrow--muted">Insurance</span>
+            <h2 id="insurance-heading" class="section-heading section-heading-size">
+              An Out-of-Network, Fee-for-Service Practice
+            </h2>
+          </div>
+          <div class="intro-copy">
+            <p>
+              The Center for Smile Enhancement is an out-of-network, fee-for-service dental practice. This means we don't hold contracts with insurance companies, which allows Dr. Sudit to recommend the treatment that's genuinely best for you — not the treatment an insurer is willing to cover.
+            </p>
+            <p>
+              We're happy to accept and work with all insurance plans. As a courtesy, our team will submit claims and appeals on your behalf. Payment for services is due directly to our office at the time of your visit, and any portion your insurance doesn't cover remains your responsibility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Payment methods ──────────────────────────────────── -->
+    <section aria-labelledby="methods-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Ways to Pay</span>
+          <h2 id="methods-heading" class="section-heading section-heading-size">
+            Accepted Payment Methods
+          </h2>
+          <p class="section-sub">
+            For your convenience, we accept the following forms of payment.
+          </p>
+        </div>
+
+        <ul class="methods-list">
+          {paymentMethods.map((method) => (
+            <li class="methods-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{method}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Financing options ────────────────────────────────── -->
+    <section aria-labelledby="financing-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Financing</span>
+          <h2 id="financing-heading" class="section-heading section-heading-size">
+            Flexible Financing Options
+          </h2>
+          <p class="section-sub">
+            To help make treatment more accessible, we accept financing through both CareCredit and Cherry.
+          </p>
+        </div>
+
+        <div class="financing-grid">
+          {financingOptions.map((option) => (
+            <div class="card">
+              <h3 class="financing-card-title">{option.title}</h3>
+              <p class="financing-card-body">{option.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Deposit & prepay discount ─────────────────────────── -->
+    <section aria-labelledby="terms-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Payment Terms</span>
+          <h2 id="terms-heading" class="section-heading section-heading-size">
+            Deposits & Prepay Savings
+          </h2>
+        </div>
+
+        <div class="terms-grid">
+          <div class="card">
+            <h3 class="financing-card-title">Deposit for Major Procedures</h3>
+            <p class="financing-card-body">
+              For major procedures, we ask for a 50% payment to get started, with the remainder due when treatment is completed.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="financing-card-title">Up to 10% Prepay Discount</h3>
+            <p class="financing-card-body">
+              Patients who prepay for treatment in advance of their visit can save up to 10% on major procedures. Ask our team for details.
+            </p>
+          </div>
+        </div>
+
+        <p class="terms-footnote">
+          Questions about your specific treatment plan, insurance, or a payment option? Call our office at <a href="tel:9525939310">952-593-9310</a> — we're happy to help.
+        </p>
+      </div>
+    </section>
+
+    <CTABand />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (min-width: 768px) {
+    .intro-layout { grid-template-columns: 1fr 1.4fr; gap: 3.5rem; }
+  }
+  .intro-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+  .intro-copy p:last-child { margin-bottom: 0; }
+
+  .methods-list {
+    max-width: 34rem;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+  @media (min-width: 640px) {
+    .methods-list { grid-template-columns: 1fr 1fr; }
+  }
+  .methods-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 0.875rem 1.25rem;
+    border: 1px solid rgba(30, 52, 96, 0.07);
+    color: var(--color-text-base);
+    font-size: 0.9375rem;
+  }
+  .methods-item svg { color: var(--color-primary); flex-shrink: 0; }
+
+  .financing-grid,
+  .terms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .financing-grid,
+    .terms-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .financing-card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .financing-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .terms-footnote {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+  .terms-footnote a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+// component-builder: RelatedGrid
+// Purpose: Small card grid for related services, sub-services, or resources at the bottom of a page.
+
+interface Item {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  items: Item[];
+}
+
+const { eyebrow, heading, items } = Astro.props;
+---
+
+<section aria-labelledby="related-heading" class="section-surface">
+  <div class="site-container section-py">
+    <div class="section-intro">
+      {eyebrow && <span class="section-eyebrow section-eyebrow--muted">{eyebrow}</span>}
+      <h2 id="related-heading" class="related-heading">{heading}</h2>
+    </div>
+
+    <div class="related-grid">
+      {items.map((item) => (
+        <a href={item.href} class="card related-card">
+          <h3 class="related-card-title">{item.title}</h3>
+          <p class="related-card-body">{item.description}</p>
+          <span class="related-card-cta" aria-hidden="true">
+            Learn more
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-surface { background-color: var(--color-surface); }
+  .section-intro {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto 3rem;
+  }
+  .related-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .related-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .related-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+  .related-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .related-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+  }
+  .related-card-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+</style>

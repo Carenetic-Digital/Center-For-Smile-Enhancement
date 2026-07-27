@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const services = [
+  {
+    name: 'General & Family Dentistry',
+    description: "Comprehensive preventive and family dental care for every stage of life — routine cleanings and exams, digital X-rays, fillings, and personalized hygiene guidance. We welcome patients of all ages, from your child's first visit to your parents' golden years.",
+    href: '/services/general-family-dentistry/',
+    photo: '/images/service-family.jpg',
+    photoAlt: 'Mother and child brushing teeth together',
+  },
+  {
+    name: 'Cosmetic Dentistry',
+    description: 'Transform your smile with ZOOM professional teeth whitening, custom porcelain veneers, and cosmetic bonding. Dr. Sudit designs every smile makeover around your unique features and goals for a natural, confident result.',
+    href: '/services/cosmetic-dentistry/',
+    photo: '/images/service-cosmetic-smile.png',
+    photoAlt: 'Woman with a confident, beautiful smile',
+  },
+  {
+    name: 'Orthodontics',
+    description: 'Straighten your smile discreetly with Invisalign clear aligners — a comfortable, nearly invisible alternative to traditional metal braces for teens and adults, customized to your bite, timeline, and lifestyle.',
+    href: '/services/orthodontics/',
+    photo: '/images/service-orthodontics.png',
+    photoAlt: 'Patient placing an Invisalign clear aligner',
+  },
+  {
+    name: 'Implant Dentistry',
+    description: 'Replace missing teeth with dental implants that look, feel, and function like your natural teeth. From single-tooth replacement to full-arch restorations, implants offer a permanent, long-lasting solution.',
+    href: '/services/implant-dentistry/',
+    photo: '/images/service-cosmetic.jpg',
+    photoAlt: 'Patient with a beautiful, confident smile after restorative dental care',
+  },
+  {
+    name: 'Masterpiece Aesthetics',
+    description: 'Refresh your appearance with Botox, dermal fillers, microneedling, and medical-grade skincare — offered right alongside your dental care, designed to complement a beautiful, healthy smile with a refreshed overall look.',
+    href: '/services/masterpiece-aesthetics/',
+    photo: '/images/service-aesthetics.png',
+    photoAlt: 'Woman with refreshed, elegant appearance',
+  },
+  {
+    name: 'TMJ & Facial Pain',
+    description: 'Find relief from jaw pain, headaches, and facial discomfort caused by TMJ disorders. Dr. Sudit provides thorough diagnosis and personalized treatment plans that address the root cause of your pain, not just the symptoms.',
+    href: '/services/tmj-facial-pain/',
+    photo: '/images/service-tmj.png',
+    photoAlt: 'Patient experiencing relief from jaw and facial pain',
+  },
+  {
+    name: 'Emergency Care',
+    description: "Dental emergencies don't wait for convenient timing, and neither do we. We offer same-day and after-hours care for broken teeth, severe toothaches, and other urgent needs — call us any time at 952-593-9310.",
+    href: '/services/emergency-care/',
+    photo: '/images/service-emergency.png',
+    photoAlt: 'Child with a surprised expression needing dental care',
+  },
+  {
+    name: 'Teledentistry',
+    description: 'Connect with Dr. Sudit remotely for consultations, follow-ups, and professional advice — no office visit required. Teledentistry makes it easy to get answers to your dental questions from wherever you are.',
+    href: '/services/teledentistry/',
+    photo: '/images/service-teledentistry.png',
+    photoAlt: 'Patient connecting with dentist via smartphone',
+  },
+  {
+    name: 'Advanced Technology',
+    description: 'Our practice is equipped with state-of-the-art digital imaging, intraoral cameras, and precision diagnostic tools, allowing us to diagnose more accurately, treat more comfortably, and keep you fully informed every step of the way.',
+    href: '/services/advanced-technology/',
+    photo: '/images/service-advanced-tech.png',
+    photoAlt: '3D digital rendering of dental anatomy',
+  },
+  {
+    name: 'Galleri® Cancer Detection',
+    description: 'Center for Smile Enhancement is proud to be the first dental practice in Minnesota to offer the Galleri® multi-cancer early detection blood test — a proactive screening tool that complements our Total Health Connection philosophy.',
+    href: '/services/galleri-oral-cancer-detection/',
+    photo: '/images/GrailSampleBocx-crop.webp',
+    photoAlt: 'Healthcare provider holding a Galleri multi-cancer early detection test kit',
+  },
+];
+---
+
+<BaseLayout
+  title="Our Services | Center for Smile Enhancement, Minnetonka, MN"
+  description="General, cosmetic, implant, and orthodontic dentistry plus aesthetic services at Center for Smile Enhancement in Minnetonka, MN, led by Dr. Michael Sudit."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Comprehensive Care"
+      title="All Your Dental Needs, Under One Roof"
+      lede="From routine cleanings to full smile makeovers, Dr. Sudit and his team provide a comprehensive range of dental and aesthetic services — every one delivered with the boutique attention to detail Center for Smile Enhancement is known for."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services' },
+      ]}
+      primaryCta={{ label: 'Schedule an Appointment', href: '/schedule/' }}
+      secondaryCta={{ label: 'Meet Dr. Sudit', href: '/about/' }}
+    />
+
+    <!-- ── Services Grid ─────────────────────────────────── -->
+    <section aria-labelledby="services-heading" class="section-white">
+      <div class="site-container section-py">
+        <h2 id="services-heading" class="sr-only">Our Services</h2>
+
+        <div class="svc-grid">
+          {services.map((service) => (
+            <a href={service.href} class="svc-card">
+              <div class="svc-card__img-wrap">
+                <img
+                  src={service.photo}
+                  alt={service.photoAlt}
+                  loading="lazy"
+                  decoding="async"
+                  class="svc-card__img"
+                />
+              </div>
+              <div class="svc-card__body">
+                <h3 class="svc-card__name">{service.name}</h3>
+                <p class="svc-card__desc">{service.description}</p>
+                <span class="svc-card__cta" aria-hidden="true">
+                  Learn more
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+              <span class="sr-only">Learn more about {service.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABand />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+
+  /* ── Services grid: 1 → 2 → 3 → 5 columns per DESIGN.md ──── */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  @media (min-width: 640px) {
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .svc-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1280px) {
+    .svc-grid { grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+  }
+
+  .svc-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(30, 52, 96, 0.07);
+    box-shadow: 0 2px 8px rgba(30, 52, 96, 0.06), 0 12px 32px rgba(30, 52, 96, 0.14);
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .svc-card:hover {
+    box-shadow: 0 4px 12px rgba(30, 52, 96, 0.08), 0 22px 46px rgba(30, 52, 96, 0.22);
+    transform: translateY(-3px);
+  }
+
+  .svc-card__img-wrap {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--color-surface);
+  }
+  .svc-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+  }
+  .svc-card:hover .svc-card__img { transform: scale(1.05); }
+
+  .svc-card__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+  .svc-card__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-bottom: 0.625rem;
+  }
+  .svc-card__desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+  }
+  .svc-card__cta {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+</style>

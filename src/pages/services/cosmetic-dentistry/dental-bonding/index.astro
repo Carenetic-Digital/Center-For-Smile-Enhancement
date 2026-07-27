@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import RelatedGrid from '../../../../components/RelatedGrid.astro';
+import StructuredData from '../../../../components/StructuredData.astro';
+
+const serviceData = {
+  name: 'Dental Bonding',
+  serviceType: 'Dental Bonding',
+  provider: {
+    "@type": "Dentist",
+    name: "Center for Smile Enhancement",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Minnetonka, MN",
+  },
+  description: "Tooth-colored composite bonding to repair chips, gaps, and minor imperfections in a single visit at the Center for Smile Enhancement in Minnetonka, MN.",
+  url: "https://www.drsudit.com/services/cosmetic-dentistry/dental-bonding/",
+};
+---
+
+<BaseLayout
+  title="Dental Bonding | Center for Smile Enhancement, Minnetonka, MN"
+  description="Repair chips, gaps, and minor imperfections in a single visit with tooth-colored dental bonding at the Center for Smile Enhancement in Minnetonka, MN."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Cosmetic Dentistry"
+      title="Dental Bonding"
+      lede="Dental bonding uses tooth-colored composite resin, sculpted and hardened directly onto your tooth, to repair chips, close small gaps, and refine shape — often completed in a single, comfortable visit."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: 'Cosmetic Dentistry', href: '/services/cosmetic-dentistry/' },
+        { label: 'Dental Bonding' },
+      ]}
+      primaryCta={{ label: 'Schedule a Consultation', href: '/schedule/' }}
+      secondaryCta={{ label: 'Call 952-593-9310', href: 'tel:9525939310' }}
+    />
+
+    <!-- ── Benefits ───────────────────────────────────────── -->
+    <section aria-labelledby="benefits-heading" class="section-white">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Why Bonding</span>
+          <h2 id="benefits-heading" class="section-heading section-heading-size">
+            A Conservative, Affordable Fix
+          </h2>
+          <p class="section-sub">
+            Bonding is one of the most versatile cosmetic treatments we offer, ideal for smaller imperfections that don't require a veneer or crown.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="card">
+            <h3 class="card-title">Single-Visit Convenience</h3>
+            <p class="card-body">Most bonding procedures are completed in one appointment, with no lab fabrication or temporary restorations required.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Minimally Invasive</h3>
+            <p class="card-body">Bonding typically requires little to no removal of natural tooth structure, preserving as much of your original tooth as possible.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Versatile</h3>
+            <p class="card-body">Used to repair chips, close gaps, reshape teeth, cover discoloration, and even replace old metal fillings with tooth-colored material.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Natural-Looking Finish</h3>
+            <p class="card-body">Composite resin is shade-matched to your surrounding teeth and polished to a natural, glossy finish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What to Expect ─────────────────────────────────── -->
+    <section aria-labelledby="expect-heading" class="section-surface">
+      <div class="site-container section-py">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow--muted">Your Visit</span>
+          <h2 id="expect-heading" class="section-heading section-heading-size">
+            What to Expect
+          </h2>
+        </div>
+
+        <ol class="steps-list">
+          <li class="steps-item">
+            <span class="steps-number">1</span>
+            <div>
+              <h3 class="card-title">Consultation &amp; Shade Match</h3>
+              <p class="card-body">We examine the tooth, discuss your goals, and select a composite resin shade that blends with your natural smile.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">2</span>
+            <div>
+              <h3 class="card-title">Surface Preparation</h3>
+              <p class="card-body">The tooth surface is lightly prepared and conditioned so the composite resin bonds securely.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">3</span>
+            <div>
+              <h3 class="card-title">Sculpting &amp; Curing</h3>
+              <p class="card-body">Resin is applied in layers, sculpted to the desired shape, and hardened with a curing light.</p>
+            </div>
+          </li>
+          <li class="steps-item">
+            <span class="steps-number">4</span>
+            <div>
+              <h3 class="card-title">Polishing</h3>
+              <p class="card-body">The bonded tooth is trimmed, shaped, and polished until it matches the natural sheen of your smile.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <RelatedGrid
+      eyebrow="Explore Further"
+      heading="Other Cosmetic Dentistry Services"
+      items={[
+        { title: 'Cosmetic Dentistry Overview', description: 'See the full range of smile-enhancing treatments we offer.', href: '/services/cosmetic-dentistry/' },
+        { title: 'Porcelain Veneers', description: 'Stain-resistant porcelain shells for more extensive smile changes.', href: '/services/cosmetic-dentistry/porcelain-veneers/' },
+        { title: 'Teeth Whitening', description: 'ZOOM in-office bleaching and take-home options to brighten your smile.', href: '/services/cosmetic-dentistry/teeth-whitening/' },
+      ]}
+    />
+
+    <CTABand
+      heading="Have a Chip, Gap, or Imperfection?"
+      sub="Schedule a complimentary consultation to see if bonding is a quick, conservative fix for your smile."
+    />
+  </main>
+
+  <Footer />
+
+  <StructuredData type="Service" data={serviceData} />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+  .section-heading-size { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+  .section-intro {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .benefit-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .benefit-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .steps-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .steps-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .steps-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background-color: var(--color-brand-light);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+  }
+</style>
