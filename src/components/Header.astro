@@ -84,22 +84,24 @@ const isServiceActive = currentPath.startsWith('/services/');
             </button>
 
             <div class="dropdown-panel" id="services-panel" role="region" aria-labelledby="services-btn">
-              <ul role="list" class="dropdown-grid">
-                {services.map((s) => (
-                  <li>
-                    <a
-                      href={s.href}
-                      class={`dropdown-link${currentPath === s.href ? ' dropdown-link--active' : ''}`}
-                    >
-                      {s.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <div class="dropdown-footer">
-                <a href="/services/" class="dropdown-all-link">
-                  View All Services →
-                </a>
+              <div class="dropdown-panel-inner">
+                <ul role="list" class="dropdown-grid">
+                  {services.map((s) => (
+                    <li>
+                      <a
+                        href={s.href}
+                        class={`dropdown-link${currentPath === s.href ? ' dropdown-link--active' : ''}`}
+                      >
+                        {s.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <div class="dropdown-footer">
+                  <a href="/services/" class="dropdown-all-link">
+                    View All Services →
+                  </a>
+                </div>
               </div>
             </div>
           </li>
@@ -251,20 +253,29 @@ const isServiceActive = currentPath.startsWith('/services/');
   .dropdown-panel {
     display: none;
     position: absolute;
-    top: calc(100% + 0.75rem);
+    /* Flush with the trigger (no margin gap) — the gap lives as padding-top
+       on this element instead, so it's part of .nav-dropdown's own hover
+       area. A real gap here would let the pointer leave .nav-dropdown while
+       crossing it, closing the panel before the cursor reaches it. */
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
+    padding-top: 0.75rem;
+    z-index: 100;
+  }
+
+  .dropdown-panel-inner {
+    position: relative;
     background: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
     box-shadow: 0 8px 32px rgba(0,0,0,0.10);
     min-width: 560px;
     padding: 1.25rem 1.5rem 1rem;
-    z-index: 100;
   }
 
   /* Small arrow pointing up */
-  .dropdown-panel::before {
+  .dropdown-panel-inner::before {
     content: '';
     position: absolute;
     top: -7px;
