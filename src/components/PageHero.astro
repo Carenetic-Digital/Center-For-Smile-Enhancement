@@ -88,8 +88,18 @@ const {
 <style>
   .page-hero {
     background-color: #ffffff;
+    /* Top padding scales with the header's oversized logo (5.5rem/7rem/8rem
+       tall against a 5rem nav bar), which overflows out the bottom of the
+       nav at the same breakpoints — see Header.astro. Keeps the breadcrumb
+       row clear of the logo instead of overlapping it. */
     padding-top: 2.5rem;
     padding-bottom: 3.5rem;
+  }
+  @media (min-width: 640px) {
+    .page-hero { padding-top: 3.5rem; }
+  }
+  @media (min-width: 1024px) {
+    .page-hero { padding-top: 4.5rem; }
   }
 
   .breadcrumb-list {
