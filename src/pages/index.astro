@@ -76,27 +76,6 @@ const services = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "I've been a patient of Dr. Sudit's for over 25 years. His commitment to excellence and the genuine warmth of his team keep me coming back. There is truly no one else I would trust with my family's dental care.",
-    author: "Sarah M.",
-    location: "Minnetonka",
-    stars: 5,
-  },
-  {
-    quote: "I had a dental emergency on a Friday afternoon and they got me in immediately. The care was exceptional, and the entire team made what could have been a very stressful situation completely comfortable. I can't recommend them enough.",
-    author: "James R.",
-    location: "Eden Prairie",
-    stars: 5,
-  },
-  {
-    quote: "Dr. Sudit is in a league of his own. The level of personal attention, the spotless and beautiful office, the way every single team member treats you — it is unlike any dental experience I've ever had.",
-    author: "Carol L.",
-    location: "Wayzata",
-    stars: 5,
-  },
-];
-
 const patientResources = [
   {
     title: 'New Patients',
@@ -332,32 +311,9 @@ const patientResources = [
           </p>
         </div>
 
-        <div class="testimonials-grid">
-          {testimonials.map((t) => (
-            <div class="soft-card testimonial-card">
-              <svg class="quote-mark" width="34" height="26" viewBox="0 0 34 26" fill="var(--color-brand-light)" aria-hidden="true">
-                <path d="M0 26V16.6C0 7.2 5.4 1.1 14.7 0l1.1 4.2C10 5.7 7.3 9 7.1 13.4h6.9V26H0zm18.6 0V16.6c0-9.4 5.4-15.5 14.7-16.6l1.1 4.2c-5.8 1.5-8.5 4.8-8.7 9.2h6.9V26H18.6z"/>
-              </svg>
-              <div class="stars" aria-label={`${t.stars} out of 5 stars`}>
-                {Array.from({ length: t.stars }).map(() => (
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                ))}
-              </div>
-              <blockquote>
-                <p class="testimonial-quote">
-                  "{t.quote}"
-                </p>
-                <footer class="testimonial-footer">
-                  <span class="avatar-badge">{t.author.charAt(0)}</span>
-                  <span>
-                    <span class="testimonial-author">{t.author}</span>
-                    <span class="testimonial-location">{t.location}</span>
-                  </span>
-                </footer>
-              </blockquote>
-            </div>
-          ))}
-        </div>
+        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+        <script is:inline src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-e2c44335-6888-4d70-8594-1b935c3d292f" data-elfsight-app-lazy></div>
 
         <div class="center-cta">
           <a href="/patients/reviews/" class="btn-pill btn-pill-outline">Read All Reviews</a>
@@ -842,48 +798,6 @@ const patientResources = [
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
-
-  /* ── Testimonials ─────────────────────────────────────── */
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-  @media (min-width: 768px) {
-    .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  .testimonial-card { position: relative; padding-top: 1.5rem; }
-  .quote-mark { position: absolute; top: 1.25rem; right: 1.75rem; opacity: 0.9; }
-  .stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
-  .testimonial-quote {
-    font-size: 0.9375rem;
-    line-height: 1.75;
-    color: var(--color-text-base);
-    font-style: italic;
-    margin-bottom: 1.5rem;
-  }
-  .testimonial-footer {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.875rem;
-  }
-  .avatar-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 999px;
-    background-color: var(--color-brand-light);
-    color: var(--color-primary);
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.9375rem;
-    flex-shrink: 0;
-  }
-  .testimonial-author { font-weight: 500; color: var(--color-primary); display: block; }
-  .testimonial-location { font-weight: 400; color: var(--color-text-muted); font-size: 0.8125rem; }
 
   /* ── Patient Resources ────────────────────────────────── */
   .resources-section {
