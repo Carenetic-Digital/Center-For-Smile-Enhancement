@@ -35,7 +35,7 @@ const reviews = [
 
 <BaseLayout
   title="Patient Reviews | Center for Smile Enhancement, MN"
-  description="272 five-star Google reviews and real patient stories about Dr. Michael Sudit and his caring team at the Center for Smile Enhancement in Minnetonka, Minnesota."
+  description="Real patient stories about Dr. Michael Sudit and his caring team at the Center for Smile Enhancement in Minnetonka, Minnesota."
 >
   <Header />
 
@@ -50,16 +50,6 @@ const reviews = [
         { label: 'Reviews' },
       ]}
     />
-
-    <!-- ── Headline stat ────────────────────────────────────── -->
-    <section aria-labelledby="stat-heading" class="section-white">
-      <div class="site-container">
-        <div class="stat-band">
-          <span class="stat-number">272</span>
-          <span class="stat-label" id="stat-heading">Five-Star Google Reviews</span>
-        </div>
-      </div>
-    </section>
 
     <!-- ── Review quotes ────────────────────────────────────── -->
     <section aria-labelledby="quotes-heading" class="section-surface">
@@ -88,8 +78,12 @@ const reviews = [
         </div>
 
         <p class="reviews-footnote">
-          These are just a few of our 272 five-star reviews — read more of our reviews on Google.
+          These are just a few of the reviews our patients have left us.
         </p>
+
+        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+        <script is:inline src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-e2c44335-6888-4d70-8594-1b935c3d292f" data-elfsight-app-lazy></div>
       </div>
     </section>
 
@@ -108,30 +102,6 @@ const reviews = [
     text-align: center;
     max-width: 36rem;
     margin: 0 auto 3.5rem;
-  }
-
-  .stat-band {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-    padding-bottom: 3rem;
-  }
-  .stat-number {
-    font-family: var(--font-display);
-    font-weight: 700;
-    color: var(--color-primary);
-    font-size: clamp(3rem, 8vw, 5rem);
-    line-height: 1;
-  }
-  .stat-label {
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
   }
 
   .reviews-grid {
