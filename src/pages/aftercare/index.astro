@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const dentalAftercare = [
+  {
+    title: 'Cleanings & Checkups',
+    description: 'A little extra care in the day or two after your cleaning can help keep your smile comfortable while your gums settle.',
+    href: '/aftercare/cleanings-checkups/',
+  },
+  {
+    title: 'Routine Fillings',
+    description: 'Most patients recover with little more than temporary numbness and mild sensitivity. Here\'s what to expect.',
+    href: '/aftercare/routine-fillings/',
+  },
+  {
+    title: 'Crowns & Bridges',
+    description: 'Your new crown or bridge needs a little time to fully set. Follow these guidelines for a smooth recovery.',
+    href: '/aftercare/crowns-bridges/',
+  },
+  {
+    title: 'Root Canals',
+    description: 'Root canal therapy is completed in two appointments. Here\'s what to expect and how to care for your tooth in between.',
+    href: '/aftercare/root-canals/',
+  },
+  {
+    title: 'Veneers',
+    description: 'A short adjustment period is normal as your smile settles into its new veneers. Here\'s how to care for them.',
+    href: '/aftercare/veneers/',
+  },
+];
+
+const aestheticsAftercare = [
+  {
+    title: 'Botox Injections',
+    description: 'A few simple steps in the hours and days after your treatment will help your results develop smoothly and comfortably.',
+    href: '/aftercare/botox-injections/',
+  },
+  {
+    title: 'Dermal Filler Injections',
+    description: 'A few simple precautions in the days after your filler appointment will help minimize swelling and support your results.',
+    href: '/aftercare/dermal-filler-injections/',
+  },
+  {
+    title: 'Bruise Management',
+    description: 'Bruising is a common, temporary side effect of cosmetic injections. These steps help minimize it and speed up healing.',
+    href: '/aftercare/bruise-management/',
+  },
+];
+---
+
+<BaseLayout
+  title="Aftercare Instructions | Center for Smile Enhancement, MN"
+  description="Post-operative and aftercare instructions for every procedure at the Center for Smile Enhancement in Minnetonka, MN — cleanings, fillings, crowns, root canals, veneers, and aesthetic treatments."
+>
+  <Header />
+
+  <main id="main-content">
+    <PageHero
+      eyebrow="Post-Operative Care"
+      title="Aftercare Instructions"
+      lede="Everything you need to know after your appointment, in one place. Find your procedure below for what to expect, what to do, and when to call us."
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Aftercare' },
+      ]}
+    />
+
+    <section aria-labelledby="dental-heading" class="section-surface">
+      <div class="site-container section-py">
+        <h2 id="dental-heading" class="section-heading">Dental Procedures</h2>
+        <div class="aftercare-grid">
+          {dentalAftercare.map((item) => (
+            <a href={item.href} class="card aftercare-card">
+              <h3 class="aftercare-card-title">{item.title}</h3>
+              <p class="aftercare-card-body">{item.description}</p>
+              <span class="aftercare-card-cta" aria-hidden="true">
+                View instructions
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="aesthetics-heading" class="section-white">
+      <div class="site-container section-py">
+        <h2 id="aesthetics-heading" class="section-heading">Masterpiece Aesthetics</h2>
+        <div class="aftercare-grid">
+          {aestheticsAftercare.map((item) => (
+            <a href={item.href} class="card aftercare-card">
+              <h3 class="aftercare-card-title">{item.title}</h3>
+              <p class="aftercare-card-body">{item.description}</p>
+              <span class="aftercare-card-cta" aria-hidden="true">
+                View instructions
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <p class="aftercare-note">
+          Still have questions after reading through your instructions? Call us at
+          <a href="tel:9525939310">952-593-9310</a> — we would always rather hear from you than have you wonder.
+        </p>
+      </div>
+    </section>
+
+    <CTABand />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section-white { background-color: #ffffff; }
+  .section-surface { background-color: var(--color-surface); }
+
+  .section-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+  }
+
+  .aftercare-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .aftercare-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .aftercare-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .aftercare-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+  .aftercare-card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+  }
+  .aftercare-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-body);
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+  .aftercare-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-top: auto;
+  }
+
+  .aftercare-note {
+    margin-top: 2.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-body);
+  }
+</style>
