@@ -28,3 +28,8 @@ playwright-report/
 .wrangler/
 .playwright-mcp/
 worker-configuration.d.ts
+
+# BugHerd workflow (local state; triage logs are tracked)
+.bugherd/screenshots/
+.bugherd/review/
+.bugherd/review-server.log
