@@ -44,3 +44,6 @@
 
 # ── Retired homepage design-comparison staging page ──────────────────────────
 /home-warm                                         /                                              301
+
+# ── Blog slug corrected to match the live site ───────────────────────────────
+/blog/what-are-the-risk-factors-associated-with-poor-oral-hygiene  /blog/what-are-the-risk-factors-associated-with-poor-hygiene/  301
