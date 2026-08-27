@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Can You Walk In for Dental Care?",
+  excerpt: "Dental issues don't wait for appointments. Learn how walk-in dental care works and when it makes sense in Minnetonka, MN.",
+  category: "Patient Education",
+  date: "2025-04-24",
+};
+
 const articleData = {
   headline: 'Can You Walk In for Dental Care?',
   description: 'What walk-in dental care means, when it makes sense, and what to expect when you need care without a pre-scheduled appointment.',

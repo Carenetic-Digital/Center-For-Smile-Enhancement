@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Risk Factors Associated With Poor Oral Hygiene",
+  excerpt: "Poor oral hygiene affects more than your smile. Learn the dental, systemic, and financial risk factors — and how to protect your health.",
+  category: "Patient Education",
+  date: "2025-05-29",
+};
+
 const articleData = {
   headline: 'What Are the Risk Factors Associated with Poor Hygiene?',
   description: 'How poor oral hygiene affects your dental health, systemic health, and confidence — plus practical strategies to protect your smile in Minnetonka, MN.',

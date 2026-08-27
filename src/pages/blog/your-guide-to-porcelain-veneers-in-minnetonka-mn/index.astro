@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Your Guide to Porcelain Veneers in Minnetonka, MN",
+  excerpt: "How porcelain veneers work, what to expect from the process, and how to care for your new smile.",
+  category: "Cosmetic Dentistry",
+  date: "2025-11-17",
+};
+
 const articleData = {
   headline: 'Your Guide to Porcelain Veneers in Minnetonka, MN',
   description:

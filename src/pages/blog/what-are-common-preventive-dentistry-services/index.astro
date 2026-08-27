@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Common Preventive Dentistry Services",
+  excerpt: "Discover the preventive dentistry services — check-ups, cleanings, fluoride, sealants, and screenings — that keep your smile healthy.",
+  category: "Preventive Dentistry",
+  date: "2025-05-31",
+};
+
 const articleData = {
   headline: 'What Are Common Preventive Dentistry Services?',
   description: 'A guide to the preventive dentistry services — check-ups, cleanings, fluoride, sealants, and oral cancer screenings — that protect your smile long-term.',

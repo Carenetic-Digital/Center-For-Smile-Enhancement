@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Examples of Poor Oral Hygiene",
+  excerpt: "See real examples of poor oral hygiene, the consequences of neglect, and simple fixes for a healthier smile.",
+  category: "Patient Education",
+  date: "2025-04-02",
+};
+
 const articleData = {
   headline: 'What Is an Example of Poor Oral Hygiene?',
   author: {

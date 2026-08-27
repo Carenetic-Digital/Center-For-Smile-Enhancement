@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Can Dentists Repair Severely Damaged Teeth?",
+  excerpt: "Severe tooth decay, trauma, or damage doesn't mean extraction is the only option. Learn how modern restorative dentistry can save and rebuild your smile.",
+  category: "Restorative Dentistry",
+  date: "2025-06-08",
+};
+
 const articleData = {
   headline: 'Can Dentists Repair Severely Damaged Teeth?',
   description:

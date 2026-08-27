@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "8 Risk Factors for Poor Oral Hygiene",
+  excerpt: "From diet to stress to skipped checkups, learn the 8 risk factors behind poor oral hygiene and how to protect your smile.",
+  category: "Patient Education",
+  date: "2025-05-15",
+};
+
 const articleData = {
   headline: 'What Are the 8 Risk Factors for Poor Oral Hygiene?',
   description: 'Eight common risk factors behind poor oral hygiene — from skipped checkups to diet and stress — and how to address each one.',

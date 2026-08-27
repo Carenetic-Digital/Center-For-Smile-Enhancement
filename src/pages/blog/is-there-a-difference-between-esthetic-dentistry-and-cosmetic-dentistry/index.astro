@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Esthetic vs. Cosmetic Dentistry: What’s the Difference?",
+  excerpt: "What's the real difference between esthetic dentistry and cosmetic dentistry? We break down the terminology and what each approach prioritizes.",
+  category: "Cosmetic Dentistry",
+  date: "2025-04-16",
+};
+
 const articleData = {
   headline: 'Esthetic Dentistry vs. Cosmetic Dentistry: What\'s the Difference?',
   author: {

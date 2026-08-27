@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Dentist vs. Cosmetic Dentist: What’s the Difference?",
+  excerpt: "General dentists and cosmetic dentists both hold a DDS or DMD, so what sets them apart? We explain the difference in training and focus.",
+  category: "Cosmetic Dentistry",
+  date: "2025-04-08",
+};
+
 const articleData = {
   headline: 'What\'s the Difference Between a Dentist and a Cosmetic Dentist?',
   author: {

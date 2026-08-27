@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "The Least Expensive Smile Makeover Options",
+  excerpt: "A smile makeover doesn't have to break the bank. Explore budget-friendly options and financing for a more confident smile.",
+  category: "Cosmetic Dentistry",
+  date: "2025-05-23",
+};
+
 const articleData = {
   headline: 'What Is the Least Expensive Smile Makeover?',
   description: 'How to build a budget-conscious smile makeover in Minnetonka, MN — from whitening to bonding — with financing and value-focused options.',

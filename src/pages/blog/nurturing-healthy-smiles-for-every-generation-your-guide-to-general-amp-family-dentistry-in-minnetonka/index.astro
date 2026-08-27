@@ -6,6 +6,14 @@ import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
 
+// Card data for the blog index. `date` drives ordering only — it is never displayed.
+export const postMeta = {
+  title: "Your Guide to General & Family Dentistry in Minnetonka",
+  excerpt: "From a child's first checkup to lifelong preventive care, explore general and family dentistry services for every generation.",
+  category: "General & Family Dentistry",
+  date: "2025-09-21",
+};
+
 const articleData = {
   headline:
     'Nurturing Healthy Smiles for Every Generation: Your Guide to General & Family Dentistry in Minnetonka',
