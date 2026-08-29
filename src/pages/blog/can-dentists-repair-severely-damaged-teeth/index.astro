@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer.astro';
 import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
+import { buildArticleSchema } from '../../../lib/schema';
 
 // Card data for the blog index. `date` drives ordering only — it is never displayed.
 export const postMeta = {
@@ -29,6 +30,7 @@ const articleData = {
 <BaseLayout
   title="Can Dentists Repair Severely Damaged Teeth in Minnetonka?"
   description="Severe tooth decay, trauma, or damage doesn't mean extraction is the only option. Learn how modern restorative dentistry can save and rebuild your smile."
+  type="article"
 >
   <Header />
 
@@ -85,5 +87,5 @@ const articleData = {
 
   <Footer />
 
-  <StructuredData type="Article" data={articleData} />
+  <StructuredData type="Article" data={buildArticleSchema(articleData, Astro.url.pathname)} />
 </BaseLayout>

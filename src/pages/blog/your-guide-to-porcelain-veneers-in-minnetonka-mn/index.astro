@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer.astro';
 import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
+import { buildArticleSchema } from '../../../lib/schema';
 
 // Card data for the blog index. `date` drives ordering only — it is never displayed.
 export const postMeta = {
@@ -24,11 +25,27 @@ const articleData = {
     name: 'Center for Smile Enhancement',
   },
 };
+// Mirrors the visible FAQs section below; schema answers must match on-page text.
+const faqSchema = {
+  mainEntity: [
+    ['How long do porcelain veneers last?', 'Typically 10\u201315 years with proper care and maintenance.'],
+    ['Do veneers look natural?', 'Yes\u2014Dr. Sudit and Dr. Davidson custom-shade each veneer to match your surrounding teeth.'],
+    ['Is the procedure painful?', 'No, it\u2019s minimally invasive and performed under local anesthesia for comfort.'],
+    ['Can veneers fix crooked teeth?', 'They can correct mild misalignment; severe cases may need orthodontic treatment first.'],
+    ['How do I know if I\u2019m a candidate for veneers?', 'Schedule a consultation with Dr. Sudit and Dr. Davidson to discuss your smile goals and dental health.'],
+  ].map(([question, answer]) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+};
+
 ---
 
 <BaseLayout
   title="Your Guide to Porcelain Veneers in Minnetonka, MN"
   description="Considering porcelain veneers in Minnetonka, MN? Learn how the process works, what results to expect, and how to keep your new smile looking its best."
+  type="article"
 >
   <Header />
 
@@ -87,5 +104,6 @@ const articleData = {
 
   <Footer />
 
-  <StructuredData type="Article" data={articleData} />
+  <StructuredData type="Article" data={buildArticleSchema(articleData, Astro.url.pathname)} />
+  <StructuredData type="FAQPage" data={faqSchema} />
 </BaseLayout>

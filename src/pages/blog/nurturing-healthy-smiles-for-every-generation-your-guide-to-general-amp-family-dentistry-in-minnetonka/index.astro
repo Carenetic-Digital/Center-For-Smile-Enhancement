@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer.astro';
 import PageHero from '../../../components/PageHero.astro';
 import CTABand from '../../../components/CTABand.astro';
 import StructuredData from '../../../components/StructuredData.astro';
+import { buildArticleSchema } from '../../../lib/schema';
 
 // Card data for the blog index. `date` drives ordering only — it is never displayed.
 export const postMeta = {
@@ -30,6 +31,7 @@ const articleData = {
 <BaseLayout
   title="Family Dentistry for Every Generation in Minnetonka, MN"
   description="From a child's first checkup to lifelong preventive care, explore general and family dentistry services at Center for Smile Enhancement in Minnetonka."
+  type="article"
 >
   <Header />
 
@@ -108,5 +110,5 @@ const articleData = {
 
   <Footer />
 
-  <StructuredData type="Article" data={articleData} />
+  <StructuredData type="Article" data={buildArticleSchema(articleData, Astro.url.pathname)} />
 </BaseLayout>
