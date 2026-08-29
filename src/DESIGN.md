@@ -21,7 +21,7 @@ Premium, editorial, warm. Target demographic is adults 45+, fee-for-service pati
 | Token | Hex | Usage |
 |-------|-----|-------|
 | `--color-text-base` | `#1a1f2e` | Body copy, primary text |
-| `--color-text-muted` | `#6b7280` | Secondary text, descriptions, captions |
+| `--color-text-muted` | `#626a79` | Secondary text, descriptions, captions |
 
 ### Backgrounds
 
@@ -217,9 +217,9 @@ lg: 1.5fr + 3×1fr
 
 - Color contrast: all text/bg combinations meet WCAG 2.1 AA (4.5:1 for body, 3:1 for large text)
 - Primary (`#1e3460`) on white: ~12.2:1 ✓
-- Muted (`#6b7280`) on white: ~4.8:1 ✓ (borderline; prefer `--color-text-base` for critical copy)
+- Muted (`#626a79`) on white: 5.44:1 ✓ — also 4.69:1 on the `#ebeef5` `.section-wash` and 5.17:1 on `--color-surface`, so muted body copy is safe on every light background the site uses. (Darkened from `#6b7280` during pre-launch review: the old value cleared white at 4.83:1 but dropped to 4.16:1 on `.section-wash`.)
 - White on primary (`#1e3460`): ~12.2:1 ✓
-- **⚠ Warning:** `--color-text-muted` (`#6b7280`) on `--color-brand-light` (`#c5cde3`) = 3.04:1 — **WCAG AA FAIL** for body text. Never place muted text directly on the brand-light background. Use `--color-primary` or `--color-text-base` for any text on brand-light sections (e.g. `.section-sub` inside a `.section-brand` block needs a `color: var(--color-text-base)` override — see the Testimonials section on the homepage). The default `.section-eyebrow` is already safe (`--color-primary` on `--color-brand-light`); use the `--muted`, `--onDark`, `--onBrand` modifiers for eyebrows on other backgrounds.
+- **⚠ Warning:** `--color-text-muted` (`#626a79`) on `--color-brand-light` (`#c5cde3`) = 3.43:1 — **WCAG AA FAIL** for body text. Never place muted text directly on the brand-light background. Use `--color-primary` or `--color-text-base` for any text on brand-light sections (e.g. `.section-sub` inside a `.section-brand` block needs a `color: var(--color-text-base)` override — see the Testimonials section on the homepage). The default `.section-eyebrow` is already safe (`--color-primary` on `--color-brand-light`); use the `--muted`, `--onDark`, `--onBrand` modifiers for eyebrows on other backgrounds.
 - All interactive elements have visible focus states
 - SVG icons include `aria-hidden="true"` when decorative
 - Semantic HTML: `<header>`, `<main>`, `<footer>`, `<nav>`, `<section aria-labelledby>`, `<article>`

@@ -4,69 +4,70 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
+import { imageDims } from '../../data/image-dimensions';
 
 const services = [
   {
     name: 'General & Family Dentistry',
     description: "Comprehensive preventive and family dental care for every stage of life — routine cleanings and exams, digital X-rays, fillings, and personalized hygiene guidance. We welcome patients of all ages, from your child's first visit to your parents' golden years.",
     href: '/services/general-family-dentistry/',
-    photo: '/images/service-family.jpg',
+    photo: '/images/service-family.webp',
     photoAlt: 'Mother and child brushing teeth together',
   },
   {
     name: 'Cosmetic Dentistry',
     description: 'Transform your smile with ZOOM professional teeth whitening, custom porcelain veneers, and cosmetic bonding. Dr. Sudit designs every smile makeover around your unique features and goals for a natural, confident result.',
     href: '/services/cosmetic-dentistry/',
-    photo: '/images/service-cosmetic-smile.png',
+    photo: '/images/service-cosmetic-smile.webp',
     photoAlt: 'Woman with a confident, beautiful smile',
   },
   {
     name: 'Orthodontics',
     description: 'Straighten your smile discreetly with Invisalign clear aligners — a comfortable, nearly invisible alternative to traditional metal braces for teens and adults, customized to your bite, timeline, and lifestyle.',
     href: '/services/orthodontics/',
-    photo: '/images/service-orthodontics.png',
+    photo: '/images/service-orthodontics.webp',
     photoAlt: 'Patient placing an Invisalign clear aligner',
   },
   {
     name: 'Implant Dentistry',
     description: 'Replace missing teeth with dental implants that look, feel, and function like your natural teeth. From single-tooth replacement to full-arch restorations, implants offer a permanent, long-lasting solution.',
     href: '/services/implant-dentistry/',
-    photo: '/images/service-cosmetic.jpg',
+    photo: '/images/service-cosmetic.webp',
     photoAlt: 'Patient with a beautiful, confident smile after restorative dental care',
   },
   {
     name: 'Masterpiece Aesthetics',
     description: 'Refresh your appearance with Botox, dermal fillers, microneedling, and medical-grade skincare — offered right alongside your dental care, designed to complement a beautiful, healthy smile with a refreshed overall look.',
     href: '/services/masterpiece-aesthetics/',
-    photo: '/images/service-aesthetics.png',
+    photo: '/images/service-aesthetics.webp',
     photoAlt: 'Woman with refreshed, elegant appearance',
   },
   {
     name: 'TMJ & Facial Pain',
     description: 'Find relief from jaw pain, headaches, and facial discomfort caused by TMJ disorders. Dr. Sudit provides thorough diagnosis and personalized treatment plans that address the root cause of your pain, not just the symptoms.',
     href: '/services/tmj-facial-pain/',
-    photo: '/images/service-tmj.png',
+    photo: '/images/service-tmj.webp',
     photoAlt: 'Patient experiencing relief from jaw and facial pain',
   },
   {
     name: 'Emergency Care',
     description: "Dental emergencies don't wait for convenient timing, and neither do we. We offer same-day and after-hours care for broken teeth, severe toothaches, and other urgent needs — call us any time at 952-593-9310.",
     href: '/services/emergency-care/',
-    photo: '/images/service-emergency.png',
+    photo: '/images/service-emergency.webp',
     photoAlt: 'Child with a surprised expression needing dental care',
   },
   {
     name: 'Teledentistry',
     description: 'Connect with Dr. Sudit remotely for consultations, follow-ups, and professional advice — no office visit required. Teledentistry makes it easy to get answers to your dental questions from wherever you are.',
     href: '/services/teledentistry/',
-    photo: '/images/service-teledentistry.png',
+    photo: '/images/service-teledentistry.webp',
     photoAlt: 'Patient connecting with dentist via smartphone',
   },
   {
     name: 'Advanced Technology',
     description: 'Our practice is equipped with state-of-the-art digital imaging, intraoral cameras, and precision diagnostic tools, allowing us to diagnose more accurately, treat more comfortably, and keep you fully informed every step of the way.',
     href: '/services/advanced-technology/',
-    photo: '/images/service-advanced-tech.png',
+    photo: '/images/service-advanced-tech.webp',
     photoAlt: '3D digital rendering of dental anatomy',
   },
   {
@@ -110,6 +111,8 @@ const services = [
                 <img
                   src={service.photo}
                   alt={service.photoAlt}
+                  width={imageDims(service.photo).width}
+                  height={imageDims(service.photo).height}
                   loading="lazy"
                   decoding="async"
                   class="svc-card__img"

@@ -10,12 +10,24 @@ import sitemap from '@astrojs/sitemap';
 // production build, so base falls back to "/".
 const previewBase = process.env.PREVIEW_BASE;
 
+/** Routes rendered with `noindex`; excluded from the sitemap to match. */
+const NOINDEX_ROUTES = ['/hipaa/', '/privacy/', '/terms/', '/accessibility/'];
+
 export default defineConfig({
   // Set this to your production URL (updated during deployment)
   site: 'https://www.drsudit.com',
   base: previewBase || undefined,
   output: 'static',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // These pages ship `noindex` (see the `noindex` prop in each page's
+      // BaseLayout call). Listing them here too would submit URLs we have
+      // asked Google not to index — which Search Console reports as
+      // "Submitted URL marked 'noindex'". Keep the two in sync.
+      filter: (page) =>
+        !NOINDEX_ROUTES.some((route) => new URL(page).pathname === route),
+    }),
+  ],
   devToolbar: {
     enabled: false,
   },

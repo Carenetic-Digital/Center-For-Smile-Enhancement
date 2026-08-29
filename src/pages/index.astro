@@ -2,69 +2,70 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { imageDims } from '../data/image-dimensions';
 
 const services = [
   {
     name: 'General & Family Dentistry',
     description: 'Preventive cleanings, exams, fillings, and whole-family care for all ages.',
     href: '/services/general-family-dentistry/',
-    photo: '/images/service-family.jpg',
+    photo: '/images/service-family.webp',
     photoAlt: 'Mother and child brushing teeth together',
   },
   {
     name: 'Cosmetic Dentistry',
     description: 'ZOOM whitening, porcelain veneers, bonding, and complete smile transformations.',
     href: '/services/cosmetic-dentistry/',
-    photo: '/images/service-cosmetic-smile.png',
+    photo: '/images/service-cosmetic-smile.webp',
     photoAlt: 'Woman with a confident, beautiful smile',
   },
   {
     name: 'Orthodontics',
     description: 'Invisalign clear aligners for teens and adults — no metal brackets.',
     href: '/services/orthodontics/',
-    photo: '/images/service-orthodontics.png',
+    photo: '/images/service-orthodontics.webp',
     photoAlt: 'Patient placing an Invisalign clear aligner',
   },
   {
     name: 'Implant Dentistry',
     description: 'Permanent tooth replacement with natural-looking, long-lasting dental implants.',
     href: '/services/implant-dentistry/',
-    photo: '/images/service-cosmetic.jpg',
+    photo: '/images/service-cosmetic.webp',
     photoAlt: 'Patient with a beautiful, confident smile after restorative dental care',
   },
   {
     name: 'Masterpiece Aesthetics',
     description: 'Botox, dermal fillers, microneedling, and medical-grade skincare services.',
     href: '/services/masterpiece-aesthetics/',
-    photo: '/images/service-aesthetics.png',
+    photo: '/images/service-aesthetics.webp',
     photoAlt: 'Woman with refreshed, elegant appearance',
   },
   {
     name: 'TMJ & Facial Pain',
     description: 'Expert diagnosis and treatment for jaw pain, TMJ disorders, and facial discomfort.',
     href: '/services/tmj-facial-pain/',
-    photo: '/images/service-tmj.png',
+    photo: '/images/service-tmj.webp',
     photoAlt: 'Patient experiencing relief from jaw and facial pain',
   },
   {
     name: 'Emergency Care',
     description: 'Same-day and after-hours care for dental emergencies. Call us at 952-593-9310.',
     href: '/services/emergency-care/',
-    photo: '/images/service-emergency.png',
+    photo: '/images/service-emergency.webp',
     photoAlt: 'Child with a surprised expression needing dental care',
   },
   {
     name: 'Teledentistry',
     description: 'Connect with Dr. Sudit remotely for consultations, follow-ups, and advice.',
     href: '/services/teledentistry/',
-    photo: '/images/service-teledentistry.png',
+    photo: '/images/service-teledentistry.webp',
     photoAlt: 'Patient connecting with dentist via smartphone',
   },
   {
     name: 'Advanced Technology',
     description: 'State-of-the-art imaging, digital dentistry tools, and precision diagnostics.',
     href: '/services/advanced-technology/',
-    photo: '/images/service-advanced-tech.png',
+    photo: '/images/service-advanced-tech.webp',
     photoAlt: '3D digital rendering of dental anatomy',
   },
   {
@@ -139,8 +140,8 @@ const patientResources = [
               <img
                 src="/images/hero-patient-warm.webp"
                 alt="Smiling patient seated in a warm, light-filled space"
-                width="1600"
-                height="2000"
+                width={imageDims('/images/hero-patient-warm.webp').width}
+                height={imageDims('/images/hero-patient-warm.webp').height}
                 loading="eager"
                 fetchpriority="high"
                 class="hero-photo-img"
@@ -241,9 +242,9 @@ const patientResources = [
           <img
             src="/images/interior-office.webp"
             alt="Center for Smile Enhancement reception area in Minnetonka, MN"
-            width="2500"
-            height="1664"
-            loading="eager"
+            width={imageDims('/images/interior-office.webp').width}
+            height={imageDims('/images/interior-office.webp').height}
+            loading="lazy"
             decoding="async"
             class="interior-img"
           />
@@ -278,6 +279,8 @@ const patientResources = [
               <img
                 src={service.photo}
                 alt={service.photoAlt}
+                width={imageDims(service.photo).width}
+                height={imageDims(service.photo).height}
                 loading="lazy"
                 decoding="async"
                 class="svc-tile__img"

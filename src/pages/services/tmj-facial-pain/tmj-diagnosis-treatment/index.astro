@@ -180,7 +180,10 @@ const relatedItems = [
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--color-brand-light);
+    /* Brand-light (#c5cde3) reads at only 1.59:1 on white — these numerals
+       carry the step order, so they need the 3:1 large-text minimum. This
+       mid-tone keeps the soft brand-blue look at 3.34:1. */
+    color: #7d8cb5;
     margin-bottom: 0.75rem;
   }
   .feature-title {

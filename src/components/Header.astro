@@ -1,4 +1,5 @@
 ---
+import { imageDims } from '../data/image-dimensions';
 const services = [
   { label: 'General & Family Dentistry',    href: '/services/general-family-dentistry/' },
   { label: 'Cosmetic Dentistry',            href: '/services/cosmetic-dentistry/' },
@@ -58,10 +59,10 @@ const isServiceActive = currentPath.startsWith('/services/');
         <!-- Logo (oversized, overlaps out the bottom of the nav bar) -->
         <a href="/" aria-label="Center for Smile Enhancement — Home" class="site-logo">
           <img
-            src="/images/logo-mark.png"
+            src="/images/logo-mark.webp"
             alt="Center for Smile Enhancement"
-            width="600"
-            height="599"
+            width={imageDims('/images/logo-mark.webp').width}
+            height={imageDims('/images/logo-mark.webp').height}
             loading="eager"
           />
         </a>
