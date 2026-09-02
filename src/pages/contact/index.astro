@@ -111,21 +111,10 @@ const mapDirectionsUrl = 'https://www.google.com/maps/search/?api=1&query=10500+
           </p>
         </div>
 
-        <!-- JotForm embed placeholder — insert <script is:inline> embed here once form ID is provided by client; see docs/third-party-scripts.md for is:inline + CSP requirements -->
-        <div class="card form-fallback-card">
-          <div class="form-fallback-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <h3 class="form-fallback-title">Our online contact form is being finalized</h3>
-          <p class="form-fallback-body">
-            In the meantime, please call us at <a href="tel:9525939310" class="info-link">952-593-9310</a> or email us directly at
-            <a href="mailto:TheCenterforSmileEnhancement@PDPSmiles.com" class="info-link info-link--email">TheCenterforSmileEnhancement@PDPSmiles.com</a>
-            &mdash; we'd love to hear from you.
-          </p>
-          <div class="form-fallback-ctas">
-            <a href="tel:9525939310" class="btn btn-primary">Call 952-593-9310</a>
-            <a href="mailto:TheCenterforSmileEnhancement@PDPSmiles.com" class="btn btn-outline">Email Us</a>
-          </div>
+        <!-- Drop form embed placeholder — replace this block with the Drop embed once the form is provided; see docs/third-party-scripts.md for is:inline + CSP requirements -->
+        <div class="embed-placeholder">
+          <span class="embed-placeholder-label">Placeholder</span>
+          <p class="embed-placeholder-text">A Drop form embed will go here.</p>
         </div>
       </div>
     </section>
@@ -249,40 +238,29 @@ const mapDirectionsUrl = 'https://www.google.com/maps/search/?api=1&query=10500+
     height: 100%;
   }
 
-  /* ── Form fallback card ───────────────────────────────── */
-  .form-fallback-card {
-    max-width: 36rem;
+  /* ── Embed placeholder ────────────────────────────────── */
+  .embed-placeholder {
+    max-width: 44rem;
     margin: 0 auto;
+    padding: 3.5rem 1.5rem;
     text-align: center;
+    border: 2px dashed var(--color-border, #d4d9e4);
+    border-radius: 0.75rem;
+    background-color: var(--color-surface);
   }
-  .form-fallback-icon {
-    width: 3.25rem;
-    height: 3.25rem;
-    border-radius: 999px;
-    background-color: var(--color-brand-light);
-    color: var(--color-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.25rem;
-  }
-  .form-fallback-title {
-    font-family: var(--font-display);
+  .embed-placeholder-label {
+    display: inline-block;
+    font-size: 0.6875rem;
     font-weight: 600;
-    font-size: 1.125rem;
-    color: var(--color-primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
     margin-bottom: 0.75rem;
   }
-  .form-fallback-body {
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    margin-bottom: 1.75rem;
-  }
-  .form-fallback-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+  .embed-placeholder-text {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin: 0;
   }
 </style>

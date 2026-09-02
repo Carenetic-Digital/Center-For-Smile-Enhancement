@@ -39,23 +39,14 @@ import CTABand from '../../../components/CTABand.astro';
       </div>
     </section>
 
-    <!-- ── Placeholder notice ─────────────────────────────── -->
+    <!-- ── Patient forms embed ────────────────────────────── -->
     <section aria-labelledby="placeholder-heading" class="section-surface">
       <div class="site-container section-py">
-        <div class="placeholder-card">
-          <span class="section-eyebrow section-eyebrow--muted">Online Forms Coming Soon</span>
-          <h2 id="placeholder-heading" class="placeholder-heading">
-            We're Finalizing Our Online Forms
-          </h2>
-          <p class="placeholder-body">
-            Online forms are being finalized. To save time at your visit, please call our office at
-            <a href="tel:9525939310" class="placeholder-link">952-593-9310</a>
-            and we'll help you get your paperwork started in advance.
-          </p>
-          <div class="placeholder-ctas">
-            <a href="tel:9525939310" class="btn btn-primary">Call 952-593-9310</a>
-            <a href="/schedule/" class="btn btn-outline">Schedule an Appointment</a>
-          </div>
+        <h2 id="placeholder-heading" class="sr-only">Patient Forms</h2>
+        <!-- Drop form embed placeholder — replace this block with the Drop embed once the form is provided; see docs/third-party-scripts.md for is:inline + CSP requirements -->
+        <div class="embed-placeholder">
+          <span class="embed-placeholder-label">Placeholder</span>
+          <p class="embed-placeholder-text">A Drop form embed will go here.</p>
         </div>
       </div>
     </section>
@@ -83,41 +74,29 @@ import CTABand from '../../../components/CTABand.astro';
     line-height: 1.7;
   }
 
-  .placeholder-card {
-    max-width: 40rem;
+  /* ── Embed placeholder ────────────────────────────────── */
+  .embed-placeholder {
+    max-width: 44rem;
     margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 1.5rem;
-    padding: 3rem 2.5rem;
+    padding: 3.5rem 1.5rem;
     text-align: center;
-    border: 1px solid rgba(30, 52, 96, 0.07);
-    box-shadow: 0 2px 8px rgba(30, 52, 96, 0.06), 0 12px 32px rgba(30, 52, 96, 0.14);
+    border: 2px dashed rgba(30, 52, 96, 0.2);
+    border-radius: 0.75rem;
+    background-color: #ffffff;
   }
-  .placeholder-heading {
-    font-family: var(--font-display);
-    font-weight: 700;
-    color: var(--color-primary);
-    font-size: clamp(1.5rem, 2.6vw, 2rem);
-    line-height: 1.25;
-    margin-bottom: 1rem;
-  }
-  .placeholder-body {
-    font-size: 1rem;
-    line-height: 1.75;
+  .embed-placeholder-label {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--color-text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
   }
-  .placeholder-link {
+  .embed-placeholder-text {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
     color: var(--color-primary);
-    font-weight: 500;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    white-space: nowrap;
-  }
-  .placeholder-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    margin: 0;
   }
 </style>
